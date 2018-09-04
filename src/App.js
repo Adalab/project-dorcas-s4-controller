@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './components/Login';
-import MenuCollapsible from './components/MenuCollapsible';
+//import MenuCollapsible from './components/MenuCollapsible';
+import ItemBar from './components/BarList';
 import api_token from './data/api_token.json';
+import BarList from './components/BarList';
 
 class App extends Component {
   constructor(props) {
     super(props);
     
-    this.listBar=this.listBar.bind(this);
+    //this.listBar=this.listBar.bind(this);
   }
   // componentDidMount() {
   //   listBar();
@@ -24,15 +26,16 @@ class App extends Component {
      return alert("El usuario no está registrado");
    }
   }
-listBar(){
-//esperando como accerder al token
-}
+// listBar(){
+// //esperando como accerder al token
+// }
 
   render() {
     return (
       <div className="App">
         <Login launchLogin={this.launchLogin}/>
         {/* <MenuCollapsible /> */}
+        <BarList />
       </div>
     );
   }
