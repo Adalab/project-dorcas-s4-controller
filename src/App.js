@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './components/Login';
+import MenuCollapsible from './components/MenuCollapsible';
 import api_token from './data/api_token.json';
 
 class App extends Component {
@@ -9,7 +10,6 @@ class App extends Component {
     
     this.listBar=this.listBar.bind(this);
   }
-
   // componentDidMount() {
   //   listBar();
   // }
@@ -19,7 +19,7 @@ class App extends Component {
     const apiUserName= api_token.requests[2].data[0].value;
     const apiPassWord=api_token.requests[2].data[1].value;
    if(email===apiUserName && password===apiPassWord){
-    listBar();
+    //listBar();
    }else{
      return alert("El usuario no está registrado");
    }
@@ -32,6 +32,7 @@ listBar(){
     return (
       <div className="App">
         <Login launchLogin={this.launchLogin}/>
+        {/* <MenuCollapsible /> */}
       </div>
     );
   }
