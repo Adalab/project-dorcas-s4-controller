@@ -6,17 +6,27 @@ import api_token from './data/api_token.json';
 class App extends Component {
   constructor(props) {
     super(props);
+    
+    this.listBar=this.listBar.bind(this);
   }
 
-  componentDidMount() {
-  }
-
+  // componentDidMount() {
+  //   listBar();
+  // }
+// aquí se pasan los valores de los input por 
+//los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
-    console.log(email);
-    console.log(password);
-    api_token.requests[2].data[0].value
-    api_token.requests[2].data[1].value
+    const apiUserName= api_token.requests[2].data[0].value;
+    const apiPassWord=api_token.requests[2].data[1].value;
+   if(email===apiUserName && password===apiPassWord){
+    listBar();
+   }else{
+     return alert("El usuario no está registrado");
+   }
   }
+listBar(){
+//esperando como accerder al token
+}
 
   render() {
     return (
