@@ -19,7 +19,7 @@
 
 .establishments {
   display: flex;
-  margin-top: 100px; }
+  margin-top: 103px; }
 
 .sectionList {
   width: 50vw;
@@ -32,7 +32,6 @@
 .exampleMap {
   width: 692px;
   height: 355px;
-  margin-top: 103px;
   border: 1px solid #67cf9b; }
 
 .exampleDirection {
