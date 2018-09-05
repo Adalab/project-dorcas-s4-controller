@@ -30,7 +30,7 @@ class Login extends React.Component {
           
             <p className="text-controller">Controller<span className="text-2">2</span></p>
           </div>
-          <p className="text-arrow">Introduce tus datos para poder acceder <i class="fas fa-angle-right" /></p>
+          <p className="text-arrow">Introduce tus datos para poder acceder <i className="fas fa-angle-right" /></p>
           
         </section>
         <section className="half-form">
@@ -62,7 +62,7 @@ class Login extends React.Component {
               Acceder
             </button>
           </div>
-          <p>¿No tienes una cuenta? Regístrate <span><i class="fas fa-angle-right" /></span></p>
+          <p>¿No tienes una cuenta? Regístrate <span><i className="fas fa-angle-right" /></span></p>
         </section>
       </div>
     );
