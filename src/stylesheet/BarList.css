@@ -1,0 +1,6 @@
+.barLists {
+  height: 1000px;
+  width: 50%;
+  overflow: auto; }
+  .barLists .barLists_element {
+    list-style: none; }

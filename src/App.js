@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 //import MenuCollapsible from './components/MenuCollapsible';
 import ItemBar from './components/BarList';
-import api_token from './data/api_token.json';
+
 import BarList from './components/BarList';
 
 class App extends Component {
@@ -17,15 +18,15 @@ class App extends Component {
   // }
 // aquí se pasan los valores de los input por 
 //los parámetros que hemos enviado desde login.js
-  launchLogin(email, password) {
-    const apiUserName = api_token.requests[2].data[0].value;
-    const apiPassWord = api_token.requests[2].data[1].value;
-   if (email  === apiUserName && password === apiPassWord) {
-    //listBar();
-   } else {
-     return alert("El usuario no está registrado");
-   }
-  }
+  // launchLogin(email, password) {
+  //   const apiUserName = api_token.requests[2].data[0].value;
+  //   const apiPassWord = api_token.requests[2].data[1].value;
+  //  if (email  === apiUserName && password === apiPassWord) {
+  //   //listBar();
+  //  } else {
+  //    return alert("El usuario no está registrado");
+  //  }
+  // }
 // listBar(){
 // //esperando como accerder al token
 // }
@@ -33,10 +34,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login 
-        launchLogin={this.launchLogin}/>
-        {/* <MenuCollapsible /> */}
-        <BarList />
+        <Switch>
+        <Route exact path='/BarList'
+        render={() => <Login
+          // launchLogin={this.launchLogin}
+          /* <MenuCollapsible /> */
+          />}
+        />
+          <Route path='/' component={ BarList }
+          />
+        </Switch>
       </div>
     );
   }
