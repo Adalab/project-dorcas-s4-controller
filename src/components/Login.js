@@ -35,13 +35,13 @@ class Login extends React.Component {
           </div>
           <p className="text-arrow">
             Introduce tus datos para poder acceder{" "}
-            <i className="fas fa-angle-right" />
+            <i className="fas fa-angle-right access-arrow" />
           </p>
         </section>
         <section className="half-form">
           <div className="form-inputs">
             <label className="label-form" htmlFor="">
-              Correo electrónico*
+              Correo electrónico *
             </label>
             {/* en los input crea la etiqueta ref con el this.inputEmail */}
             <input
@@ -51,7 +51,7 @@ class Login extends React.Component {
               type="text"
             />
             <label className="label-form" htmlFor="">
-              Contraseña*
+              Contraseña *
             </label>
             {/* en los input crea la etiqueta ref con el this.inputPassword */}
             <input
@@ -71,11 +71,10 @@ class Login extends React.Component {
               Acceder
             </button>
           </div>
-          <p>
-            ¿No tienes una cuenta? Regístrate{" "}
-            <span>
-              <i className="fas fa-angle-right" />
-            </span>
+          <p className="form-registry">
+            ¿No tienes una cuenta?{" "}
+            <span className="registry-text">Regístrate</span>{" "}
+            <i className="fas fa-angle-right registry-arrow" />
           </p>
         </section>
       </div>

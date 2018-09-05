@@ -15,8 +15,9 @@
   .half-logo--welcome {
     color: #67cf9b;
     display: flex;
-    margin-left: 189px;
-    margin-bottom: 0px;
+    margin-left: 177px;
+    margin-bottom: -10px;
+    font-family: "Expletus Sans", cursive;
   }
   .text-controller {
     display: flex;
@@ -38,6 +39,15 @@
   .text-arrow {
     color: #bababa;
   }
+  .access-arrow {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    margin-left: 4px;
+  }
 }
 .half-form {
   display: flex;
@@ -45,35 +55,59 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+}
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 442px;
+}
+.label-form {
+  margin: 10px 10px 16px 10px;
+  font-size: 17px;
+}
 
-  .form-inputs {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 442px;
-  }
-  .label-form {
-    margin: 10px 10px 16px 10px;
-  }
-
-  .form-input {
-    border-right: 0;
-    border-top: 0;
-    border-left: 0;
-    border-bottom-color: #67cf9b;
-    width: 442px;
-    margin: 0 10px;
-  }
-  .form-input--top {
-    margin-bottom: 20px;
-  }
-  .form-button-send {
-    background-color: #67cf9b;
-    width: 325px;
-    height: 54px;
-    border-radius: 17.1px;
-    font-family: OpenSans;
-    font-size: 14px;
-    font-weight: bold;
-  }
+.form-input {
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-color: #67cf9b;
+  width: 442px;
+  margin: 0 10px;
+}
+.form-input--top {
+  margin-bottom: 20px;
+}
+.form-button-send {
+  background-color: #67cf9b;
+  width: 325px;
+  height: 54px;
+  border-radius: 23px;
+  border-style: none;
+  font-family: sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+}
+.form-password {
+  margin: 20px 0px 61px 0px;
+  font-size: 14px;
+}
+.form-registry {
+  margin-top: 62px;
+  font-size: 14px;
+}
+.registry-text {
+  font-weight: bold;
+  line-height: 30px;
+  border-bottom: 3px solid #67cf9b;
+  padding-bottom: 3px;
+}
+.registry-arrow {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  color: #67cf9b;
+  margin-left: 5px;
 }
