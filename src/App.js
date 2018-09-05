@@ -1,38 +1,35 @@
 import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
-// import api_token from "./data/api_token.json";
-
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.listBar = this.listBar.bind(this);
+    this.launchLogin=this.launchLogin.bind(this);
   }
 
-  // componentDidMount() {
-  //   listBar();
-  // }
+
   // aquí se pasan los valores de los input por
   //los parámetros que hemos enviado desde login.js
-  // launchLogin(email, password) {
-  //   const apiUserName = api_token.requests[2].data[0].value;
-  //   const apiPassWord = api_token.requests[2].data[1].value;
-  //   if (email === apiUserName && password === apiPassWord) {
-  //     // listBar();
-  //   } else {
-  //     return alert("El usuario no está registrado");
-  //   }
-  // }
-  listBar() {
-    //esperando como accerder al token
-  }
 
+  launchLogin(email, password) {
+  
+    const url = "https://ada-controller.deploy-cd.com/api/login_check";
+
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({_username: email, _password: password}), 
+      headers:{
+        "Content-Type": "application/json; charset=utf-8",
+      }})
+    .then(res => res.json())
+    .then(response => console.log( response));
+   
+  }
+ 
   render() {
     return (
       <div className="App">
-        <Login />
-        {/* <Login launchLogin={this.launchLogin}/> */}
+        <Login launchLogin={this.launchLogin}/>
       </div>
     );
   }
