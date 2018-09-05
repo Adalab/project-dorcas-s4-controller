@@ -29,7 +29,7 @@ class Login extends React.Component {
         <section className="half-logo">
         <p className="half-logo--welcome">Bienvenido a</p>
         <div className="logo-controller">
-          <p className="text-controller">Controller</p><p className="text-2">2</p>
+          <p className="text-controller">Controller</p><span className="text-2">2</span>
           </div>
           <p className="text-arrow">Introduce tus datos para poder acceder</p><i class="fas fa-angle-right"></i>
         </section>
