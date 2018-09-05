@@ -1,11 +1,18 @@
 .App {
-  text-align: center;
-}
-.menuPage{
+  text-align: center; }
+
+.menuPage {
   width: 223px;
   height: 100vh;
-  background-color: #222222;
-}
-.half-logo--container {
-  margin-top: 20%; 
-}
+  background-color: #222222; }
+
+.text-controller {
+  color: #ffffff;
+  font-family: 'Expletus Sans', cursive;
+  padding-top: 65px;
+  font-size: 30px;
+  width: bold; }
+
+.text-2 {
+  color: #67cf9b;
+  font-size: 45px; }
