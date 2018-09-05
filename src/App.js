@@ -8,6 +8,7 @@ import ItemBar from './components/BarList';
 import BarList from './components/BarList';
 import DetailBar from './components/DetailBar';
 import Logout from './components/Logout';
+import MenuCollapsible from './components/MenuCollapsible';
 
 class App extends Component {
   constructor(props) {
@@ -21,17 +22,7 @@ class App extends Component {
 // aquí se pasan los valores de los input por 
 //los parámetros que hemos enviado desde login.js
   // launchLogin(email, password) {
-  //   const apiUserName = api_token.requests[2].data[0].value;
-  //   const apiPassWord = api_token.requests[2].data[1].value;
-  //  if (email  === apiUserName && password === apiPassWord) {
-  //   //listBar();
-  //  } else {
-  //    return alert("El usuario no está registrado");
-  //  }
-  // }
-// listBar(){
-// //esperando como accerder al token
-// }
+
 
   render() {
     return (

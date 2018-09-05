@@ -10,19 +10,24 @@
   height: 134px;
   background-color: #9d9d9d;
   margin: 10px;
+
+  .itemBar_element {
+    width: 134px;
+    height: 134px;
+  }
+
+  .itemBar_image {
+    text-align: left;
+    display: inline-block
+  } 
+
+  .itemBar_info {
+    text-align: left;
+    display: inline-block
+  }
 }
 
-.itemBar_element {
-  width: 134px;
-  height: 134px;
-}
 
-.itemBar_image {
-  text-align: left;
-  display: inline-block
-} 
 
-.itemBar_info {
-  text-align: left;
-  display: inline-block
-}
+
+

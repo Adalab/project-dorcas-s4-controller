@@ -1,18 +1,20 @@
 import React from 'react';
 
 class MenuCollapsible extends React.Component {
- 
+
   render() {
     return (
-        <nav>
-          <h2>Controller 2</h2>
-          <li>
-              <ul>Próximas visitas</ul>
-              <ul>Visitas anteriores</ul>
-          </li>
-        </nav>
-     );
-    }
+      <nav className="menuPage">
+        <div className="half-logo--container">
+          <p className="text-controller">Controller<span className="text-2">2</span></p>
+        </div>
+        <ul className="listMenu">
+          <li className="itemList">Próximas visitas</li>
+          <li className="itemList">Visitas anteriores</li>
+        </ul>
+      </nav>
+    );
   }
+}
 
 export default MenuCollapsible;
