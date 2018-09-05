@@ -46,13 +46,21 @@ height:100vh;
   font-weight: bold;
 }
 .text-controller{
+    display: flex;
+   justify-content: center;
+   align-items: center;
     font-size: 70px;
     color: #ffffff;
+    margin-top: 0;
+    height: 98px;;
     font-family: 'Expletus Sans', cursive;
+    margin-bottom: 0;
+    font-weight: bold;
 }
 .text-2{
     font-size: 100px;
     color: #67cf9b;
+    padding-bottom: 13px;
 }
 .text-arrow{
     color: #bababa;
@@ -63,4 +71,11 @@ height:100vh;
     border-left: 0;
     border-bottom-color: #67cf9b;
     width: 442px;
+    margin: 0 10px;
+}
+.label-form{
+    margin: 10px 10px 16px 10px;
+}
+.form-input--top{
+    margin-bottom: 20px;
 }

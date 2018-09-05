@@ -30,15 +30,15 @@ class Login extends React.Component {
           
             <p className="text-controller">Controller<span className="text-2">2</span></p>
           </div>
-          <p className="text-arrow">Introduce tus datos para poder acceder</p>
-          <i class="fas fa-angle-right" />
+          <p className="text-arrow">Introduce tus datos para poder acceder <i class="fas fa-angle-right" /></p>
+          
         </section>
         <section className="half-form">
           <div className="form-inputs">
             <label className="label-form" htmlFor="">Correo electrónico*</label>
             {/* en los input crea la etiqueta ref con el this.inputEmail */}
             <input
-              className="form-input"
+              className="form-input form-input--top"
               placeholder="Escribe tu email"
               ref={this.inputEmail}
               type="text"
@@ -62,7 +62,7 @@ class Login extends React.Component {
               Acceder
             </button>
           </div>
-          <p>¿No tienes una cuenta? Regístrate</p><i class="fas fa-angle-right" />
+          <p>¿No tienes una cuenta? Regístrate <span><i class="fas fa-angle-right" /></span></p>
         </section>
       </div>
     );
