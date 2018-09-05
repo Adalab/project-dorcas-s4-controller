@@ -18,11 +18,11 @@ class App extends Component {
 // aquí se pasan los valores de los input por 
 //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
-    const apiUserName= api_token.requests[2].data[0].value;
-    const apiPassWord=api_token.requests[2].data[1].value;
-   if(email===apiUserName && password===apiPassWord){
+    const apiUserName = api_token.requests[2].data[0].value;
+    const apiPassWord = api_token.requests[2].data[1].value;
+   if (email  === apiUserName && password === apiPassWord) {
     //listBar();
-   }else{
+   } else {
      return alert("El usuario no está registrado");
    }
   }
@@ -33,7 +33,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login launchLogin={this.launchLogin}/>
+        <Login 
+        launchLogin={this.launchLogin}/>
         {/* <MenuCollapsible /> */}
         <BarList />
       </div>
