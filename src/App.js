@@ -6,6 +6,8 @@ import Login from './components/Login';
 import ItemBar from './components/BarList';
 
 import BarList from './components/BarList';
+import DetailBar from './components/DetailBar';
+import Logout from './components/Logout';
 
 class App extends Component {
   constructor(props) {
