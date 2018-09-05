@@ -25,17 +25,17 @@ class Login extends React.Component {
     return (
       <div className="login-page">
         <section className="half-logo">
+        <div className="half-logo--container">
           <p className="half-logo--welcome">Bienvenido a</p>
-          <div className="logo-controller">
-            <span className="text-controller">Controller</span>
-            <span className="text-2">2</span>
+          
+            <p className="text-controller">Controller<span className="text-2">2</span></p>
           </div>
           <p className="text-arrow">Introduce tus datos para poder acceder</p>
           <i class="fas fa-angle-right" />
         </section>
         <section className="half-form">
           <div className="form-inputs">
-            <label htmlFor="">Correo electrónico*</label>
+            <label className="label-form" htmlFor="">Correo electrónico*</label>
             {/* en los input crea la etiqueta ref con el this.inputEmail */}
             <input
               className="form-input"
@@ -43,7 +43,7 @@ class Login extends React.Component {
               ref={this.inputEmail}
               type="text"
             />
-            <label htmlFor="">Contraseña*</label>
+            <label className="label-form" htmlFor="">Contraseña*</label>
             {/* en los input crea la etiqueta ref con el this.inputPassword */}
             <input
               className="form-input"

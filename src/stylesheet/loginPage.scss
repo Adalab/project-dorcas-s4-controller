@@ -9,16 +9,19 @@ height:100vh;
     background-color: #222222;
     width: 50%;
 }
-.logo-controller{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
+// .logo-controller{
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+// }borrar
 .half-logo--welcome{
     color: #67cf9b;
     display: flex;
     margin-left: 189px;
     margin-bottom: 0px;
+}
+.half-logo--container{
+    margin-top: 20%;
 }
 .half-form{
     display: flex;
