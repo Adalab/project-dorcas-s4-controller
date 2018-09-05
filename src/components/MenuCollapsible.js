@@ -5,7 +5,10 @@ class MenuCollapsible extends React.Component {
   render() {
     return (
       <nav className="menuPage">
-        <h2>Controller 2</h2>
+        <div className="half-logo--container">
+          <p className="half-logo--welcome">Bienvenido a</p>
+          <p className="text-controller">Controller<span className="text-2">2</span></p>
+        </div>
         <li>
           <ul>Próximas visitas</ul>
           <ul>Visitas anteriores</ul>
