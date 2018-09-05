@@ -1,6 +1,8 @@
 import React from 'react';
 import map from '../images/exampleMap.jpg';
 import direction from '../images/exampleDirection.jpg';
+import '../stylesheet/map.css';
+import '../stylesheet/buttons.css';
 
 class Map extends React.Component {
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Map from './components/Map';
+import DetailBar from './components/DetailBar';
 import Logout from './components/Logout';
 
 class App extends Component {
@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Logout />
-          <Map />
+          <DetailBar />
         </header>
       </div>
     );
