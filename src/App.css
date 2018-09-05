@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+.menuPage{
+  width: 223px;
+  height: 100vh;
+  background-color: #222222;
+}
