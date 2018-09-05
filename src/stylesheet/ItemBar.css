@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
+.itemBar {
+  width: 400px;
+  height: 134px;
+  background-color: #9d9d9d;
+  margin: 10px; }
+  .itemBar .itemBar_element {
+    width: 134px;
+    height: 134px; }
+  .itemBar .itemBar_image {
+    text-align: left;
+    display: inline-block; }
+  .itemBar .itemBar_info {
+    text-align: left;
+    display: inline-block; }
