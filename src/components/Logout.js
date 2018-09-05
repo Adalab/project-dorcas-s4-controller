@@ -5,8 +5,8 @@ class Logout extends React.Component {
   render() {
     return (
       <div className="logout">
-        <p className="logoutName">José L.   |</p>
-        <div className="logoutIcon"><i className="fas fa-sign-out-alt"></i></div>
+        <p className="logoutName"></p>
+        <div className="logoutIcon" ><i className="fas fa-sign-out-alt"></i></div>
       </div>
     );
   }
