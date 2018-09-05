@@ -1,6 +1,5 @@
-import React from 'react';
-import '../stylesheet/loginPage.css';
-
+import React from "react";
+import "../stylesheet/loginPage.css";
 
 class Login extends React.Component {
   /*React.createRef() es como si hiciesemos const inputEmail=document.querySelector('')
@@ -24,37 +23,50 @@ class Login extends React.Component {
 
   render() {
     return (
-      
       <div className="login-page">
         <section className="half-logo">
-        <p className="half-logo--welcome">Bienvenido a</p>
-        <div className="logo-controller">
-          <p className="text-controller">Controller</p><p className="text-2">2</p>
+        <div className="half-logo--container">
+          <p className="half-logo--welcome">Bienvenido a</p>
+          
+            <p className="text-controller">Controller<span className="text-2">2</span></p>
           </div>
-          <p className="text-arrow">Introduce tus datos para poder acceder</p><i class="fas fa-angle-right"></i>
+          <p className="text-arrow">Introduce tus datos para poder acceder</p>
+          <i class="fas fa-angle-right" />
         </section>
         <section className="half-form">
-        <div className="form-inputs">
-          <label htmlFor="">Correo electrónico*</label>
-          {/* en los input crea la etiqueta ref con el this.inputEmail */}
-          <input className="form-input" placeholder="Escribe tu email" ref={this.inputEmail} type="text"/>
-          <label htmlFor="">Contraseña*</label>
-           {/* en los input crea la etiqueta ref con el this.inputPassword */}
-          <input className="form-input" placeholder="Escribe tu contraseña" ref={this.inputPassword} type="text"/>
+          <div className="form-inputs">
+            <label className="label-form" htmlFor="">Correo electrónico*</label>
+            {/* en los input crea la etiqueta ref con el this.inputEmail */}
+            <input
+              className="form-input"
+              placeholder="Escribe tu email"
+              ref={this.inputEmail}
+              type="text"
+            />
+            <label className="label-form" htmlFor="">Contraseña*</label>
+            {/* en los input crea la etiqueta ref con el this.inputPassword */}
+            <input
+              className="form-input"
+              placeholder="Escribe tu contraseña"
+              ref={this.inputPassword}
+              type="text"
+            />
           </div>
           <div className="form-password">
-          <p>¿Has olvidado tu contraseña?</p>
+            <p>¿Has olvidado tu contraseña?</p>
           </div>
           {/*evento onclick para pasarle al método launchLogin los valores 
           que se ha escrito en los inputs de username y password*/}
           <div className="form-button">
-          <button className="form-button-send" onClick={this.onClickButton}>Acceder</button>
+            <button className="form-button-send" onClick={this.onClickButton}>
+              Acceder
+            </button>
           </div>
-          <p>¿No tienes una cuenta? Regístrate</p>
+          <p>¿No tienes una cuenta? Regístrate</p><i class="fas fa-angle-right" />
         </section>
       </div>
-     );
-    }
+    );
   }
+}
 
 export default Login;

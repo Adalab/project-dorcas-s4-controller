@@ -7,27 +7,29 @@
   display: flex;
   flex-direction: column;
   background-color: #222222;
-  width: 1298px; }
-
-.logo-controller {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
+  width: 50%; }
 
 .half-logo--welcome {
-  color: #67cf9b; }
+  color: #67cf9b;
+  display: flex;
+  margin-left: 189px;
+  margin-bottom: 0px; }
+
+.half-logo--container {
+  margin-top: 20%; }
 
 .half-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  width: 50%; }
 
 .form-inputs {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; }
+  align-items: flex-start;
+  width: 442px; }
 
 .form-button-send {
   background-color: #67cf9b;
@@ -41,7 +43,7 @@
 .text-controller {
   font-size: 70px;
   color: #ffffff;
-  font-family: ExpletusSans; }
+  font-family: 'Expletus Sans', cursive; }
 
 .text-2 {
   font-size: 100px;
@@ -54,4 +56,5 @@
   border-right: 0;
   border-top: 0;
   border-left: 0;
-  border-bottom-color: #67cf9b; }
+  border-bottom-color: #67cf9b;
+  width: 442px; }

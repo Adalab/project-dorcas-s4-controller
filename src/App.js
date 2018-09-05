@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +10,7 @@ class App extends Component {
 
   // aquí se pasan los valores de los input por
   //los parámetros que hemos enviado desde login.js
+
   launchLogin(email, password) {
   
     const url = "https://ada-controller.deploy-cd.com/api/login_check";
@@ -30,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Login launchLogin={this.launchLogin} />
+        <Login launchLogin={this.launchLogin}/>
       </div>
     );
   }
