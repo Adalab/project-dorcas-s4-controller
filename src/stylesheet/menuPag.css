@@ -1,0 +1,16 @@
+.listMenu {
+  margin-top: 60px; }
+
+.buttonList {
+  background-color: #67cf9b;
+  width: 175px;
+  height: 25px;
+  border-top-left-radius: 17.1px;
+  border-bottom-left-radius: 17.1px;
+  font-family: OpenSans;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 47px;
+  padding-top: 7px;
+  margin-top: 15px; }

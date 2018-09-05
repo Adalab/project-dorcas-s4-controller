@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheet/menuPag.css';
 
 class MenuCollapsible extends React.Component {
 
@@ -9,8 +10,8 @@ class MenuCollapsible extends React.Component {
           <p className="text-controller">Controller<span className="text-2">2</span></p>
         </div>
         <ul className="listMenu">
-          <li className="itemList">Próximas visitas</li>
-          <li className="itemList">Visitas anteriores</li>
+          <li className="buttonList">Próximas visitas</li>
+          <li className="buttonList">Visitas anteriores</li>
         </ul>
       </nav>
     );
