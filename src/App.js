@@ -22,7 +22,7 @@ class App extends Component {
   }
   // componentWillMount () {
   //   if(savedToken){
-  //     this.props.history.push('/LayoutPrincipal');
+  //     this.postEstablishments(savedToken);
   //   }
   // }
   logout() {
@@ -51,7 +51,6 @@ class App extends Component {
   }
 
   login(email, password) {
-    //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
     const url = "https://ada-controller.deploy-cd.com/api/login_check";
     const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(url, {
@@ -72,12 +71,10 @@ class App extends Component {
             }
           })
             .then(response1 => response1.json())
-            .then(response2 => {
-              const establishment = response2;
+            .then(function (response2){
               this.setState({
-              establishments: establishment
+              establishments: response2
               })
-              
             })
           this.setState({
             email: email,
@@ -89,25 +86,21 @@ class App extends Component {
         }
       });
   }
-
   errorData() {
     this.setState({
       loginError: true
     });
   }
-
-
-      
-          
-  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el
-
-  // aquí se pasan los valores de los input por
-  //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
     if (savedToken) {
-      //se haría la petición al listado de bares y se pasaría a la página principal
+      this.setState({
+        email: email
+      });
       this.postEstablishments(savedToken);
     } else {
+      this.setState({
+        email: email
+      });
       this.login(email, password);
       
     }

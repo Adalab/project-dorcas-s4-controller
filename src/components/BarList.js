@@ -10,9 +10,9 @@ class BarList extends React.Component {
         <div className="barLists">
           <ul>
             {this.props.establishments.data
-            .map(function (item) {
+            .map(function (item, index) {
                 return (
-                  <li className="barLists_element">
+                  <li className="barLists_element" index>
                       <ItemBar item={item} />
                   </li>
                 )
