@@ -10,7 +10,7 @@ class ItemBar extends React.Component {
           <img src="https://via.placeholder.com/134x134"></img>
         </div>
           <div className="itemBar_info">
-            <h2>{this.props.establishments.data.name}</h2>
+            <h2>{this.props.item.name}</h2>
             <p>dirección</p>
             <p>icon</p>
             <p>numero visitas</p>
