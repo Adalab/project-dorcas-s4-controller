@@ -1,5 +1,5 @@
-.containerMenu{
-  margin-top: 60px; }
+.containerMenu {
+  margin-top: 40px; }
 
 .buttonList {
   background-color: #67cf9b;
@@ -14,3 +14,23 @@
   margin-left: 47px;
   padding-top: 7px;
   margin-top: 15px; }
+
+.logoText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #ffffff;
+  margin-top: 0;
+  height: 98px;
+  font-family: 'Expletus Sans', cursive;
+  margin-bottom: 0;
+  font-weight: bold; }
+
+.logoNumber {
+  font-size: 60px;
+  color: #67cf9b;
+  padding-bottom: 13px; }
+
+.half-logo--container {
+  margin-top: 25%; }
