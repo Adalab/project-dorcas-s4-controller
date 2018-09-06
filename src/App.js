@@ -8,18 +8,19 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'usuario'
+      email: 'usuario',
+      establishments: []
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
-    this.postEstablishments=this.postEstablishments.bind(this);
-    this.login=this.login.bind(this);
+    this.postEstablishments = this.postEstablishments.bind(this);
+    this.login = this.login.bind(this);
   }
-  componentWillMount () {
-    if(savedToken){
-      this.props.history.push('/LayoutPrincipal');
-    }
-  }
+  // componentWillMount () {
+  //   if(savedToken){
+  //     this.props.history.push('/LayoutPrincipal');
+  //   }
+  // }
   logout() {
     localStorage.removeItem('token');
     this.setState({
@@ -27,21 +28,28 @@ class App extends Component {
     });
     this.props.history.push('/');
   }
-  postEstablishments(savedToken){
-    const establishments='https://ada-controller.deploy-cd.com/api/establishments';
+  postEstablishments(savedToken,email) {
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + savedToken
-      }  
+      }
     })
-    .then(response => response.json())
-    .then(response2 => console.log(response2));
-    this.props.history.push('/LayoutPrincipal');
+      .then(response => response.json())
+      .then(response2 => {
+        const establishment = response2;
+        this.setState({
+        establishments: establishment
+        })
+        this.props.history.push('/LayoutPrincipal');
+      })
   }
-  login(email, password,){
+
+  login(email, password) {
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
     const url = "https://ada-controller.deploy-cd.com/api/login_check";
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(url, {
       method: 'POST',
       body: JSON.stringify({ _username: email, _password: password }),
@@ -50,18 +58,30 @@ class App extends Component {
       }
     })
       .then(res => res.json())
-      .then(response => localStorage.setItem('token', JSON.stringify(response.token)));
-      this.setState({
-        email: email
-      });
-      this.props.history.push('/LayoutPrincipal');
-      //si no está logado error
-      //si están vacíos los campos, required y comprobar length.y por programcion se pasa a la siguiente pagina
-      //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
-  }
+      .then(function(response) {
+        localStorage.setItem('token', JSON.stringify(response.token))
 
-    // aquí se pasan los valores de los input por
-   //los parámetros que hemos enviado desde login.js
+      fetch(establishments, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + response.token
+          }
+        })
+          .then(response1 => response1.json())
+          .then(response2 => {
+            const establishment = response2;
+            this.setState({
+            establishments: establishment
+            })
+            
+          })
+          
+  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
+  })
+}
+
+  // aquí se pasan los valores de los input por
+  //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
     if (savedToken) {
       //se haría la petición al listado de bares y se pasaría a la página principal
@@ -71,19 +91,18 @@ class App extends Component {
       
     }
   }
-  
 
   render() {
-    //localStorage.removeItem('token');
+    // localStorage.removeItem('token');
     return (
       <div className="App">
         <Switch>
           <Route exact path='/'
             render={() => <Login
-             launchLogin={this.launchLogin}
+              launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} logout={this.logout} match={props.match} />}
+          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
           />
         </Switch>
       </div>
