@@ -8,7 +8,7 @@ class Map extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div className="establishments col-3">
+      <div className="establishments">
         <section className="sectionList">
         </section>
         <section className="sectionDetails">

@@ -6,7 +6,7 @@ class BarList extends React.Component {
  
   render() {
     return (
-        <div className="col-6">
+        <div>
           <div className="barLists">
             <li className="barLists_element ">
               <ItemBar />

@@ -9,7 +9,7 @@ class LoyoutPrincipal extends React.Component {
     return (
       <div className="row">
         <div className="col-12"> <Logout  email={this.props.email} /></div>
-        <div className="col-4"><MenuCollapsible  /></div>
+        <div className="col-3"><MenuCollapsible  /></div>
         <div className="col-4"><BarList  /></div>
         <div className="col-4"><DetailBar /></div>
       </div>
