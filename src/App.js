@@ -54,11 +54,11 @@ class App extends Component {
           }
         })
           .then(response1 => response1.json())
-          .then(function(response2){
+          .then(response2 =>
             this.setState({
             establishments: response2
             })
-          });
+          );
 
   //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
   });
