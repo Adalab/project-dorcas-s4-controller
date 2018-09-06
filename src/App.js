@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
+import Notification from './components/Notification';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loginError: '',
       email: ''
     }
     this.launchLogin = this.launchLogin.bind(this);
@@ -15,7 +17,6 @@ class App extends Component {
     this.postEstablishments=this.postEstablishments.bind(this);
     this.login=this.login.bind(this);
   }
-
 
   logout() {
     localStorage.removeItem('token');
@@ -62,7 +63,6 @@ class App extends Component {
       this.login(email, password);
     }
   }
-  
 
   render() {
     //localStorage.removeItem('token');
@@ -77,6 +77,10 @@ class App extends Component {
           <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} />}
           />
         </Switch>
+        {this.state.loginError && (<Notification />)} 
+{/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
+
+si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
       </div>
     );
   }

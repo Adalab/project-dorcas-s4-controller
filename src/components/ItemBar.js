@@ -5,12 +5,12 @@ class ItemBar extends React.Component {
 
   render() {
     return (
-      <div className="itemBar fgdfgsd">
-        <div className="itemBar_image">
+      <div className="itemBar">
+        <div className="itemBar__image">
           <img src="https://via.placeholder.com/134x134"></img>
         </div>
-          <div className="itemBar_info">
-            <h2>Bar prueba</h2>
+          <div className="itemBar__info">
+            <h2 className="itemBar__info__name">Bar prueba</h2>
             <p>dirección</p>
             <p>icon</p>
             <p>numero visitas</p>
