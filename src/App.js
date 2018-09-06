@@ -4,21 +4,27 @@ import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
 import Notification from './components/Notification';
 import { withRouter, Route, Switch } from 'react-router-dom';
-
+const savedToken = JSON.parse(localStorage.getItem('token'));
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loginError: false,
-      email: 'usuario'
+      email: 'usuario',
+      establishments: []
+
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.postEstablishments=this.postEstablishments.bind(this);
     this.login=this.login.bind(this);
-    this.errorData=this.errorData.bind(this);
+    this.errorData=this.errorData.bind(this);   
   }
-
+  // componentWillMount () {
+  //   if(savedToken){
+  //     this.props.history.push('/LayoutPrincipal');
+  //   }
+  // }
   logout() {
     localStorage.removeItem('token');
     this.setState({
@@ -26,20 +32,28 @@ class App extends Component {
     });
     this.props.history.push('/');
   }
-  postEstablishments(savedToken){
-    const establishments='https://ada-controller.deploy-cd.com/api/establishments';
+  postEstablishments(savedToken) {
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + savedToken
-      }  
+      }
     })
-    .then(response => response.json())
-    .then(response2 => console.log(response2));
+      .then(response => response.json())
+      .then(response2 => {
+        const establishment = response2;
+        this.setState({
+        establishments: establishment
+        })
+        this.props.history.push('/LayoutPrincipal');
+      })
   }
-  login(email, password,){
+
+  login(email, password) {
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
     const url = "https://ada-controller.deploy-cd.com/api/login_check";
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(url, {
       method: 'POST',
       body: JSON.stringify({ _username: email, _password: password }),
@@ -50,6 +64,21 @@ class App extends Component {
       .then(res => res.json())
       .then(response => {
         if (response.token) {
+          localStorage.setItem('token', JSON.stringify(response.token))
+          fetch(establishments, {
+            method: 'GET',
+            headers: {
+              'Authorization': 'Bearer ' + response.token
+            }
+          })
+            .then(response1 => response1.json())
+            .then(response2 => {
+              const establishment = response2;
+              this.setState({
+              establishments: establishment
+              })
+              
+            })
           this.setState({
             email: email,
             loginError: false
@@ -58,9 +87,7 @@ class App extends Component {
         } else {
           this.errorData();
         }
-        //si están vacíos los campos, required y comprobar length.y por programcion se pasa a la siguiente pagina
       });
-      //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
   }
 
   errorData() {
@@ -69,10 +96,14 @@ class App extends Component {
     });
   }
 
-    // aquí se pasan los valores de los input por
-   //los parámetros que hemos enviado desde login.js
+
+      
+          
+  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el
+
+  // aquí se pasan los valores de los input por
+  //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
-    const savedToken = JSON.parse(localStorage.getItem('token'));
     if (savedToken) {
       //se haría la petición al listado de bares y se pasaría a la página principal
       this.postEstablishments(savedToken);
@@ -89,10 +120,10 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-             launchLogin={this.launchLogin}
+              launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} logout={this.logout} match={props.match} />}
+          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
           />
         </Switch>
         {this.state.loginError && (<Notification />)} 
