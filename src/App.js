@@ -44,7 +44,8 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(response => localStorage.setItem('token', JSON.stringify(response.token)));
-      
+      //si no está logado error
+      //si están vacíos los campos, required y comprobar length.y por programcion se pasa a la siguiente pagina
       //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
   }
 
@@ -69,7 +70,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/'
+          <Route exact path='/LayoutPrincipal'
             render={() => <Login
              launchLogin={this.launchLogin}
             />}
