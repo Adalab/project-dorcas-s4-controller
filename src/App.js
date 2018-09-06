@@ -36,7 +36,6 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(response2 => console.log(response2));
-    this.props.history.push('/LayoutPrincipal');
   }
   login(email, password,){
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
@@ -52,10 +51,10 @@ class App extends Component {
       .then(response => {
         if (response.token) {
           this.setState({
-            email: email
+            email: email,
+            loginError: false
           });
           this.props.history.push('/LayoutPrincipal');
-          
         } else {
           this.errorData();
         }
