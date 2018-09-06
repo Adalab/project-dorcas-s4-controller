@@ -7,7 +7,7 @@ import '../stylesheet/layoutP.css';
 class LoyoutPrincipal extends React.Component {
   render() {
     return (
-		<div class="layoutPrincipal">
+		<div className="layoutPrincipal">
 			<MenuCollapsible  />
 			<BarList  />
 			<DetailBar />
