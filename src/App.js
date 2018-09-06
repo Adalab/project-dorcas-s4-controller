@@ -9,13 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginError: '',
+      loginError: false,
       email: ''
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.postEstablishments=this.postEstablishments.bind(this);
     this.login=this.login.bind(this);
+    this.errorData=this.errorData.bind(this);
   }
 
   logout() {
@@ -44,9 +45,21 @@ class App extends Component {
       }
     })
       .then(res => res.json())
-      .then(response => localStorage.setItem('token', JSON.stringify(response.token)));
+      .then(response => {
+        if (response.code === 200) {
+          localStorage.setItem('token', JSON.stringify(response.token));
+        } else {
+          this.errorData()
+        }
+      });
       
       //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
+  }
+
+  errorData() {
+    this.setState({
+      loginError: true
+    });
   }
 
     // aquí se pasan los valores de los input por
