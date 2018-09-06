@@ -16,7 +16,7 @@ class ItemBar extends React.Component {
             <p>numero visitas</p>
           </div>
       </div>
-     );
+    );
     }
   }
 
