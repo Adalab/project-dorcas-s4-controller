@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       email: '',
-      establishments: []
+      establishments: {}
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
