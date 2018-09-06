@@ -11,9 +11,8 @@ class ItemBar extends React.Component {
         </div>
           <div className="itemBar_info">
             <h2>{this.props.item.name}</h2>
-            <p>dirección</p>
-            <p>icon</p>
-            <p>numero visitas</p>
+            <p>{this.props.item.address}{this.props.item.postalcode}{this.props.item.province}</p>
+            <p><span>icon</span>{this.props.item.affiliates}</p>
           </div>
       </div>
     );
