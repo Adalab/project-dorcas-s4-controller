@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
+      email: 'usuario'
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -16,9 +16,11 @@ class App extends Component {
     this.login=this.login.bind(this);
   }
 
-
   logout() {
     localStorage.removeItem('token');
+    this.setState({
+      email: 'usuario'
+    });
   }
   postEstablishments(savedToken){
     const establishments='https://ada-controller.deploy-cd.com/api/establishments';
@@ -57,10 +59,10 @@ class App extends Component {
       //se haría la petición al listado de bares y se pasaría a la página principal
       this.postEstablishments(savedToken);
     } else {
+      this.login(email, password);
       this.setState({
         email: email
       });
-      this.login(email, password);
     }
   }
   
@@ -70,12 +72,12 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route exact path='/LayoutPrincipal'
+          <Route exact path='/'
             render={() => <Login
              launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} />}
+          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} logout={this.logout} match={props.match} />}
           />
         </Switch>
       </div>
