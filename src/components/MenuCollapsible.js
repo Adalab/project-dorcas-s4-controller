@@ -9,7 +9,7 @@ class MenuCollapsible extends React.Component {
         <div className="half-logo--container">
           <p className="text-controller">Controller<span className="text-2">2</span></p>
         </div>
-        <ul className="listMenu">
+        <ul className="containerMenu ">
           <li className="buttonList">Próximas visitas</li>
           <li className="buttonList">Visitas anteriores</li>
         </ul>
