@@ -46,10 +46,10 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(response => {
-        if (response.code === 200) {
+        if (response.token) {
           localStorage.setItem('token', JSON.stringify(response.token));
         } else {
-          this.errorData()
+          this.errorData();
         }
       });
       
@@ -87,7 +87,7 @@ class App extends Component {
              launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} />}
+          <Route path='/controller' render={(props) => <LayoutPrincipal email={this.state.email} match={props.match} />}
           />
         </Switch>
         {this.state.loginError && (<Notification />)} 
