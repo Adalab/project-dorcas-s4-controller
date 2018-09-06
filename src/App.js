@@ -29,7 +29,7 @@ class App extends Component {
       }
     })
       .then(response => response.json())
-      .then(response2 => this.setState({establishments: response2}));
+      .then(response2 => console.log(response2));
   }
 
   login(email, password) {
