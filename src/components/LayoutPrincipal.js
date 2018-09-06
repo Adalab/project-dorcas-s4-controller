@@ -10,7 +10,7 @@ class LoyoutPrincipal extends React.Component {
       <div>
         <Logout email={this.props.email} />
         <MenuCollapsible />
-        <BarList />
+        <BarList establishments={this.props.establishments}/>
         <DetailBar />
       </div>
     );

@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       email: '',
-      establishments: {}
+      establishments: []
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -29,7 +29,12 @@ class App extends Component {
       }
     })
       .then(response => response.json())
-      .then(response2 => console.log(response2));
+      .then(response2 => {
+        const establishment = response2;
+        this.setState({
+        establishments: establishment
+        })
+      })
   }
 
   login(email, password) {
@@ -54,14 +59,14 @@ class App extends Component {
           }
         })
           .then(response1 => response1.json())
-          .then(response2 =>
+          .then(response2 => {
+            const establishment = response2;
             this.setState({
-            establishments: response2
+            establishments: establishment
             })
-          );
-
+          })
   //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
-  });
+  })
 }
 
   // aquí se pasan los valores de los input por
@@ -80,7 +85,7 @@ class App extends Component {
   }
 
   render() {
-    //localStorage.removeItem('token');
+    // localStorage.removeItem('token');
     return (
       <div className="App">
         <Switch>
@@ -89,7 +94,7 @@ class App extends Component {
               launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} />}
+          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} establishments={this.state.establishments}/>}
           />
         </Switch>
       </div>
