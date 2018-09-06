@@ -72,7 +72,7 @@ class Login extends React.Component {
               className="form-input"
               placeholder="Escribe tu contraseña"
               ref={this.inputPassword}
-              type="text"
+              type="password"
             />
           </div>
           <div className="form-password">

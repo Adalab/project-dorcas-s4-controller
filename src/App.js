@@ -2,19 +2,23 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
+import Notification from './components/Notification';
 import { withRouter, Route, Switch } from 'react-router-dom';
 const savedToken = JSON.parse(localStorage.getItem('token'));
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loginError: false,
       email: 'usuario',
       establishments: []
+
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
-    this.postEstablishments = this.postEstablishments.bind(this);
-    this.login = this.login.bind(this);
+    this.postEstablishments=this.postEstablishments.bind(this);
+    this.login=this.login.bind(this);
+    this.errorData=this.errorData.bind(this);   
   }
   // componentWillMount () {
   //   if(savedToken){
@@ -28,7 +32,7 @@ class App extends Component {
     });
     this.props.history.push('/');
   }
-  postEstablishments(savedToken,email) {
+  postEstablishments(savedToken) {
     const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
@@ -58,27 +62,44 @@ class App extends Component {
       }
     })
       .then(res => res.json())
-      .then(function(response) {
-        localStorage.setItem('token', JSON.stringify(response.token))
-
-      fetch(establishments, {
-          method: 'GET',
-          headers: {
-            'Authorization': 'Bearer ' + response.token
-          }
-        })
-          .then(response1 => response1.json())
-          .then(response2 => {
-            const establishment = response2;
-            this.setState({
-            establishments: establishment
-            })
-            
+      .then(response => {
+        if (response.token) {
+          localStorage.setItem('token', JSON.stringify(response.token))
+          fetch(establishments, {
+            method: 'GET',
+            headers: {
+              'Authorization': 'Bearer ' + response.token
+            }
           })
+            .then(response1 => response1.json())
+            .then(response2 => {
+              const establishment = response2;
+              this.setState({
+              establishments: establishment
+              })
+              
+            })
+          this.setState({
+            email: email,
+            loginError: false
+          });
+          this.props.history.push('/LayoutPrincipal');
+        } else {
+          this.errorData();
+        }
+      });
+  }
+
+  errorData() {
+    this.setState({
+      loginError: true
+    });
+  }
+
+
+      
           
-  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
-  })
-}
+  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el
 
   // aquí se pasan los valores de los input por
   //los parámetros que hemos enviado desde login.js
@@ -93,7 +114,7 @@ class App extends Component {
   }
 
   render() {
-    // localStorage.removeItem('token');
+    //localStorage.removeItem('token');
     return (
       <div className="App">
         <Switch>
@@ -105,6 +126,10 @@ class App extends Component {
           <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
           />
         </Switch>
+        {this.state.loginError && (<Notification />)} 
+{/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
+
+si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
       </div>
     );
   }
