@@ -10,15 +10,32 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.onClickButton = this.onClickButton.bind(this);
+    this.focusEmail = this.focusEmail.bind(this);
+    this.focusPassword = this.focusPassword.bind(this);
   }
-
+  focusEmail() {
+    this.inputEmail.current.focus();
+   
+  }
+  focusPassword(){
+    this.inputPassword.current.focus();
+  }
   onClickButton() {
     // el evento click en el boton de acceder pasamos al método launchLogin, que está en App.js
     //los valores como parámetros de username y el password
+    if(this.inputEmail.current.value.length<=0){
+      console.log('email vacio');
+      this.focusEmail();
+      
+    }else if(this.inputPassword.current.value.length<=0){
+      console.log('contraseña vacio');
+      this.focusPassword();
+    }else{
     this.props.launchLogin(
       this.inputEmail.current.value,
       this.inputPassword.current.value
     );
+  }
   }
 
   render() {
