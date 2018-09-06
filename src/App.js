@@ -9,35 +9,33 @@ class App extends Component {
     super(props);
     this.state = {
       email: '',
-      name: '',
-      address: '',
-      affiliates: ''
+      establishments: []
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
-    this.postEstablishments=this.postEstablishments.bind(this);
-    this.login=this.login.bind(this);
+    this.postEstablishments = this.postEstablishments.bind(this);
+    this.login = this.login.bind(this);
   }
-
 
   logout() {
     localStorage.removeItem('token');
   }
-  postEstablishments(savedToken){
-    const establishments='https://ada-controller.deploy-cd.com/api/establishments';
+  postEstablishments(savedToken) {
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
       headers: {
         'Authorization': 'Bearer ' + savedToken
       }
     })
-    .then(response => response.json())
-    .then(response2 => console.log(response2));
-
+      .then(response => response.json())
+      .then(response2 => this.setState({establishments: response2}));
   }
-  login(email, password,){
+
+  login(email, password) {
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
     const url = "https://ada-controller.deploy-cd.com/api/login_check";
+    const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(url, {
       method: 'POST',
       body: JSON.stringify({ _username: email, _password: password }),
@@ -46,13 +44,28 @@ class App extends Component {
       }
     })
       .then(res => res.json())
-      .then(response => localStorage.setItem('token', JSON.stringify(response.token)));
+      .then(function(response) {
+        localStorage.setItem('token', JSON.stringify(response.token))
 
-      //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
-  }
+      fetch(establishments, {
+          method: 'GET',
+          headers: {
+            'Authorization': 'Bearer ' + response.token
+          }
+        })
+          .then(response1 => response1.json())
+          .then(function(response2){
+            this.setState({
+            establishments: response2
+            })
+          });
 
-    // aquí se pasan los valores de los input por
-   //los parámetros que hemos enviado desde login.js
+  //   //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
+  });
+}
+
+  // aquí se pasan los valores de los input por
+  //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
     const savedToken = JSON.parse(localStorage.getItem('token'));
     if (savedToken) {
@@ -73,7 +86,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-             launchLogin={this.launchLogin}
+              launchLogin={this.launchLogin}
             />}
           />
           <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} match={props.match} />}
