@@ -6,7 +6,7 @@ class MenuCollapsible extends React.Component {
   render() {
     return (
       <nav className="menuPage">
-        <div className="half-logo--container">
+        <div className="logoContainer">
           <p className="logoText">Controller<span className="logoNumber">2</span></p>
         </div>
         <ul className="containerMenu">

@@ -1,19 +1,40 @@
 .containerMenu {
-  margin-top: 40px; }
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+
+.menuPage {
+  width: 20%;
+  height: 1000px;
+  background-color: #222222; }
+
+.text-controller {
+  color: #ffffff;
+  font-family: 'Expletus Sans', cursive;
+  padding-top: 65px;
+  font-size: 30px;
+  width: bold; }
+
+.text-2 {
+  color: #67cf9b;
+  font-size: 45px; }
 
 .buttonList {
   background-color: #67cf9b;
-  width: 175px;
-  height: 25px;
+  width: 199px;
+  height: 39px;
   border-top-left-radius: 17.1px;
   border-bottom-left-radius: 17.1px;
   font-family: OpenSans;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  display: inline-block;
-  margin-left: 47px;
-  padding-top: 7px;
-  margin-top: 15px; }
+  padding-left: 17px;
+  padding-top: 10px;
+  margin: 15px 0 0 47px;
+  color: white;
+  text-align: left; }
 
 .logoText {
   display: flex;
@@ -32,5 +53,5 @@
   color: #67cf9b;
   padding-bottom: 13px; }
 
-.half-logo--container {
-  margin-top: 25%; }
+.logoContainer {
+  margin-top: 20%; }

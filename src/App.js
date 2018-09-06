@@ -3,14 +3,14 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
 import Notification from './components/Notification';
-import { Route, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loginError: false,
-      email: ''
+      email: 'usuario'
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -21,6 +21,10 @@ class App extends Component {
 
   logout() {
     localStorage.removeItem('token');
+    this.setState({
+      email: 'usuario'
+    });
+    this.props.history.push('/');
   }
   postEstablishments(savedToken){
     const establishments='https://ada-controller.deploy-cd.com/api/establishments';
@@ -32,7 +36,7 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(response2 => console.log(response2));
-
+    this.props.history.push('/LayoutPrincipal');
   }
   login(email, password,){
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
@@ -47,12 +51,16 @@ class App extends Component {
       .then(res => res.json())
       .then(response => {
         if (response.token) {
-          localStorage.setItem('token', JSON.stringify(response.token));
+          this.setState({
+            email: email
+          });
+          this.props.history.push('/LayoutPrincipal');
+          
         } else {
           this.errorData();
         }
+        //si están vacíos los campos, required y comprobar length.y por programcion se pasa a la siguiente pagina
       });
-      
       //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
   }
 
@@ -70,10 +78,8 @@ class App extends Component {
       //se haría la petición al listado de bares y se pasaría a la página principal
       this.postEstablishments(savedToken);
     } else {
-      this.setState({
-        email: email
-      });
       this.login(email, password);
+      
     }
   }
 
@@ -87,7 +93,7 @@ class App extends Component {
              launchLogin={this.launchLogin}
             />}
           />
-          <Route path='/controller' render={(props) => <LayoutPrincipal email={this.state.email} match={props.match} />}
+          <Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} logout={this.logout} match={props.match} />}
           />
         </Switch>
         {this.state.loginError && (<Notification />)} 
@@ -99,4 +105,4 @@ si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
   }
 }
 
-export default App;
+export default withRouter(App);

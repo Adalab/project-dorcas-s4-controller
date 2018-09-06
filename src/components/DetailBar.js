@@ -14,7 +14,7 @@ class Map extends React.Component {
         <section className="sectionDetails">
           <img className="exampleMap" src={map} alt="exampleMap" />
           <img className="exampleDirection" src={direction} alt="exampleDirection" />
-          <div className="divBtb"><button className="btnReport"><i class="fas fa-clipboard-list"></i>Reportar</button></div>
+          <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
         </section>
       </div>
       </React.Fragment>

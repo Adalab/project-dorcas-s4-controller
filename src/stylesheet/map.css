@@ -1,22 +1,21 @@
 .establishments {
   display: flex;
-  margin-top: 103px; }
-
-.sectionList {
-  width: 50vw;
-  background: red; }
+  margin-top: 110px; }
 
 .sectionDetails {
-  width: 50vw;
-  margin-right: 28px; }
+  width: 50%;
+  margin-left: 28px;
+  margin-top: 88px; }
 
 .exampleMap {
   width: 692px;
   height: 355px;
-  border: 1px solid #67cf9b; }
+  border: 1px solid #67cf9b;
+  margin: 0 auto; }
 
 .exampleDirection {
   width: 692px;
   height: 231px;
-  margin-top: 28px;
-  border: 1px solid #67cf9b; }
+  padding-top: 28px;
+  border: 1px solid #67cf9b;
+  margin: 0 auto; }

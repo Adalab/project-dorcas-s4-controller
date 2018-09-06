@@ -11,9 +11,11 @@ class ItemBar extends React.Component {
         </div>
           <div className="itemBar__info">
             <h2 className="itemBar__info__name">Bar prueba</h2>
-            <p>dirección</p>
-            <p>icon</p>
-            <p>numero visitas</p>
+            <p className="itemBar__info__direction">C/ de Bailén 19, 28013 Madrid</p>
+            <div className="item__info__visits">
+              <p className="intemBar__info__visits__icon"><i className="far fa-user-friends"></i></p>
+              <p className="itemBar__info__visits__number">53</p>
+            </div>
           </div>
       </div>
      );

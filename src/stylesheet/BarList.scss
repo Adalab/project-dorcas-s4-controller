@@ -1,10 +1,11 @@
 .barLists {
-  height: 1000px;
-  width: 50%;
+  height: 100vh;
+  margin: 183px 0 0 37px;
+  min-width: 30%;
   overflow: auto;
-
   .barLists_element {
-    background-color: blue;
+
+    background-color: rgb(198, 214, 188);
   }
 }
 
