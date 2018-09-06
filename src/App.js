@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
-import { Route, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class App extends Component {
     this.setState({
       email: 'usuario'
     });
+    this.props.history.push('/');
   }
   postEstablishments(savedToken){
     const establishments='https://ada-controller.deploy-cd.com/api/establishments';
@@ -32,7 +33,7 @@ class App extends Component {
     })
     .then(response => response.json())
     .then(response2 => console.log(response2));
-
+    this.props.history.push('/LayoutPrincipal');
   }
   login(email, password,){
     //aqui hacer comprobacion si el usuario no tiene acceso, para mostrar pantalla que no tiene acceso
@@ -46,6 +47,10 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(response => localStorage.setItem('token', JSON.stringify(response.token)));
+      this.setState({
+        email: email
+      });
+      this.props.history.push('/LayoutPrincipal');
       //si no está logado error
       //si están vacíos los campos, required y comprobar length.y por programcion se pasa a la siguiente pagina
       //hacer otra peticion para mostrar los establecimientos la 1 vez que hace login y no está el LS
@@ -60,9 +65,7 @@ class App extends Component {
       this.postEstablishments(savedToken);
     } else {
       this.login(email, password);
-      this.setState({
-        email: email
-      });
+      
     }
   }
   
@@ -85,4 +88,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
