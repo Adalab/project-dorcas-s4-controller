@@ -3,7 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
 import { withRouter, Route, Switch } from 'react-router-dom';
-
+const savedToken = JSON.parse(localStorage.getItem('token'));
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,11 @@ class App extends Component {
     this.postEstablishments=this.postEstablishments.bind(this);
     this.login=this.login.bind(this);
   }
-
+  componentWillMount () {
+    if(savedToken){
+      this.props.history.push('/LayoutPrincipal');
+    }
+  }
   logout() {
     localStorage.removeItem('token');
     this.setState({
@@ -59,7 +63,6 @@ class App extends Component {
     // aquí se pasan los valores de los input por
    //los parámetros que hemos enviado desde login.js
   launchLogin(email, password) {
-    const savedToken = JSON.parse(localStorage.getItem('token'));
     if (savedToken) {
       //se haría la petición al listado de bares y se pasaría a la página principal
       this.postEstablishments(savedToken);

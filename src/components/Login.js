@@ -15,7 +15,6 @@ class Login extends React.Component {
   }
   focusEmail() {
     this.inputEmail.current.focus();
-   
   }
   focusPassword(){
     this.inputPassword.current.focus();
