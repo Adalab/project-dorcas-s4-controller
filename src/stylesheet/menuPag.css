@@ -1,0 +1,57 @@
+.containerMenu {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column; }
+
+.menuPage {
+  width: 20%;
+  height: 1000px;
+  background-color: #222222; }
+
+.text-controller {
+  color: #ffffff;
+  font-family: 'Expletus Sans', cursive;
+  padding-top: 65px;
+  font-size: 30px;
+  width: bold; }
+
+.text-2 {
+  color: #67cf9b;
+  font-size: 45px; }
+
+.buttonList {
+  background-color: #67cf9b;
+  width: 199px;
+  height: 39px;
+  border-top-left-radius: 17.1px;
+  border-bottom-left-radius: 17.1px;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 17px;
+  padding-top: 10px;
+  margin: 15px 0 0 47px;
+  color: white;
+  text-align: left; }
+
+.logoText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: #ffffff;
+  margin-top: 0;
+  height: 98px;
+  font-family: 'Expletus Sans', cursive;
+  margin-bottom: 0;
+  font-weight: bold; }
+
+.logoNumber {
+  font-size: 60px;
+  color: #67cf9b;
+  padding-bottom: 13px; }
+
+.logoContainer {
+  margin-top: 20%; }
