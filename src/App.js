@@ -64,7 +64,7 @@ class App extends Component {
       .then(res => res.json())
       .then(response => {
         if (response.token) {
-          localStorage.setItem('token', JSON.stringify(response.token))
+          localStorage.setItem('token', JSON.stringify(response.token));
           fetch(establishments, {
             method: 'GET',
             headers: {
