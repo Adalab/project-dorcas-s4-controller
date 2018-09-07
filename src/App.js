@@ -5,6 +5,7 @@ import LayoutPrincipal from './components/LayoutPrincipal';
 import Notification from './components/Notification';
 import { withRouter, Route, Switch } from 'react-router-dom';
 const savedToken = JSON.parse(localStorage.getItem('token'));
+
 class App extends Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +13,6 @@ class App extends Component {
 			loginError: false,
 			email: 'usuario',
 			establishments: []
-
 		}
 		this.launchLogin = this.launchLogin.bind(this);
 		this.logout = this.logout.bind(this);
@@ -49,7 +49,6 @@ class App extends Component {
 				this.props.history.push('/LayoutPrincipal');
 			})
 	}
-
 	login(email, password) {
 		const url = "https://ada-controller.deploy-cd.com/api/login_check";
 		const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
@@ -102,10 +101,9 @@ class App extends Component {
 				email: email
 			});
 			this.login(email, password);
-
 		}
 	}
-
+	
 	render() {
 		return (
 			<div className="App">

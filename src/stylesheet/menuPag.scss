@@ -4,7 +4,6 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
 }
 
 .menuPage{
@@ -12,6 +11,7 @@
   height: 1000px;
   background-color: #222222;
 }
+
 .text-controller {
   color: #ffffff;
   font-family: 'Expletus Sans', cursive; 
@@ -19,12 +19,14 @@
   font-size: 30px;
   width: bold;
 }
+
 .text-2 {
   color: #67cf9b; 
   font-size: 45px;
 }
+
 .buttonList{
-background-color: #67cf9b;
+  background-color: #67cf9b;
   width: 175px;
   height: 25px;
   border-top-left-radius: 17.1px;

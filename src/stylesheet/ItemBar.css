@@ -34,3 +34,6 @@
       font-size: 14px;
       color: black;
       padding-left: 10px; }
+
+.itemBarMarked {
+  border: 5px solid aqua; }
