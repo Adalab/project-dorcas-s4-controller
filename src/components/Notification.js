@@ -7,8 +7,8 @@ class Notification extends React.Component {
       <div className="box">
         <p>El nombre de usuario y/o la contraseña no son correctos</p>
       </div>
-     );
-    }
+    );
   }
+}
 
 export default Notification;

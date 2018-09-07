@@ -8,7 +8,7 @@
   width: 400px;
   height: 134px;
   background-color: #9d9d9d;
-  margin: 10px;
+  margin-bottom: 10px;
   text-align: left;
   display: flex; }
   .itemBar .itemBar__image {
@@ -20,7 +20,6 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    vertical-align: top;
     padding: 15px 0 10px 10px; }
   .itemBar .itemBar__info__name {
     color: black;
@@ -30,6 +29,8 @@
     padding-top: 31px; }
   .itemBar .item__info__visits {
     display: flex; }
+    .itemBar .item__info__visits .fa-user-friends {
+      color: #67cf9b; }
     .itemBar .item__info__visits .itemBar__info__visits__number {
       font-size: 14px;
       color: black;

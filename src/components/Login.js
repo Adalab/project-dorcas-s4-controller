@@ -11,24 +11,26 @@ class Login extends React.Component {
     this.focusEmail = this.focusEmail.bind(this);
     this.focusPassword = this.focusPassword.bind(this);
   }
+
   focusEmail() {
     this.inputEmail.current.focus();
   }
-  focusPassword(){
+
+  focusPassword() {
     this.inputPassword.current.focus();
   }
+
   onClickButton() {
-    if(this.inputEmail.current.value.length<=0){
+    if (this.inputEmail.current.value.length <= 0) {
       this.focusEmail();
-      
-    }else if(this.inputPassword.current.value.length<=0){
+    } else if (this.inputPassword.current.value.length <= 0) {
       this.focusPassword();
-    }else{
-    this.props.launchLogin(
-      this.inputEmail.current.value,
-      this.inputPassword.current.value
-    );
-  }
+    } else {
+      this.props.launchLogin(
+        this.inputEmail.current.value,
+        this.inputPassword.current.value
+      );
+    }
   }
 
   render() {
