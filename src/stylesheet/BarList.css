@@ -1,0 +1,7 @@
+.barLists {
+  height: 600px;
+  margin: 183px 0 0 37px;
+  min-width: 30%;
+  overflow: auto; }
+  .barLists .barLists_element {
+    background-color: #c6d6bc; }
