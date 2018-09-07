@@ -20,11 +20,11 @@ class App extends Component {
     this.login=this.login.bind(this);
     this.errorData=this.errorData.bind(this);   
   }
-  // componentWillMount () {
-  //   if(savedToken){
-  //     this.postEstablishments(savedToken);
-  //   }
-  // }
+  componentWillMount () {
+    if(savedToken){
+      this.postEstablishments(savedToken);
+    }
+  }
   logout() {
     localStorage.removeItem('token');
     this.setState({
@@ -62,6 +62,7 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(response => {
+        console.log(response);
         if (response.token) {
           localStorage.setItem('token', JSON.stringify(response.token))
           fetch(establishments, {
@@ -71,7 +72,7 @@ class App extends Component {
             }
           })
             .then(response1 => response1.json())
-            .then(function (response2){
+            .then(response2 => {
               this.setState({
               establishments: response2
               })
