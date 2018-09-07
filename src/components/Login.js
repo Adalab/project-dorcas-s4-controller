@@ -2,8 +2,6 @@ import React from "react";
 import "../stylesheet/loginPage.css";
 
 class Login extends React.Component {
-  /*React.createRef() es como si hiciesemos const inputEmail=document.querySelector('')
-  hace referencia al DOM y crea la etiqueta en el html y así se relaciona*/
   inputEmail = React.createRef();
   inputPassword = React.createRef();
 
@@ -20,8 +18,6 @@ class Login extends React.Component {
     this.inputPassword.current.focus();
   }
   onClickButton() {
-    // el evento click en el boton de acceder pasamos al método launchLogin, que está en App.js
-    //los valores como parámetros de username y el password
     if(this.inputEmail.current.value.length<=0){
       this.focusEmail();
       
@@ -41,7 +37,6 @@ class Login extends React.Component {
         <section className="half-logo">
           <div className="half-logo--container">
             <p className="half-logo--welcome">Bienvenido a</p>
-
             <p className="text-controller">
               Controller
               <span className="text-2">2</span>
@@ -57,7 +52,6 @@ class Login extends React.Component {
             <label className="label-form" htmlFor="">
               Correo electrónico *
             </label>
-            {/* en los input crea la etiqueta ref con el this.inputEmail */}
             <input
               className="form-input form-input--top"
               placeholder="Escribe tu email"
@@ -67,7 +61,6 @@ class Login extends React.Component {
             <label className="label-form" htmlFor="">
               Contraseña *
             </label>
-            {/* en los input crea la etiqueta ref con el this.inputPassword */}
             <input
               className="form-input"
               placeholder="Escribe tu contraseña"
@@ -78,8 +71,6 @@ class Login extends React.Component {
           <div className="form-password">
             <p>¿Has olvidado tu contraseña?</p>
           </div>
-          {/*evento onclick para pasarle al método launchLogin los valores 
-          que se ha escrito en los inputs de username y password*/}
           <div className="form-button">
             <button className="form-button-send" onClick={this.onClickButton}>
               Acceder
