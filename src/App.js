@@ -11,14 +11,16 @@ class App extends Component {
 		this.state = {
 			loginError: false,
 			email: 'usuario',
-			establishments: []
-
+			establishments: [],
+			isHovering: false
 		}
 		this.launchLogin = this.launchLogin.bind(this);
 		this.logout = this.logout.bind(this);
 		this.postEstablishments = this.postEstablishments.bind(this);
 		this.login = this.login.bind(this);
 		this.errorData = this.errorData.bind(this);
+		this.handleMouseHover = this.handleMouseHover.bind(this);
+		this.toggleHoverState = this.toggleHoverState.bind(this);
 	}
 	componentWillMount() {
 		if (savedToken) {
@@ -105,6 +107,14 @@ class App extends Component {
 
 		}
 	}
+	handleMouseHover() {
+	    this.setState(this.toggleHoverState);
+	  }
+	toggleHoverState(state) {
+	    return {
+	      isHovering: state.isHovering,
+	    };
+	  }
 
 	render() {
 		return (
@@ -115,7 +125,7 @@ class App extends Component {
 							launchLogin={this.launchLogin}
 						/>}
 					/>
-					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
+					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} showmenu={this.handleMouseHover} quitmenu={this.handleMouseHover} hovering={this.state.isHovering} />}
 					/>
 				</Switch>
 				{this.state.loginError && (<Notification />)}
