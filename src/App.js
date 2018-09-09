@@ -12,7 +12,8 @@ class App extends Component {
 		this.state = {
 			loginError: false,
 			email: 'usuario',
-			establishments: []
+			establishments: [],
+			classDetails: 'hiddenDetails'
 		}
 		this.launchLogin = this.launchLogin.bind(this);
 		this.logout = this.logout.bind(this);
@@ -103,7 +104,11 @@ class App extends Component {
 			this.login(email, password);
 		}
 	}
-	
+	hiddenDetails() {
+    this.setState({
+			classHiddenDetails: 'hiddenDetails'
+    });
+  }
 	render() {
 		return (
 			<div className="App">
@@ -113,7 +118,7 @@ class App extends Component {
 							launchLogin={this.launchLogin}
 						/>}
 					/>
-					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
+					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} hiddenDetails={this.hiddenDetails} classDetails={this.state.classDetails}/>}
 					/>
 				</Switch>
 				{this.state.loginError && (<Notification />)}
