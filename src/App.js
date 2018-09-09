@@ -78,7 +78,6 @@ class App extends Component {
     })
       .then(res => res.json())
       .then(response => {
-        console.log(response);
         if (response.token) {
           localStorage.setItem('token', JSON.stringify(response.token));
           fetch(establishments, {
@@ -116,17 +115,13 @@ class App extends Component {
   }
 
   launchLogin(email, password) {
+    this.setState({
+      email: email
+    });
     if (savedToken) {
-      this.setState({
-        email: email
-      });
       this.postEstablishments(savedToken);
     } else {
-      this.setState({
-        email: email
-      });
       this.login(email, password);
-
     }
   }
   handleChangeInputEmail(inputE){
@@ -150,8 +145,11 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-              launchLogin={this.launchLogin} loginError={this.state.loginError}
-              classError={this.state.classError} inputE={this.state.inputE} inputP={this.state.inputP}
+              launchLogin={this.launchLogin} 
+              loginError={this.state.loginError}
+              classError={this.state.classError} 
+              inputE={this.state.inputE} 
+              inputP={this.state.inputP}
               classErrorInputPassword={this.state.classErrorInputPassword} 
               classErrorInputEmail={this.state.classErrorInputEmail}
               handleChangeInputEmail={this.handleChangeInputEmail} 

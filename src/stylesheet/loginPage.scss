@@ -3,6 +3,7 @@
   flex-direction: row;
   height: 100vh;
 }
+
 .half-logo {
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@
   .half-logo--container {
     margin-top: 20%;
   }
+  
   .half-logo--welcome {
     color: #67cf9b;
     display: flex;
