@@ -14,7 +14,6 @@ class App extends Component {
       email: 'usuario',
       establishments: []
     }
-
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.postEstablishments = this.postEstablishments.bind(this);
