@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
-import Notification from './components/Notification';
 import { withRouter, Route, Switch } from 'react-router-dom';
 const savedToken = JSON.parse(localStorage.getItem('token'));
 
@@ -11,7 +10,12 @@ class App extends Component {
     super(props);
     this.state = {
       loginError: false,
-      email: 'usuario',
+	  email: 'usuario',
+	  classError:'hidden',
+	  classErrorInputEmail:'form-input form-input--top',
+	  classErrorInputPassword:'form-input',
+	  inputE:'',
+	  inputP:'',
       establishments: []
     }
     this.launchLogin = this.launchLogin.bind(this);
@@ -19,6 +23,8 @@ class App extends Component {
     this.postEstablishments = this.postEstablishments.bind(this);
     this.login = this.login.bind(this);
     this.errorData = this.errorData.bind(this);
+    this.handleChangeInputEmail=this.handleChangeInputEmail.bind(this);
+    this.handleChangeInputPassword=this.handleChangeInputPassword.bind(this);
   }
 
   componentWillMount() {
@@ -30,7 +36,12 @@ class App extends Component {
   logout() {
     localStorage.removeItem('token');
     this.setState({
-      email: 'usuario'
+	  email: 'usuario',
+	  classError:'hidden',
+	  classErrorInputEmail:'form-input form-input--top',
+    classErrorInputPassword:'form-input',
+    inputE:'',
+	  inputP:''
     });
     this.props.history.push('/');
   }
@@ -93,7 +104,12 @@ class App extends Component {
 
   errorData() {
     this.setState({
-      loginError: true
+	  loginError: true,
+	  classError:'visible',
+	  classErrorInputEmail:'errorEmail',
+	  classErrorInputPassword:'error',
+	  inputE:'',
+	  inputP:'',
     });
   }
 
@@ -111,6 +127,19 @@ class App extends Component {
 
     }
   }
+  handleChangeInputEmail(inputE){
+    this.setState({
+      inputE:inputE,
+      classError:'hidden',
+      classErrorInputEmail:'form-input form-input--top',
+      classErrorInputPassword:'form-input'
+    });
+  }
+  handleChangeInputPassword(inputP){
+    this.setState({
+      inputP:inputP
+    });
+  }
 
   render() {
     //localStorage.removeItem('token');
@@ -119,7 +148,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-            launchLogin={this.launchLogin}
+              launchLogin={this.launchLogin} loginError={this.state.loginError}
+              classError={this.state.classError} inputE={this.state.inputE} inputP={this.state.inputP}
+              classErrorInputPassword={this.state.classErrorInputPassword} 
+              classErrorInputEmail={this.state.classErrorInputEmail}
+              handleChangeInputEmail={this.handleChangeInputEmail} 
+              handleChangeInputPassword={this.handleChangeInputPassword}
             />}
           />
           <Route path='/' render={(props) => < LayoutPrincipal
@@ -129,7 +163,6 @@ class App extends Component {
             match={props.match} />}
           />
         </Switch>
-        {this.state.loginError && (<Notification />)}
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
         si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
       </div>
