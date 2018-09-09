@@ -18,6 +18,8 @@ class App extends Component {
 		this.postEstablishments = this.postEstablishments.bind(this);
 		this.login = this.login.bind(this);
 		this.errorData = this.errorData.bind(this);
+		this.handleClickMenu = this.handleClickMenu.bind(this);
+		this.handleClickMenu2 = this.handleClickMenu2.bind(this);
 	}
 	componentWillMount() {
 		if (savedToken) {
@@ -104,6 +106,12 @@ class App extends Component {
 
 		}
 	}
+	handleClickMenu(container){
+		container.currentTarget.classList.toggle('buttonSelection');
+	}
+	handleClickMenu2(container){
+		container.currentTarget.classList.toggle('buttonSelection');
+	}
 
 	render() {
 		return (
@@ -114,7 +122,7 @@ class App extends Component {
 							launchLogin={this.launchLogin}
 						/>}
 					/>
-					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
+					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} clickmenu={this.handleClickMenu} clickmenu2={this.handleClickMenu2} />}
 					/>
 				</Switch>
 				{this.state.loginError && (<Notification />)}

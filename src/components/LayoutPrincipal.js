@@ -8,7 +8,7 @@ class LoyoutPrincipal extends React.Component {
   render() {
     return (
       <div className="layoutPrincipal">
-        <MenuCollapsible />
+        <MenuCollapsible clickmenu={this.props.clickmenu} clickmenu2={this.props.clickmenu2} />
         <BarList establishments={this.props.establishments}/>
         <DetailBar />
         <Logout  logout={this.props.logout} email={this.props.email} />
