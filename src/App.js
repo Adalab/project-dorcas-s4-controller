@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
-import Notification from './components/Notification';
 import { withRouter, Route, Switch } from 'react-router-dom';
 const savedToken = JSON.parse(localStorage.getItem('token'));
 
@@ -163,7 +162,6 @@ class App extends Component {
             match={props.match} />}
           />
         </Switch>
-        {/* {this.state.loginError && (<Notification />)} */}
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
         si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
       </div>
