@@ -11,6 +11,8 @@ class Login extends React.Component {
     this.onClickButton = this.onClickButton.bind(this);
     this.focusEmail = this.focusEmail.bind(this);
     this.focusPassword = this.focusPassword.bind(this);
+    this.handleChangeEmail=this.handleChangeEmail.bind(this);
+    this.handleChangePassword=this.handleChangePassword.bind(this);
   }
 
   focusEmail() {
@@ -34,6 +36,15 @@ class Login extends React.Component {
 
     }
 
+  }
+  handleChangeEmail(event) {
+    const inputE=event.target.value;
+    this.props.handleChangeInputEmail(inputE);
+   
+  }
+  handleChangePassword(event) {
+    const inputP=event.target.value;
+    this.props.handleChangeInputPassword(inputP);
   }
 
   render() {
@@ -62,7 +73,8 @@ class Login extends React.Component {
               placeholder="Escribe tu email"
               ref={this.inputEmail}
               type="text"
-
+              value={this.props.inputE}
+              onChange={this.handleChangeEmail}
             />
             <label className="label-form" htmlFor="">
               Contraseña *
@@ -72,7 +84,8 @@ class Login extends React.Component {
               placeholder="Escribe tu contraseña"
               ref={this.inputPassword}
               type="password"
-
+              value={this.props.inputP}
+              onChange={this.handleChangePassword}
             />
           </form>
           <div className="form-password">

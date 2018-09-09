@@ -25,6 +25,8 @@ class App extends Component {
     this.postEstablishments = this.postEstablishments.bind(this);
     this.login = this.login.bind(this);
     this.errorData = this.errorData.bind(this);
+    this.handleChangeInputEmail=this.handleChangeInputEmail.bind(this);
+    this.handleChangeInputPassword=this.handleChangeInputPassword.bind(this);
   }
 
   componentWillMount() {
@@ -39,7 +41,9 @@ class App extends Component {
 	  email: 'usuario',
 	  classError:'hidden',
 	  classErrorInputEmail:'form-input form-input--top',
-	  classErrorInputPassword:'form-input',
+    classErrorInputPassword:'form-input',
+    inputE:'',
+	  inputP:''
     });
     this.props.history.push('/');
   }
@@ -125,6 +129,19 @@ class App extends Component {
 
     }
   }
+  handleChangeInputEmail(inputE){
+    this.setState({
+      inputE:inputE,
+      classError:'hidden',
+      classErrorInputEmail:'form-input form-input--top',
+      classErrorInputPassword:'form-input'
+    });
+  }
+  handleChangeInputPassword(inputP){
+    this.setState({
+      inputP:inputP
+    });
+  }
 
   render() {
     //localStorage.removeItem('token');
@@ -133,9 +150,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-			launchLogin={this.launchLogin} loginError={this.state.loginError}
-			classError={this.state.classError} inputE={this.state.inputE} inputP={this.state.inputP}
-			classErrorInputPassword={this.state.classErrorInputPassword} classErrorInputEmail={this.state.classErrorInputEmail}
+              launchLogin={this.launchLogin} loginError={this.state.loginError}
+              classError={this.state.classError} inputE={this.state.inputE} inputP={this.state.inputP}
+              classErrorInputPassword={this.state.classErrorInputPassword} 
+              classErrorInputEmail={this.state.classErrorInputEmail}
+              handleChangeInputEmail={this.handleChangeInputEmail} 
+              handleChangeInputPassword={this.handleChangeInputPassword}
             />}
           />
           <Route path='/' render={(props) => < LayoutPrincipal
