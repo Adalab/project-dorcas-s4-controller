@@ -11,7 +11,12 @@ class App extends Component {
     super(props);
     this.state = {
       loginError: false,
-      email: 'usuario',
+	  email: 'usuario',
+	  classError:'hidden',
+	  classErrorInputEmail:'form-input form-input--top',
+	  classErrorInputPassword:'form-input',
+	  inputE:'',
+	  inputP:'',
       establishments: []
     }
 
@@ -31,7 +36,10 @@ class App extends Component {
   logout() {
     localStorage.removeItem('token');
     this.setState({
-      email: 'usuario'
+	  email: 'usuario',
+	  classError:'hidden',
+	  classErrorInputEmail:'form-input form-input--top',
+	  classErrorInputPassword:'form-input',
     });
     this.props.history.push('/');
   }
@@ -94,7 +102,12 @@ class App extends Component {
 
   errorData() {
     this.setState({
-      loginError: true
+	  loginError: true,
+	  classError:'visible',
+	  classErrorInputEmail:'errorEmail',
+	  classErrorInputPassword:'error',
+	  inputE:'',
+	  inputP:'',
     });
   }
 
@@ -120,7 +133,9 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-            launchLogin={this.launchLogin}
+			launchLogin={this.launchLogin} loginError={this.state.loginError}
+			classError={this.state.classError} inputE={this.state.inputE} inputP={this.state.inputP}
+			classErrorInputPassword={this.state.classErrorInputPassword} classErrorInputEmail={this.state.classErrorInputEmail}
             />}
           />
           <Route path='/' render={(props) => < LayoutPrincipal
@@ -130,7 +145,7 @@ class App extends Component {
             match={props.match} />}
           />
         </Switch>
-        {this.state.loginError && (<Notification />)}
+        {/* {this.state.loginError && (<Notification />)} */}
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
         si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
       </div>
