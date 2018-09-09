@@ -3,6 +3,7 @@
   flex-direction: row;
   height: 100vh;
 }
+
 .half-logo {
   display: flex;
   flex-direction: column;
@@ -12,6 +13,7 @@
   .half-logo--container {
     margin-top: 20%;
   }
+
   .half-logo--welcome {
     color: #67cf9b;
     display: flex;
@@ -19,6 +21,7 @@
     margin-bottom: -10px;
     font-family: "Expletus Sans", cursive;
   }
+
   .text-controller {
     display: flex;
     justify-content: center;
@@ -31,14 +34,17 @@
     margin-bottom: 0;
     font-weight: bold;
   }
+
   .text-2 {
     font-size: 100px;
     color: #67cf9b;
     padding-bottom: 13px;
   }
+
   .text-arrow {
     color: #bababa;
   }
+
   .access-arrow {
     display: inline-flex;
     justify-content: center;
@@ -49,6 +55,7 @@
     margin-left: 4px;
   }
 }
+
 .half-form {
   display: flex;
   flex-direction: column;
@@ -56,12 +63,14 @@
   align-items: center;
   width: 50%;
 }
+
 .form-inputs {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 442px;
 }
+
 .label-form {
   margin: 10px 10px 16px 10px;
   font-size: 17px;
@@ -75,9 +84,11 @@
   width: 442px;
   margin: 0 10px;
 }
+
 .form-input--top {
   margin-bottom: 20px;
 }
+
 .form-button-send {
   background-color: #67cf9b;
   width: 325px;
@@ -88,20 +99,24 @@
   font-size: 19px;
   font-weight: bold;
 }
+
 .form-password {
   margin: 20px 0px 61px 0px;
   font-size: 14px;
 }
+
 .form-registry {
   margin-top: 62px;
   font-size: 14px;
 }
+
 .registry-text {
   font-weight: bold;
   line-height: 30px;
   border-bottom: 3px solid #67cf9b;
   padding-bottom: 3px;
 }
+
 .registry-arrow {
   display: inline-flex;
   justify-content: center;
