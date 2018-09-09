@@ -6,11 +6,13 @@
 
 .itemBar {
   width: 400px;
-  height: 134px;
+  height: 122px;
   background-color: #9d9d9d;
   margin-bottom: 10px;
   text-align: left;
-  display: flex; }
+  display: flex;
+  box-sizing: content-box;
+  border: solid 3px #67cf9b; }
   .itemBar .itemBar__image {
     display: inline-block; }
   .itemBar .itemBar__info {
@@ -20,13 +22,15 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    padding: 15px 0 10px 10px; }
+    padding: 15px 0 6px 10px; }
   .itemBar .itemBar__info__name {
     color: black;
-    font-size: 18px; }
+    font-size: 18px;
+    font-family: 'Expletus Sans';
+    font-weight: bold; }
   .itemBar .itemBar__info__direction {
     color: #343434;
-    padding-top: 24px; }
+    font-family: 'OpenSans'; }
   .itemBar .item__info__visits {
     display: flex; }
     .itemBar .item__info__visits .fa-user-friends {
@@ -34,4 +38,5 @@
     .itemBar .item__info__visits .itemBar__info__visits__number {
       font-size: 14px;
       color: black;
-      padding-left: 10px; }
+      padding-left: 10px;
+      font-family: 'OpenSans'; }

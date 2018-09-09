@@ -7,14 +7,17 @@
 
 .itemBar {
   width: 400px;
-  height: 134px;
+  height: 122px;
   background-color: #9d9d9d;
   margin-bottom: 10px;
   text-align: left;
   display: flex;
+  box-sizing: content-box;
+  border: solid 3px #67cf9b;
 
   .itemBar__image {
     display: inline-block
+
   } 
 
   .itemBar__info {
@@ -24,17 +27,19 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    padding: 15px 0 10px 10px;
+    padding: 15px 0 6px 10px;
   }
 
   .itemBar__info__name {
     color: black;
     font-size: 18px;
-  }
+    font-family: 'Expletus Sans';
+    font-weight: bold;
+    }
 
   .itemBar__info__direction {
     color: #343434;
-    padding-top: 24px;
+    font-family: 'OpenSans';
   }
 
   .item__info__visits {
@@ -48,6 +53,7 @@
       font-size: 14px;
       color: black;
       padding-left: 10px;
+      font-family: 'OpenSans';
 
     }
   }  
