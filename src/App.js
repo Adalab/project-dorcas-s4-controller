@@ -106,11 +106,15 @@ class App extends Component {
 
 		}
 	}
-	handleClickMenu(container){
-		container.currentTarget.classList.toggle('buttonSelection');
+	handleClickMenu(eventclick){
+		eventclick.currentTarget.classList.add('buttonSelection');
+		const button2 = document.querySelector('#button2');
+		button2.classList.remove('buttonSelection');
 	}
-	handleClickMenu2(container){
-		container.currentTarget.classList.toggle('buttonSelection');
+	handleClickMenu2(eventclick){
+		eventclick.currentTarget.classList.add('buttonSelection');
+		const button1 = document.querySelector('#button1');
+		button1.classList.remove('buttonSelection');
 	}
 
 	render() {
