@@ -5,9 +5,7 @@ class ItemBar extends React.Component {
   render() {
     return (
       <div className="itemBar">
-        <div className="itemBar__image">
-          <img className="itemBar__image" src="https://via.placeholder.com/122x122"></img>
-        </div>
+        <img className="itemBar__image" src="https://via.placeholder.com/134x134"></img>
         <div className="itemBar__info">
           <h2 className="itemBar__info__name">{this.props.item.name}</h2>
           <p className="itemBar__info__direction">{this.props.item.address}{this.props.item.postalcode}{this.props.item.province}</p>

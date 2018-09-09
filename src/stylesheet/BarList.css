@@ -8,6 +8,7 @@
   height: 534px;
   margin: 183px 20px 0 37px;
   min-width: 30%;
-  overflow: auto; }
+  overflow: auto;
+  padding-right: 20px; }
   .barLists .barLists_element {
     background-color: #c6d6bc; }
