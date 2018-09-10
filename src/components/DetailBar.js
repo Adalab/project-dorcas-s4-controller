@@ -38,7 +38,7 @@ class Map extends React.Component {
                               <p className="data__meters">A 543m</p>
                             </div>
                           </div>
-                          <p className="data__affiliates">{item.affiliates}</p>
+                          <p className="data__affiliates"><i className="fas fa-user-friends"></i>{item.affiliates}</p>
                         </div>
                       </div>
                     </div>
