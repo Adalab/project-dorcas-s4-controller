@@ -43,7 +43,6 @@
     .itemBar .item__info__visits .itemBar__info__visits__number {
       font-size: 14px;
       color: black;
-      padding-left: 10px; }
-
-.itemBarMarked {
-  border: 5px solid aqua; }
+      padding-left: 10px;
+      font-family: 'OpenSans';
+      margin-bottom: 0; }
