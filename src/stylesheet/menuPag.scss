@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.menuPage{
+.menuPage {
   width: 20%;
   height: 1000px;
   background-color: #222222;
@@ -14,7 +14,7 @@
 
 .text-controller {
   color: #ffffff;
-  font-family: 'Expletus Sans', cursive; 
+  font-family: 'Expletus Sans'; 
   padding-top: 65px;
   font-size: 30px;
   width: bold;
@@ -40,7 +40,7 @@
   text-align: left;
 }
 
-.logoText{
+.logoText {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,12 +53,12 @@
   font-weight: bold;
 }
 
-.logoNumber{
+.logoNumber {
   font-size: 60px;
   color: #67cf9b;
   padding-bottom: 13px;
 }
 
-.logoContainer{
+.logoContainer {
   margin-top: 20%;
 }

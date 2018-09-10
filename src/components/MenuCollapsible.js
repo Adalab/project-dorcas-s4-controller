@@ -2,7 +2,6 @@ import React from 'react';
 import '../stylesheet/menuPag.css';
 
 class MenuCollapsible extends React.Component {
-
   render() {
     return (
       <nav className="menuPage">
