@@ -10,7 +10,8 @@
   margin-bottom: 10px;
   text-align: left;
   display: flex;
-  border: solid 3px transparent; }
+  border: solid 3px transparent;
+  cursor: pointer; }
   .itemBar.itemBar--selected {
     border-color: #67cf9b; }
   .itemBar .itemBar__image {

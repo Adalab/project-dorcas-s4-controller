@@ -12,6 +12,7 @@
   text-align: left;
   display: flex;
   border: solid 3px transparent;
+  cursor: pointer;
 
   &.itemBar--selected {
     border-color: #67cf9b;
