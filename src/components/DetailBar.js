@@ -11,11 +11,11 @@ class Map extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <div className="establishments">
+          <div className="establishments" >
             <section className="sectionDetails">
               <img className="exampleMap" src={map} alt="exampleMap" />
               {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
-              <div className={this.props.classDetails}>
+              <div className="establishments__div__details">
                 <div className="details__img" style={{ backgroundImage: `url()` }}>
                   <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />
                 </div>

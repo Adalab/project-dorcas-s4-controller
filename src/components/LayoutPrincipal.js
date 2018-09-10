@@ -10,8 +10,8 @@ class LoyoutPrincipal extends React.Component {
     return (
       <div className="layoutPrincipal">
         <MenuCollapsible />
-        <BarList establishments={this.props.establishments} />
-        <DetailBar establishments={this.props.establishments} hiddenDetails={this.props.hiddenDetails} classDetails={this.props.classDetails}/>
+        <BarList establishments={this.props.establishments} setSelectedEstablishment={this.props.setSelectedEstablishment} selectedEstablishment={this.props.selectedEstablishment}/>
+        <DetailBar establishments={this.props.establishments} />
         <Logout logout={this.props.logout} email={this.props.email} />
       </div>
     );
