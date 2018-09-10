@@ -11,6 +11,7 @@ class BarList extends React.Component {
             <ul>
               {this.props.establishments.data
                 .map(function (item, index) {
+                  console.log(item)
                   return (
                     <li className="barLists_element" key={index} >
                       <ItemBar item={item} />
