@@ -13,7 +13,7 @@ class BarList extends React.Component {
                 .map((item, index) => {
                   return (
                     <li className="barLists_element" key={index} onClick={()=>this.props.setSelectedEstablishment(item.establishmentId)}>
-                      <ItemBar item={item} />
+                      <ItemBar item={item} selectedEstablishment={this.props.selectedEstablishment} />
                     </li>
                   )
                 })}
