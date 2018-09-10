@@ -154,13 +154,15 @@ class App extends Component {
               classErrorInputEmail={this.state.classErrorInputEmail}
               handleChangeInputEmail={this.handleChangeInputEmail} 
               handleChangeInputPassword={this.handleChangeInputPassword}
-            />}
+            />
+            
+          }
           />
           <Route path='/' render={(props) => < LayoutPrincipal
             email={this.state.email}
             establishments={this.state.establishments}
             logout={this.logout}
-            match={props.match} />}
+            match={props.match} /> }
           />
         </Switch>
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )

@@ -1,10 +1,12 @@
 
 .establishments{
   display: flex;
+  flex-direction: column;
   margin-top:110px;
 }
 
 .sectionDetails{
+
   width: 400px;
   margin-left: 28px;
   margin-top: 88px;
