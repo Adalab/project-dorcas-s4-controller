@@ -123,9 +123,6 @@ class App extends Component {
 					/>
 				</Switch>
 				{this.state.loginError && (<Notification />)}
-				{/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
-
-si this.state.loginError es false, NO pintamos lo que meta dentro de ( ) */}
 			</div>
 		);
 	}
