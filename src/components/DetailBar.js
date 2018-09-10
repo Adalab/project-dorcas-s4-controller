@@ -1,8 +1,8 @@
 import React from 'react';
 import map from '../images/exampleMap.jpg';
-import direction from '../images/exampleDirection.jpg';
 import '../stylesheet/map.css';
 import '../stylesheet/buttons.css';
+import '../stylesheet/detailBar.css';
 
 class Map extends React.Component {
   render() {
@@ -11,27 +11,42 @@ class Map extends React.Component {
     } else {
       return (
         <React.Fragment>
-          <div className="establishments">
-            <section className="sectionDetails">
-              <img className="exampleMap" src={map} alt="exampleMap" />
-              {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
-                  <div className="establishments__div__details">
-                <div className="details__img" style={{ backgroundImage: `url()` }}>
-                  <img className="imgDetails" src="" alt="" />
+          {this.props.establishments.data
+            .filter(detailEstablishment => {
+              return (
+                detailEstablishment.establishmentId === this.props.selectedEstablishment
+              )
+            })
+            .map(function (item) {
+              return (
+                < div className="establishments" >
+                  <section className="sectionDetails">
+                    <img className="exampleMap" src={map} alt="exampleMap" />
+                    {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
+                    <div className="establishments__div__details">
+                      <div className="details__img" style={{ backgroundImage: `url()` }}>
+                        <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />
+                      </div>
+                      <div className="details__data">
+                        <h2 className="data__title">{item.name}</h2>
+                        <div>
+                          <p className="data__icon"><i class="fas fa-map-marker-alt"></i></p>
+                          <div>
+                            <p className="data">Dirección</p>
+                            <p className="data__direction">{item.address}{item.postalcode}{item.province}</p>
+                            <p className="data__meters">A 543m</p>
+                          </div>
+                        </div>
+                        <p className="data__affiliates">{item.affiliates}</p>
+                      </div>
+                    </div>
+                    <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
+                  </section>
                 </div>
-                <div className="details__data">
-                  <h2 className="titleDatos"></h2>
-                  <div>
-                    <p className="parDatos">Dirección:</p>
-                    <p className="data__directio"></p>
-                    <p className="data__meters"></p>
-                  </div>
-                </div>
-              </div>
-            <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
-            </section>
-          </div>
-        </React.Fragment>
+              )
+            })
+          }
+        </React.Fragment >
       );
     }
   }

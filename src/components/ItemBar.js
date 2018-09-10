@@ -2,17 +2,9 @@ import React from 'react';
 import '../stylesheet/ItemBar.css';
 
 class ItemBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.forEstablishment = this.forEstablishment.bind(this);
-  }
-  forEstablishment(e) {
-    console.log(e.currentTarget);
-    e.currentTarget.classList.toggle('itemBarMarked');
-  }
   render() {
     return (
-      <div className="itemBar" onClick={this.forEstablishment}>
+      <div className="itemBar" >
         <div className="itemBar__image">
           <img src="https://via.placeholder.com/134x134"></img>
         </div>

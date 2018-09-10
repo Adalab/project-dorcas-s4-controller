@@ -3,6 +3,7 @@ import ItemBar from './ItemBar';
 import '../stylesheet/BarList.css';
 
 class BarList extends React.Component {
+
   render() {
     if (this.props.establishments.data !== undefined) {
       return (
@@ -10,10 +11,10 @@ class BarList extends React.Component {
           <div className="barLists">
             <ul>
               {this.props.establishments.data
-                .map(function (item, index) {
+                .map((item, index) => {
                   console.log(item)
                   return (
-                    <li className="barLists_element" key={index} >
+                    <li className="barLists_element" key={index} onClick={()=>this.props.setSelectedEstablishment(item.establishmentId)}>
                       <ItemBar item={item} />
                     </li>
                   )

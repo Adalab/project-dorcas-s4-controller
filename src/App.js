@@ -12,13 +12,15 @@ class App extends Component {
 		this.state = {
 			loginError: false,
 			email: 'usuario',
-			establishments: []
+			establishments: [],
+			selectedEstablishment: 1
 		}
 		this.launchLogin = this.launchLogin.bind(this);
 		this.logout = this.logout.bind(this);
 		this.postEstablishments = this.postEstablishments.bind(this);
 		this.login = this.login.bind(this);
 		this.errorData = this.errorData.bind(this);
+		this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
 	}
 	componentWillMount() {
 		if (savedToken) {
@@ -103,7 +105,11 @@ class App extends Component {
 			this.login(email, password);
 		}
 	}
-	
+	setSelectedEstablishment(id){
+		this.setState({
+			selectedEstablishment: id
+		})
+	}
 	render() {
 		return (
 			<div className="App">
@@ -113,7 +119,7 @@ class App extends Component {
 							launchLogin={this.launchLogin}
 						/>}
 					/>
-					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} />}
+					<Route path='/' render={(props) => < LayoutPrincipal email={this.state.email} establishments={this.state.establishments} logout={this.logout} match={props.match} setSelectedEstablishment={this.setSelectedEstablishment} selectedEstablishment={this.state.selectedEstablishment}/>}
 					/>
 				</Switch>
 				{this.state.loginError && (<Notification />)}
