@@ -4,26 +4,28 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
 }
 
-.menuPage{
+.menuPage {
   width: 20%;
   height: 1000px;
   background-color: #222222;
 }
+
 .text-controller {
   color: #ffffff;
-  font-family: 'Expletus Sans', cursive; 
+  font-family: 'Expletus Sans'; 
   padding-top: 65px;
   font-size: 30px;
   width: bold;
 }
+
 .text-2 {
   color: #67cf9b; 
   font-size: 45px;
 }
-.buttonList{
+
+.buttonList {
 background-color: #67cf9b;
   width: 175px;
   height: 25px;
@@ -38,7 +40,7 @@ background-color: #67cf9b;
   text-align: left;
 }
 
-.logoText{
+.logoText {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,12 +53,12 @@ background-color: #67cf9b;
   font-weight: bold;
 }
 
-.logoNumber{
+.logoNumber {
   font-size: 60px;
   color: #67cf9b;
   padding-bottom: 13px;
 }
 
-.logoContainer{
+.logoContainer {
   margin-top: 20%;
 }
