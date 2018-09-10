@@ -28,16 +28,18 @@ class Map extends React.Component {
                         <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />
                       </div>
                       <div className="details__data">
-                        <h2 className="data__title">{item.name}</h2>
-                        <div>
-                          <p className="data__icon"><i class="fas fa-map-marker-alt"></i></p>
-                          <div>
-                            <p className="data">Dirección</p>
-                            <p className="data__direction">{item.address}{item.postalcode}{item.province}</p>
-                            <p className="data__meters">A 543m</p>
+                        <div className="data__text">
+                          <h2 className="data__title">{item.name}</h2>
+                          <div className="data__div__direction">
+                            <p className="direction__icon"><i class="fas fa-map-marker-alt"></i></p>
+                            <div className="direction__div">
+                              <p className="data">Dirección</p>
+                              <p className="data__direction">{item.address}{item.postalcode}{item.province}</p>
+                              <p className="data__meters">A 543m</p>
+                            </div>
                           </div>
+                          <p className="data__affiliates">{item.affiliates}</p>
                         </div>
-                        <p className="data__affiliates">{item.affiliates}</p>
                       </div>
                     </div>
                     <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
