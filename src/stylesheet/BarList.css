@@ -6,8 +6,7 @@
 
 .barLists {
   height: 534px;
-  margin: 183px 0 0 37px;
+  margin: 183px 20px 0 37px;
   min-width: 30%;
-  overflow: auto; }
-  .barLists .barLists_element {
-    background-color: #c6d6bc; }
+  overflow: auto;
+  padding-right: 20px; }

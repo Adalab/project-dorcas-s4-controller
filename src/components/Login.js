@@ -6,13 +6,12 @@ class Login extends React.Component {
   inputPassword = React.createRef();
   errorLoginP = React.createRef();
   constructor(props) {
-
     super(props);
     this.onClickButton = this.onClickButton.bind(this);
     this.focusEmail = this.focusEmail.bind(this);
     this.focusPassword = this.focusPassword.bind(this);
-    this.handleChangeEmail=this.handleChangeEmail.bind(this);
-    this.handleChangePassword=this.handleChangePassword.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
   focusEmail() {
@@ -33,17 +32,16 @@ class Login extends React.Component {
         this.inputEmail.current.value,
         this.inputPassword.current.value
       );
-
     }
+  }
 
-  }
   handleChangeEmail(event) {
-    const inputE=event.target.value;
+    const inputE = event.target.value;
     this.props.handleChangeInputEmail(inputE);
-   
   }
+
   handleChangePassword(event) {
-    const inputP=event.target.value;
+    const inputP = event.target.value;
     this.props.handleChangeInputPassword(inputP);
   }
 

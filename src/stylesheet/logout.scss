@@ -1,21 +1,24 @@
 
-.logout{
+.logout {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   height: 30px;
   margin-top: 26px;
 }
-.logoutName{
+
+.logoutName {
   font-size: 20px;
   padding: 10px;
   margin-top: 10px;
 }
-.logoutIcon{
+
+.logoutIcon {
   justify-content: center;
 
 }
-.fa-sign-out-alt{
+
+.fa-sign-out-alt {
   align-self: center;
   font-size: 17px;
 }

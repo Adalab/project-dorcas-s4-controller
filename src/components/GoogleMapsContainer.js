@@ -30,30 +30,31 @@ class GoogleMapsContainer extends React.Component {
     }
   }
   render() {
+    const {latitude, longitude, name, address, postalcode, city}=this.props.establishments;
     const style = {
-      width: '355px',
+      width: '655px',
       height: '355px',
       border:'1px solid #67cf9b',
       letf:'1000px',
-      'marginLeft': 'auto',
-      'marginRight': '20px'
+      'marginLeft': 'auto'
     }
     
     return (
-      <Map className="maps"
+      <Map
         item
         xs = { 12 }
         style = { style }
         google = { this.props.google }
         onClick = { this.onMapClick }
-        zoom = { 14 }
+        zoom = { 13 }
         initialCenter = {{ lat: 40.42273000, lng: -3.71305930}}
       >
+      
         <Marker 
   
           onClick = { this.onMarkerClick }
           title = { 'Changing Colors Garage' }
-          position = {{ lat: 40.42273000, lng: -3.71305930 }}
+          position = {{ lat: latitude, lng: longitude} }
           name = { 'Changing Colors Garage' }
         />
         <InfoWindow
@@ -61,15 +62,15 @@ class GoogleMapsContainer extends React.Component {
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
         >
-            
-         {/* {this.props.establisment.name} */}
+            {name} <br /> {address} <br />
+            {postalcode} {city}
+         
         </InfoWindow>
       </Map>
     );
   }
 }
 export default GoogleApiWrapper({
-    api: (process.keyMaps)
+    api: (keyMaps)
 })(GoogleMapsContainer)
 
-// (process.env.GOOGLE_API_KEY_GOES_HERE)
