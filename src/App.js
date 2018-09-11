@@ -9,14 +9,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loginError: false,
+    loginError: false,
 	  email: 'usuario',
 	  classError:'hidden',
 	  classErrorInputEmail:'form-input form-input--top',
 	  classErrorInputPassword:'form-input',
 	  inputE:'',
 	  inputP:'',
-      establishments: []
+    establishments: []
     }
 
     this.launchLogin = this.launchLogin.bind(this);
