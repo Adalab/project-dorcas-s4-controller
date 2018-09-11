@@ -9,7 +9,7 @@ class ItemBar extends React.Component {
     }
     return (
       <div className={itemClass}>
-        <img className="itemBar__image" src="https://via.placeholder.com/134x134"></img>
+        <div className="itemBar__image" style={{ backgroundImage: `url(https://ada-controller.deploy-cd.com/${this.props.item.imageWebUri})` }}></div>
         <div className="itemBar__info">
           <h2 className="itemBar__info__name">{this.props.item.name}</h2>
           <p className="itemBar__info__direction">{this.props.item.address}, {this.props.item.postalcode} {this.props.item.province}</p>

@@ -21,10 +21,10 @@ class Map extends React.Component {
               return (
                 < div className="establishments" >
                   <section className="sectionDetails">
-                    <img className="exampleMap" src={map} alt="exampleMap" />                    {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
+                    <img className="exampleMap" src={map} alt="exampleMap" />                   
                     <div className="establishments__div__details">
-                      <div className="details__img" style={{ backgroundImage: `url()` }}>
-                        <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />
+                      <div className="details__img" >
+                        <div className="imgDetails" style={{ backgroundImage: `url(https://ada-controller.deploy-cd.com/${item.imageWebUri})` }}></div>
                       </div>
                       <div className="details__data">
                         <div className="data__text">
