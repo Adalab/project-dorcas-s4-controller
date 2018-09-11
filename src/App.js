@@ -9,14 +9,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    loginError: false,
-	  email: 'usuario',
-	  classError:'hidden',
-	  classErrorInputEmail:'form-input form-input--top',
-	  classErrorInputPassword:'form-input',
-	  inputE:'',
-	  inputP:'',
-    establishments: []
+      loginError: false,
+      email: 'usuario',
+      classError:'hidden',
+      classErrorInputEmail:'form-input form-input--top',
+      classErrorInputPassword:'form-input',
+      inputE:'',
+      inputP:'',
+      establishments: [],
+      selectedEstablishment: 1
     }
 
     this.launchLogin = this.launchLogin.bind(this);
@@ -26,6 +27,7 @@ class App extends Component {
     this.errorData = this.errorData.bind(this);
     this.handleChangeInputEmail=this.handleChangeInputEmail.bind(this);
     this.handleChangeInputPassword=this.handleChangeInputPassword.bind(this);
+    this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
   }
 
   componentWillMount() {
@@ -140,6 +142,12 @@ class App extends Component {
     });
   }
 
+  setSelectedEstablishment(id){
+		this.setState({
+			selectedEstablishment: id
+		})
+	}
+
   render() {
     //localStorage.removeItem('token');
     return (
@@ -162,7 +170,8 @@ class App extends Component {
             email={this.state.email}
             establishments={this.state.establishments}
             logout={this.logout}
-            match={props.match} />}
+            match={props.match} 
+            setSelectedEstablishment={this.setSelectedEstablishment} selectedEstablishment={this.state.selectedEstablishment}/>}
           />
         </Switch>
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
