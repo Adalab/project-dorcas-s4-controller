@@ -115,6 +115,7 @@ class App extends Component {
 		eventclick.currentTarget.classList.add('buttonSelection');
 		const button1 = document.querySelector('#button1');
 		button1.classList.remove('buttonSelection');
+		button1.classList.remove('button1');
 	}
 
 	render() {
