@@ -2,7 +2,7 @@ import React from 'react'
 import direction from '../images/exampleDirection.jpg';
 import '../stylesheet/map.css';
 import '../stylesheet/buttons.css';
-import GoogleMapsContainer from './GoogleMapsContainer';
+//import GoogleMapsContainer from './GoogleMapsContainer';
 
 class Map extends React.Component {
   render() {
@@ -10,10 +10,10 @@ class Map extends React.Component {
       <React.Fragment>
         
         <div className="establishments">
-          <GoogleMapsContainer />
+          {/* <GoogleMapsContainer /> */}
           <section className="sectionDetails">
           
-            <img className="exampleDirection" src={direction} alt="exampleDirection" />
+            
             <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
           </section>
         </div>

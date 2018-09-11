@@ -30,12 +30,13 @@ class GoogleMapsContainer extends React.Component {
   }
   render() {
     const style = {
-      width: '35vw',
-      height: '280px',
+      width: '40vw',
+      height: '35vh',
+      border:'1px solid #67cf9b',
       top:'100px',
-      padding:'0'
-      // 'marginLeft': 'auto',
-      // 'marginRight': 'auto'
+      letf:'1000px',
+      'marginLeft': 'auto',
+      'marginRight': '20px'
     }
     
     return (
@@ -60,6 +61,7 @@ class GoogleMapsContainer extends React.Component {
           marker = { this.state.activeMarker }
           visible = { this.state.showingInfoWindow }
         >
+            
          {/* {this.props.establisment.name} */}
         </InfoWindow>
       </Map>
