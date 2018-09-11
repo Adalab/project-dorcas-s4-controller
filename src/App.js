@@ -17,7 +17,8 @@ class App extends Component {
       inputE: '',
       inputP: '',
       establishments: [],
-      selectedEstablishment: 1
+      selectedEstablishment: 1,
+      detailsEstablishment:[]
     }
 
     this.launchLogin = this.launchLogin.bind(this);
@@ -27,7 +28,8 @@ class App extends Component {
     this.errorData = this.errorData.bind(this);
     this.handleChangeInputEmail = this.handleChangeInputEmail.bind(this);
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
-    this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
+    // this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
+    this.getDetails = this.getDetails.bind(this);
   }
 
   componentWillMount() {
@@ -143,10 +145,32 @@ class App extends Component {
     });
   }
 
-  setSelectedEstablishment(id) {
-    this.setState({
-      selectedEstablishment: id
+  // setSelectedEstablishment(id) {
+  //   this.setState({
+  //     selectedEstablishment: id
+  //   })
+  // }
+
+  getDetails(id) {
+    const urlDetails = 'ada-controller.deploy-cd.com/api/visits';
+    const savedToken = JSON.parse(localStorage.getItem('token'));
+    
+    fetch(urlDetails, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + savedToken
+      }
     })
+      .then(response1 => {
+        return response1.json();})
+      .then(response2 => {
+        console.log(response2);
+
+        this.setState({
+          detailsEstablishment: response2,
+          selectedEstablishment: id
+        })
+      });
   }
 
   render() {
@@ -172,7 +196,11 @@ class App extends Component {
             establishments={this.state.establishments}
             logout={this.logout}
             match={props.match}
-            setSelectedEstablishment={this.setSelectedEstablishment} selectedEstablishment={this.state.selectedEstablishment} />}
+            setSelectedEstablishment={this.setSelectedEstablishment} 
+            selectedEstablishment={this.state.selectedEstablishment} 
+            detailsEstablishment={this.state.detailsEstablishment}
+            getDetails={this.getDetails}
+            />}
           />
         </Switch>
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )

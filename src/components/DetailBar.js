@@ -31,7 +31,7 @@ class Map extends React.Component {
                         <div className="data__text">
                           <h2 className="data__title">{item.name}</h2>
                           <div className="data__div__direction">
-                            <p className="direction__icon"><i class="fas fa-map-marker-alt"></i></p>
+                            <p className="direction__icon"><i className="fas fa-map-marker-alt"></i></p>
                             <div className="direction__div">
                               <p className="data">Dirección</p>
                               <p className="data__direction">{item.address}, {item.postalcode} {item.province}</p>
