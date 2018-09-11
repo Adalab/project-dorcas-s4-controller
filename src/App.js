@@ -3,9 +3,9 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from './components/LayoutPrincipal';
 import { withRouter, Route, Switch } from 'react-router-dom';
-const savedToken = JSON.parse(localStorage.getItem('token'));
 
 class App extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   componentWillMount() {
+    const savedToken = JSON.parse(localStorage.getItem('token'));
     if (savedToken) {
       this.postEstablishments(savedToken);
     }
@@ -48,6 +49,7 @@ class App extends Component {
   }
 
   postEstablishments(savedToken) {
+
     const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
@@ -114,6 +116,7 @@ class App extends Component {
   }
 
   launchLogin(email, password) {
+    const savedToken = JSON.parse(localStorage.getItem('token'));
     this.setState({
       email: email
     });
