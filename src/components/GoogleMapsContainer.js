@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
 import '../stylesheet/map.css';
+import keyMaps from '../data/maps.json';
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -30,8 +31,8 @@ class GoogleMapsContainer extends React.Component {
   }
   render() {
     const style = {
-      width: '40vw',
-      height: '35vh',
+      width: '355px',
+      height: '355px',
       border:'1px solid #67cf9b',
       top:'100px',
       letf:'1000px',
