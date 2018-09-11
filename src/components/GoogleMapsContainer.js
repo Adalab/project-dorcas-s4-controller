@@ -34,7 +34,6 @@ class GoogleMapsContainer extends React.Component {
       width: '355px',
       height: '355px',
       border:'1px solid #67cf9b',
-      top:'100px',
       letf:'1000px',
       'marginLeft': 'auto',
       'marginRight': '20px'
@@ -70,5 +69,7 @@ class GoogleMapsContainer extends React.Component {
   }
 }
 export default GoogleApiWrapper({
-    api: (process.env.GOOGLE_API_KEY_GOES_HERE)
+    api: (process.keyMaps)
 })(GoogleMapsContainer)
+
+// (process.env.GOOGLE_API_KEY_GOES_HERE)
