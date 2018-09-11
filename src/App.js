@@ -152,7 +152,7 @@ class App extends Component {
   // }
 
   getDetails(id) {
-    const urlDetails = 'ada-controller.deploy-cd.com/api/visits';
+    const urlDetails = 'https://ada-controller.deploy-cd.com/api/visits';
     const savedToken = JSON.parse(localStorage.getItem('token'));
     
     fetch(urlDetails, {
@@ -164,10 +164,10 @@ class App extends Component {
       .then(response1 => {
         return response1.json();})
       .then(response2 => {
-        console.log(response2);
+        console.log(response2.data);
 
         this.setState({
-          detailsEstablishment: response2,
+          detailsEstablishment: response2.data,
           selectedEstablishment: id
         })
       });
