@@ -28,7 +28,6 @@ class App extends Component {
     this.errorData = this.errorData.bind(this);
     this.handleChangeInputEmail = this.handleChangeInputEmail.bind(this);
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
-    // this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
     this.getDetails = this.getDetails.bind(this);
   }
 
@@ -145,12 +144,6 @@ class App extends Component {
     });
   }
 
-  // setSelectedEstablishment(id) {
-  //   this.setState({
-  //     selectedEstablishment: id
-  //   })
-  // }
-
   getDetails(id) {
     const urlDetails = 'https://ada-controller.deploy-cd.com/api/visits';
     const savedToken = JSON.parse(localStorage.getItem('token'));
@@ -196,7 +189,6 @@ class App extends Component {
             establishments={this.state.establishments}
             logout={this.logout}
             match={props.match}
-            setSelectedEstablishment={this.setSelectedEstablishment} 
             selectedEstablishment={this.state.selectedEstablishment} 
             detailsEstablishment={this.state.detailsEstablishment}
             getDetails={this.getDetails}

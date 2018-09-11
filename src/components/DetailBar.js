@@ -21,8 +21,7 @@ class Map extends React.Component {
               return (
                 < div className="establishments" >
                   <section className="sectionDetails">
-                    <img className="exampleMap" src={map} alt="exampleMap" />
-                    {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
+                    <img className="exampleMap" src={map} alt="exampleMap" />                    {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
                     <div className="establishments__div__details">
                       <div className="details__img" style={{ backgroundImage: `url()` }}>
                         <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />

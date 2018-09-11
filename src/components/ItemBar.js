@@ -4,8 +4,8 @@ import '../stylesheet/ItemBar.css';
 class ItemBar extends React.Component {
   render() {
     let itemClass = 'itemBar';
-    if (this.props.getDetails === this.props.item.establishmentId) {
-      itemClass += ' itemBar--selected'
+    if (this.props.selectedEstablishment === this.props.item.establishmentId) {
+      itemClass += ' itemBar--selected';
     }
     return (
       <div className={itemClass}>

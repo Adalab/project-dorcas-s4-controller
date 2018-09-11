@@ -12,7 +12,6 @@ class LoyoutPrincipal extends React.Component {
         <MenuCollapsible />
         <BarList
           establishments={this.props.establishments}
-          setSelectedEstablishment={this.props.setSelectedEstablishment}
           selectedEstablishment={this.props.selectedEstablishment}
           detailsEstablishment={this.props.detailsEstablishment}
           getDetails={this.props.getDetails}
