@@ -102,3 +102,28 @@
   height: 30px;
   color: #67cf9b;
   margin-left: 5px; }
+
+.hidden {
+  display: none; }
+
+.visible {
+  display: flex;
+  width: 350px;
+  color: red; }
+
+.error {
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-color: red;
+  width: 442px;
+  margin: 0 10px; }
+
+.errorEmail {
+  margin-bottom: 20px;
+  border-right: 0;
+  border-top: 0;
+  border-left: 0;
+  border-bottom-color: red;
+  width: 442px;
+  margin: 0 10px; }
