@@ -2,15 +2,15 @@ import React from 'react';
 import '../stylesheet/logout.css';
 
 class Logout extends React.Component {
-
   constructor(props) {
     super(props);
     this.onClickLogout = this.onClickLogout.bind(this);
-
   }
-  onClickLogout(){
+
+  onClickLogout() {
     this.props.logout();
   }
+
   render() {
     return (
       <div className="logout">
