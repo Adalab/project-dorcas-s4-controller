@@ -4,7 +4,13 @@ import React from "react";
 class ModalContent extends React.Component {
   render() {
     return (
-    <div className="modal__content">hello</div>
+      <React.Fragment>
+        <div className="modal__content">
+          ¿Has disfrutado de la experiencia en nuestro establecimiento?
+        </div>
+        <button className="modal__btn--yes">Sí</button>
+        <button className="modal__btn--no">No</button>
+      </React.Fragment>
     );
   }
 }

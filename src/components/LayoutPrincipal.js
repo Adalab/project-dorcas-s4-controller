@@ -6,7 +6,6 @@ import MenuCollapsible from "./MenuCollapsible";
 import "../stylesheet/layoutP.css";
 import Modal from "./Modal";
 import ModalContent from "./ModalContent";
-// import ButtonReport from './ButtonReport';
 
 class LoyoutPrincipal extends React.Component {
   render() {
@@ -22,19 +21,9 @@ class LoyoutPrincipal extends React.Component {
         <DetailBar
           establishments={this.props.establishments}
           selectedEstablishment={this.props.selectedEstablishment}
+          onOpen={this.props.onOpen}
         />
         <Logout logout={this.props.logout} email={this.props.email} />
-        {/* <ButtonReport
-          modalStatus={this.props.modalIsOpen}
-          onOpen={this.props.onOpen}
-          onClose={this.props.onClose}
-        /> */}
-        <div className="divBtb">
-          <button className="btnReport" onClick={this.props.onOpen}>
-            <i className="fas fa-clipboard-list" />
-            Reportar
-          </button>
-        </div>
         {this.props.modalStatus && (
           <Modal onClose={this.props.onClose}>
             <ModalContent />

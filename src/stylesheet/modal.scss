@@ -8,6 +8,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
 }
 
 .modal__panel {
@@ -24,12 +26,30 @@
 
 .modal__header {
   padding: 20px;
-  border-bottom: 1px solid #ddd;
+  width: 275px;
+  margin: 0 auto;
   position: relative;
+  border-bottom: solid 2px #67cf9b;
 }
 
 .modal__title {
   margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.modal__text {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.modal__number {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.modal__number--first {
+  color: #67cf9b;
 }
 
 .modal__overlay {

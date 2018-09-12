@@ -1,6 +1,4 @@
 import React from "react";
-import Modal from './Modal';
-import ModalContent from './ModalContent';
 
 class ButtonReport extends React.Component {
   render() {
@@ -12,11 +10,6 @@ class ButtonReport extends React.Component {
             Reportar
           </button>
         </div>
-        {this.props.modalStatus && (
-          <Modal onClose={this.props.onClose}>
-            <ModalContent />
-          </Modal>
-        )}
       </React.Fragment>
     );
   }
