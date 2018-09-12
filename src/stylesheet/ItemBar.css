@@ -6,13 +6,21 @@
 
 .itemBar {
   width: 400px;
-  height: 134px;
-  background-color: #9d9d9d;
-  margin: 10px;
+  height: 140px;
+  margin-bottom: 10px;
   text-align: left;
-  display: flex; }
+  display: flex;
+  border: solid 3px transparent;
+  cursor: pointer; }
+  .itemBar.itemBar--selected {
+    border-color: #67cf9b; }
   .itemBar .itemBar__image {
-    display: inline-block; }
+    display: inline-block;
+    width: 134px;
+    height: 134px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat; }
   .itemBar .itemBar__info {
     height: 100%;
     text-align: left;
@@ -20,17 +28,25 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    vertical-align: top;
-    padding: 15px 0 10px 10px; }
+    background-color: #9d9d9d;
+    padding: 15px 0 6px 10px; }
   .itemBar .itemBar__info__name {
     color: black;
-    font-size: 18px; }
+    font-size: 18px;
+    font-family: 'Expletus Sans';
+    font-weight: bold;
+    margin-bottom: 12px; }
   .itemBar .itemBar__info__direction {
     color: #343434;
-    padding-top: 31px; }
+    font-family: 'OpenSans';
+    margin-bottom: 30px; }
   .itemBar .item__info__visits {
     display: flex; }
+    .itemBar .item__info__visits .fa-user-friends {
+      color: #67cf9b; }
     .itemBar .item__info__visits .itemBar__info__visits__number {
       font-size: 14px;
       color: black;
-      padding-left: 10px; }
+      padding-left: 10px;
+      font-family: 'OpenSans';
+      margin-bottom: 0; }
