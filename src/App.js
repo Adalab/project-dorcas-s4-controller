@@ -5,7 +5,6 @@ import LayoutPrincipal from './components/LayoutPrincipal';
 import { withRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +17,8 @@ class App extends Component {
       inputP: '',
       establishments: [],
       selectedEstablishment: 1,
-      detailsEstablishment:[]
+      detailsEstablishment:[],
+      modalIsOpen: false
     }
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -163,6 +163,18 @@ class App extends Component {
       });
   }
 
+  onOpen = () => {
+    this.setState({
+      modalIsOpen: true
+    });
+  }
+
+  onClose = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  }
+
   render() {
     //localStorage.removeItem('token');
     return (
@@ -183,7 +195,8 @@ class App extends Component {
             
           }
           />
-          <Route path='/' render={(props) => < LayoutPrincipal
+          <Route path='/LayoutPrincipal' render={(props) => 
+          < LayoutPrincipal
             email={this.state.email}
             establishments={this.state.establishments}
             logout={this.logout}
@@ -191,6 +204,9 @@ class App extends Component {
             selectedEstablishment={this.state.selectedEstablishment} 
             detailsEstablishment={this.state.detailsEstablishment}
             getDetails={this.getDetails}
+            modalStatus={this.state.modalIsOpen}
+            onOpen={this.onOpen}
+            onClose={this.onClose}
             />}
           />
         </Switch>

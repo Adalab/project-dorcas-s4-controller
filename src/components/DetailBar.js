@@ -3,8 +3,12 @@ import '../stylesheet/map.css';
 import '../stylesheet/buttons.css';
 import '../stylesheet/detailBar.css';
 import GoogleMapsContainer from './GoogleMapsContainer';
+// import Modal from './Modal';
+// import ModalContent from './ModalContent';
+
 class Map extends React.Component {
   render() {
+    // const {onOpen, onClose, modalStatus} = this.props;
     if (this.props.establishments.data === undefined) {
       return null;
     } else {
@@ -42,7 +46,6 @@ class Map extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="divBtb"><button className="btnReport"><i className="fas fa-clipboard-list"></i>Reportar</button></div>
                   </section>
                 </div>
               )
