@@ -5,27 +5,29 @@ import LayoutPrincipal from './components/LayoutPrincipal';
 import { withRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = {
-    loginError: false,
-	  email: 'usuario',
-	  classError:'hidden',
-	  classErrorInputEmail:'form-input form-input--top',
-	  classErrorInputPassword:'form-input',
-	  inputE:'',
-	  inputP:'',
-    establishments: []
+      loginError: false,
+      email: 'usuario',
+      classError: 'hidden',
+      classErrorInputEmail: 'form-input form-input--top',
+      classErrorInputPassword: 'form-input',
+      inputE: '',
+      inputP: '',
+      establishments: [],
+      selectedEstablishment: 1,
+      detailsEstablishment:[]
     }
-
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.postEstablishments = this.postEstablishments.bind(this);
     this.login = this.login.bind(this);
     this.errorData = this.errorData.bind(this);
-    this.handleChangeInputEmail=this.handleChangeInputEmail.bind(this);
-    this.handleChangeInputPassword=this.handleChangeInputPassword.bind(this);
+    this.handleChangeInputEmail = this.handleChangeInputEmail.bind(this);
+    this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
+    this.getDetails = this.getDetails.bind(this);
   }
 
   componentWillMount() {
@@ -38,18 +40,17 @@ class App extends Component {
   logout() {
     localStorage.removeItem('token');
     this.setState({
-	  email: 'usuario',
-	  classError:'hidden',
-	  classErrorInputEmail:'form-input form-input--top',
-    classErrorInputPassword:'form-input',
-    inputE:'',
-	  inputP:''
+      email: 'usuario',
+      classError: 'hidden',
+      classErrorInputEmail: 'form-input form-input--top',
+      classErrorInputPassword: 'form-input',
+      inputE: '',
+      inputP: ''
     });
     this.props.history.push('/');
   }
 
   postEstablishments(savedToken) {
-
     const establishments = 'https://ada-controller.deploy-cd.com/api/establishments';
     fetch(establishments, {
       method: 'GET',
@@ -106,12 +107,12 @@ class App extends Component {
 
   errorData() {
     this.setState({
-	  loginError: true,
-	  classError:'visible',
-	  classErrorInputEmail:'errorEmail',
-	  classErrorInputPassword:'error',
-	  inputE:'',
-	  inputP:'',
+      loginError: true,
+      classError: 'visible',
+      classErrorInputEmail: 'errorEmail',
+      classErrorInputPassword: 'error',
+      inputE: '',
+      inputP: '',
     });
   }
 
@@ -126,18 +127,40 @@ class App extends Component {
       this.login(email, password);
     }
   }
-  handleChangeInputEmail(inputE){
+
+  handleChangeInputEmail(inputE) {
     this.setState({
-      inputE:inputE,
-      classError:'hidden',
-      classErrorInputEmail:'form-input form-input--top',
-      classErrorInputPassword:'form-input'
+      inputE: inputE,
+      classError: 'hidden',
+      classErrorInputEmail: 'form-input form-input--top',
+      classErrorInputPassword: 'form-input'
     });
   }
-  handleChangeInputPassword(inputP){
+
+  handleChangeInputPassword(inputP) {
     this.setState({
-      inputP:inputP
+      inputP: inputP
     });
+  }
+
+  getDetails(id) {
+    const urlDetails = 'https://ada-controller.deploy-cd.com/api/visits';
+    const savedToken = JSON.parse(localStorage.getItem('token'));
+    
+    fetch(urlDetails, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + savedToken
+      }
+    })
+      .then(response1 => {
+        return response1.json();})
+      .then(response2 => {
+        this.setState({
+          detailsEstablishment: response2.data,
+          selectedEstablishment: id
+        })
+      });
   }
 
   render() {
@@ -147,22 +170,28 @@ class App extends Component {
         <Switch>
           <Route exact path='/'
             render={() => <Login
-              launchLogin={this.launchLogin} 
+              launchLogin={this.launchLogin}
               loginError={this.state.loginError}
-              classError={this.state.classError} 
-              inputE={this.state.inputE} 
+              classError={this.state.classError}
+              inputE={this.state.inputE}
               inputP={this.state.inputP}
-              classErrorInputPassword={this.state.classErrorInputPassword} 
+              classErrorInputPassword={this.state.classErrorInputPassword}
               classErrorInputEmail={this.state.classErrorInputEmail}
-              handleChangeInputEmail={this.handleChangeInputEmail} 
+              handleChangeInputEmail={this.handleChangeInputEmail}
               handleChangeInputPassword={this.handleChangeInputPassword}
-            />}
+            />
+            
+          }
           />
           <Route path='/' render={(props) => < LayoutPrincipal
             email={this.state.email}
             establishments={this.state.establishments}
             logout={this.logout}
-            match={props.match} />}
+            match={props.match}
+            selectedEstablishment={this.state.selectedEstablishment} 
+            detailsEstablishment={this.state.detailsEstablishment}
+            getDetails={this.getDetails}
+            />}
           />
         </Switch>
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )
