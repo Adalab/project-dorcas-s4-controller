@@ -3,8 +3,6 @@ import '../stylesheet/map.css';
 import '../stylesheet/buttons.css';
 import '../stylesheet/detailBar.css';
 import GoogleMapsContainer from './GoogleMapsContainer';
-// import Modal from './Modal';
-// import ModalContent from './ModalContent';
 
 class Map extends React.Component {
   render() {
