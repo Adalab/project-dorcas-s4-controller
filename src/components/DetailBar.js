@@ -1,9 +1,8 @@
 import React from 'react';
-import map from '../images/exampleMap.jpg';
 import '../stylesheet/map.css';
 import '../stylesheet/buttons.css';
 import '../stylesheet/detailBar.css';
-
+import GoogleMapsContainer from './GoogleMapsContainer';
 class Map extends React.Component {
   render() {
     if (this.props.establishments.data === undefined) {
@@ -21,17 +20,18 @@ class Map extends React.Component {
               return (
                 < div className="establishments" >
                   <section className="sectionDetails">
-                    <img className="exampleMap" src={map} alt="exampleMap" />
-                    {/* <img className="exampleDirection" src={direction} alt="exampleDirection" /> */}
+                    <div className="container__maps">
+                      <GoogleMapsContainer establishments={item} />
+                    </div>                 
                     <div className="establishments__div__details">
-                      <div className="details__img" style={{ backgroundImage: `url()` }}>
-                        <img className="imgDetails" src="http://via.placeholder.com/230x230" alt="" />
+                      <div className="details__img" >
+                        <div className="imgDetails" style={{ backgroundImage: `url(https://ada-controller.deploy-cd.com/${item.imageWebUri})` }}></div>
                       </div>
                       <div className="details__data">
                         <div className="data__text">
                           <h2 className="data__title">{item.name}</h2>
                           <div className="data__div__direction">
-                            <p className="direction__icon"><i class="fas fa-map-marker-alt"></i></p>
+                            <p className="direction__icon"><i className="fas fa-map-marker-alt"></i></p>
                             <div className="direction__div">
                               <p className="data">Dirección</p>
                               <p className="data__direction">{item.address}, {item.postalcode} {item.province}</p>

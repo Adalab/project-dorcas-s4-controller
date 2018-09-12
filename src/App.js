@@ -17,9 +17,9 @@ class App extends Component {
       inputE: '',
       inputP: '',
       establishments: [],
-      selectedEstablishment: 1
+      selectedEstablishment: 1,
+      detailsEstablishment:[]
     }
-
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
     this.postEstablishments = this.postEstablishments.bind(this);
@@ -27,7 +27,7 @@ class App extends Component {
     this.errorData = this.errorData.bind(this);
     this.handleChangeInputEmail = this.handleChangeInputEmail.bind(this);
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
-    this.setSelectedEstablishment = this.setSelectedEstablishment.bind(this);
+    this.getDetails = this.getDetails.bind(this);
   }
 
   componentWillMount() {
@@ -143,10 +143,24 @@ class App extends Component {
     });
   }
 
-  setSelectedEstablishment(id) {
-    this.setState({
-      selectedEstablishment: id
+  getDetails(id) {
+    const urlDetails = 'https://ada-controller.deploy-cd.com/api/visits';
+    const savedToken = JSON.parse(localStorage.getItem('token'));
+    
+    fetch(urlDetails, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Bearer ' + savedToken
+      }
     })
+      .then(response1 => {
+        return response1.json();})
+      .then(response2 => {
+        this.setState({
+          detailsEstablishment: response2.data,
+          selectedEstablishment: id
+        })
+      });
   }
 
   render() {
@@ -165,14 +179,19 @@ class App extends Component {
               classErrorInputEmail={this.state.classErrorInputEmail}
               handleChangeInputEmail={this.handleChangeInputEmail}
               handleChangeInputPassword={this.handleChangeInputPassword}
-            />}
+            />
+            
+          }
           />
           <Route path='/' render={(props) => < LayoutPrincipal
             email={this.state.email}
             establishments={this.state.establishments}
             logout={this.logout}
             match={props.match}
-            setSelectedEstablishment={this.setSelectedEstablishment} selectedEstablishment={this.state.selectedEstablishment} />}
+            selectedEstablishment={this.state.selectedEstablishment} 
+            detailsEstablishment={this.state.detailsEstablishment}
+            getDetails={this.getDetails}
+            />}
           />
         </Switch>
         {/* si this.state.loginError es true, pintamos lo que meta dentro de ( )

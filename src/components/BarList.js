@@ -12,8 +12,8 @@ class BarList extends React.Component {
               {this.props.establishments.data
                 .map((item, index) => {
                   return (
-                    <li className="barLists_element" key={index} onClick={()=>this.props.setSelectedEstablishment(item.establishmentId)}>
-                      <ItemBar item={item} selectedEstablishment={this.props.selectedEstablishment} />
+                    <li className="barLists_element" key={index} onClick={()=>this.props.getDetails(item.establishmentId)}>
+                      <ItemBar item={item} selectedEstablishment={this.props.selectedEstablishment}/>
                     </li>
                   )
                 })}

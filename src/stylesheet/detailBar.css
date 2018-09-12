@@ -1,3 +1,10 @@
+.imgDetails {
+  width: 230px;
+  height: 230px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
 .establishments__div__details {
   display: flex;
   margin-top: 28px;
