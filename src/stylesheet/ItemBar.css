@@ -34,12 +34,10 @@
     color: black;
     font-size: 18px;
     font-family: 'Expletus Sans';
-    font-weight: bold;
-    margin-bottom: 12px; }
+    font-weight: bold; }
   .itemBar .itemBar__info__direction {
     color: #343434;
-    font-family: 'OpenSans';
-    margin-bottom: 30px; }
+    font-family: 'OpenSans'; }
   .itemBar .item__info__visits {
     display: flex; }
     .itemBar .item__info__visits .fa-user-friends {
