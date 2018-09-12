@@ -1,3 +1,4 @@
+
 .imgDetails{
   width: 230px;
   height: 230px;
@@ -18,18 +19,16 @@
   width: 100%;
   height: 230px;
   text-align: left;
-}
-
-.data__text{
-  margin-left: 39px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .data__title{
   font-family: "Expletus Sans", cursive;
   font-size: 30px;
   color: #ffffff;
-  margin-bottom: 18px;
-  margin-top: 20px;
 }
 
 .hiddenDetails{
@@ -47,7 +46,6 @@
 
 .direction__div{
   margin-left: 21px;
-  margin-bottom: 31px;
   font-family: 'Open Sans', sans-serif;
 }
 

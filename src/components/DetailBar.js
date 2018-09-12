@@ -39,7 +39,6 @@ class Map extends React.Component {
                         />
                       </div>
                       <div className="details__data">
-                        <div className="data__text">
                           <h2 className="data__title">{item.name}</h2>
                           <div className="data__div__direction">
                             <p className="direction__icon">
@@ -58,7 +57,6 @@ class Map extends React.Component {
                             <i className="fas fa-user-friends" />
                             {item.affiliates}
                           </p>
-                        </div>
                       </div>
                     </div>
                   </section>
