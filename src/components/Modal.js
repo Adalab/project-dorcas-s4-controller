@@ -8,7 +8,8 @@ class Modal extends React.Component {
       <section className="modal">
         <div className="modal__panel">
           <header className="modal__header">
-            <h2 className="modal__title">titulo</h2>
+            <h2 className="modal__title">Completa el cuestionario</h2>
+            <p className="modal_text">Pregunta</p>
           </header>
           <div className="modal__container">{this.props.children}</div>
         </div>
