@@ -4,7 +4,7 @@ import React from "react";
 class ModalContent extends React.Component {
   render() {
     return (
-    <div className="div_provisional">hello</div>
+    <div className="modal__content">hello</div>
     );
   }
 }
