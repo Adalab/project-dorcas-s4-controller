@@ -42,13 +42,14 @@
   padding-left: 17px;
   margin: 15px 0 0 47px;
   color: white;
-  text-align: left; }
+  text-align: left;
+  justify-content: flex-end; }
 
 .logoText {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
   margin-top: 0;
   height: 98px;
@@ -57,9 +58,9 @@
   font-weight: bold; }
 
 .logoNumber {
-  font-size: 60px;
+  font-size: 45px;
   color: #67cf9b;
   padding-bottom: 13px; }
 
 .logoContainer {
-  margin-top: 20%; }
+  margin-top: 30%; }
