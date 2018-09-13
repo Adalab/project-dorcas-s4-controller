@@ -1,5 +1,4 @@
-
-.imgDetails{
+.imgDetails { 
   width: 230px;
   height: 230px;
   background-position: center center;
@@ -7,14 +6,14 @@
   background-repeat: no-repeat;
 }
 
-.establishments__div__details{
+.establishments__div__details {
   display: flex;
   margin-top: 28px;
   width: 690px;
   border: 1px solid #67cf9b;
 }
 
-.details__data{
+.details__data {
   background-color: #67cf9b;
   width: 100%;
   height: 230px;
@@ -25,54 +24,54 @@
   flex-direction: column;
 }
 
-.data__title{
+.data__title {
   font-family: "Expletus Sans", cursive;
   font-size: 30px;
   color: #ffffff;
 }
 
-.hiddenDetails{
+.hiddenDetails {
   display: none;
 }
 
-.data__div__direction{
+.data__div__direction {
   display: flex;
 }
 
-.fa-map-marker-alt{
+.fa-map-marker-alt {
   color: #ffffff;
   font-size: 22px;
 }
 
-.direction__div{
+.direction__div {
   margin-left: 21px;
   font-family: 'Open Sans', sans-serif;
 }
 
-.data{
+.data {
   font-size: 14px;
   margin-bottom: 4px;
   font-weight: 300;
 }
 
-.data__direction{
+.data__direction {
   font-size: 22px;
   margin-bottom: 9px;
 }
 
-.data__meters{
+.data__meters {
   font-size: 16px;
   margin-bottom: 0;
   font-weight: 300;
   font-style: italic;
 }
 
-.data__affiliates{
+.data__affiliates {
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
 
-.fa-user-friends{
+.fa-user-friends {
   margin-right: 12px;
   color: #ffffff;
   font-size: 22px;
