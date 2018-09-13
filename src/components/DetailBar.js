@@ -4,6 +4,7 @@ import "../stylesheet/buttons.css";
 import "../stylesheet/detailBar.css";
 import ButtonReport from './ButtonReport';
 import GoogleMapsContainer from "./GoogleMapsContainer";
+import Logout from "./Logout";
 
 class Map extends React.Component {
   render() {
@@ -13,6 +14,8 @@ class Map extends React.Component {
     } else {
       return (
         <React.Fragment>
+          <div className="establishments">
+          <Logout logout={this.props.logout} email={this.props.email} />
           {this.props.establishments.data
             .filter(detailEstablishment => {
               return (
@@ -22,7 +25,6 @@ class Map extends React.Component {
             })
             .map(function(item) {
               return (
-                <div className="establishments">
                   <section className="sectionDetails">
                     <div className="container__maps">
                       <GoogleMapsContainer establishments={item} />
@@ -60,10 +62,10 @@ class Map extends React.Component {
                       </div>
                     </div>
                   </section>
-                </div>
               );
             })}
           <ButtonReport onOpen={this.props.onOpen} />
+          </div>
         </React.Fragment>
       );
     }

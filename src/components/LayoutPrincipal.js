@@ -22,8 +22,9 @@ class LoyoutPrincipal extends React.Component {
           establishments={this.props.establishments}
           selectedEstablishment={this.props.selectedEstablishment}
           onOpen={this.props.onOpen}
+          email={this.props.email} logout={this.props.logout}
         />
-        <Logout logout={this.props.logout} email={this.props.email} />
+       
         {this.props.modalStatus && (
           <Modal onClose={this.props.onClose}>
             <ModalContent />

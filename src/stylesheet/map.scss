@@ -1,7 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+} 
+
 .container__maps {
   margin-top: 100px;
   height: 355px;
-  width: 655px;
+  width: 692px;
   position: relative;
   overflow: hidden;
 }
