@@ -4,6 +4,8 @@ import DetailBar from "./DetailBar";
 import Logout from "./Logout";
 import MenuCollapsible from "./MenuCollapsible";
 import "../stylesheet/layoutP.css";
+import Modal from "./Modal";
+import ModalContent from "./ModalContent";
 
 class LoyoutPrincipal extends React.Component {
   render() {
@@ -19,11 +21,14 @@ class LoyoutPrincipal extends React.Component {
         <DetailBar
           establishments={this.props.establishments}
           selectedEstablishment={this.props.selectedEstablishment}
+          onOpen={this.props.onOpen}
         />
-        <Logout 
-          logout={this.props.logout} 
-          email={this.props.email} 
-        />
+        <Logout logout={this.props.logout} email={this.props.email} />
+        {this.props.modalStatus && (
+          <Modal onClose={this.props.onClose}>
+            <ModalContent />
+          </Modal>
+        )}
       </div>
     );
   }
