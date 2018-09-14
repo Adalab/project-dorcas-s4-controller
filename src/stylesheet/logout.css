@@ -3,12 +3,10 @@
   align-items: center;
   justify-content: flex-end;
   height: 30px;
-  margin-top: 26px; }
+  margin: 14px 0 14px 0; }
 
 .logout__name {
-  font-size: 20px;
-  padding: 10px;
-  margin-top: 10px; }
+  font-size: 20px; }
 
 .logout__icon {
   margin-left: 10px; }
