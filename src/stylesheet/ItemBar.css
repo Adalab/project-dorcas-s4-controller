@@ -28,7 +28,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    background-color: #9d9d9d;
+    background-color: rgba(9, 9, 9, 0.2);
     padding: 15px 0 6px 10px; }
   .itemBar .itemBar__info__name {
     color: black;
