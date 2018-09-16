@@ -5,13 +5,6 @@
   align-items: center;
   flex-direction: column; }
 
-.buttonList:hover {
-  background-color: #4e5c55;
-  cursor: pointer; }
-
-.buttonSelection {
-  background-color: #67cf9b; }
-
 .menuPage {
   width: 223px;
   height: 100%;
@@ -43,6 +36,11 @@
   color: white;
   text-align: left;
   justify-content: flex-start; }
+  .buttonList:hover {
+    background-color: #4e5c55;
+    cursor: pointer; }
+  .buttonList.buttonSelection {
+    background-color: #67cf9b; }
 
 .logoText {
   display: flex;
