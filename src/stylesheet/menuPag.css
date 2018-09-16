@@ -6,13 +6,10 @@
   flex-direction: column; }
 
 .buttonList:hover {
-  background-color: #2B935F;
+  background-color: #4e5c55;
   cursor: pointer; }
 
 .buttonSelection {
-  background-color: #67cf9b; }
-
-.button1 {
   background-color: #67cf9b; }
 
 .menuPage {
@@ -32,7 +29,6 @@
   font-size: 45px; }
 
 .buttonList {
-  background-color: #67cf9b;
   width: 175px;
   height: 25px;
   border-top-left-radius: 17.1px;
