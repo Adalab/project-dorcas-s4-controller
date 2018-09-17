@@ -188,7 +188,7 @@ class App extends Component {
   getQuestions(){
     const urlQuestions = "https://ada-controller.deploy-cd.com/api/challenge/2";
     const savedToken = JSON.parse(localStorage.getItem("token"));
-    
+
     fetch(urlQuestions, {
       method: "GET",
       headers: {
@@ -256,6 +256,7 @@ class App extends Component {
                 colorMenuButton1={this.state.colorMenuButton1}
                 colorMenuButton2={this.state.colorMenuButton2}
                 getQuestions={this.getQuestions}
+                questions={this.state.questions}
               />
             )}
           />

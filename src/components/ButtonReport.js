@@ -4,15 +4,11 @@ class ButtonReport extends React.Component {
   constructor(props) {
     super(props);
     this.modalOnClick=this.modalOnClick.bind(this);
-    
   }
   modalOnClick(){
     this.props.onOpen();
     this.props.getQuestions();
   }
-
-
-
   render() {
     return (
       <React.Fragment>
