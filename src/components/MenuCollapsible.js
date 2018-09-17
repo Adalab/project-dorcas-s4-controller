@@ -10,8 +10,8 @@ class MenuCollapsible extends React.Component {
             <p className="logoText">Controller<span className="logoNumber">2</span></p>
           </div>
           <ul className="containerMenu">
-            <li className="buttonList button1" id="button1" onClick={this.props.clickmenu} >Próximas visitas</li>
-            <li className="buttonList" id="button2" onClick={this.props.clickmenu2} >Visitas anteriores</li>
+            <li className={this.props.colorMenuButton1} id="button1" onClick={this.props.clickmenu} >Próximas visitas</li>
+            <li className={this.props.colorMenuButton2} id="button2" onClick={this.props.clickmenu} >Visitas anteriores</li>
           </ul>
         </nav>
       </div>

@@ -18,7 +18,9 @@ class App extends Component {
       establishments: [],
       selectedEstablishment: 1,
       detailsEstablishment: [],
-      modalIsOpen: false
+      modalIsOpen: false,
+      colorMenuButton1: 'buttonList buttonSelection',
+      colorMenuButton2: 'buttonList'
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -29,7 +31,6 @@ class App extends Component {
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
     this.getDetails = this.getDetails.bind(this);
     this.handleClickMenu = this.handleClickMenu.bind(this);
-    this.handleClickMenu2 = this.handleClickMenu2.bind(this);
   }
 
   componentWillMount() {
@@ -148,16 +149,17 @@ class App extends Component {
   }
 
   handleClickMenu(eventclick) {
-    eventclick.currentTarget.classList.add("buttonSelection");
-    const button2 = document.querySelector("#button2");
-    button2.classList.remove("buttonSelection");
-  }
-
-  handleClickMenu2(eventclick) {
-    eventclick.currentTarget.classList.add("buttonSelection");
-    const button1 = document.querySelector("#button1");
-    button1.classList.remove("buttonSelection");
-    button1.classList.remove("button1");
+    if(eventclick.currentTarget.getAttribute('button1')){
+      this.setState({
+        colorMenuButton1: 'buttonList buttonSelection',
+        colorMenuButton2: 'buttonList'
+      })
+    }else{
+      this.setState({
+        colorMenuButton1: 'buttonList',
+        colorMenuButton2: 'buttonList buttonSelection'
+      })
+    }
   }
 
   getDetails(id) {
@@ -230,7 +232,8 @@ class App extends Component {
                 onOpen={this.onOpen}
                 onClose={this.onClose}
                 clickmenu={this.handleClickMenu}
-                clickmenu2={this.handleClickMenu2}
+                colorMenuButton1={this.state.colorMenuButton1}
+                colorMenuButton2={this.state.colorMenuButton2}
               />
             )}
           />

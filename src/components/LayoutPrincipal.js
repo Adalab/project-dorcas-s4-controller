@@ -12,8 +12,9 @@ class LoyoutPrincipal extends React.Component {
     return (
       <div className="layoutPrincipal">
         <MenuCollapsible
-        clickmenu={this.props.clickmenu} 
-        clickmenu2={this.props.clickmenu2} 
+        clickmenu={this.props.clickmenu}
+        colorMenuButton1={this.props.colorMenuButton1}
+        colorMenuButton2={this.props.colorMenuButton2}
         />
         <BarList
           establishments={this.props.establishments}
