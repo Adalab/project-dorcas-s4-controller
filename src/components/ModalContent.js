@@ -7,17 +7,21 @@ class ModalContent extends React.Component {
     if (this.props.questions.length<=0) {
       return null;
     } else {
-      console.log(this.props.questions[0].questions[0].message);
       return (
         <React.Fragment>
-          <div className="modal__content">
-            {/* ¿Has disfrutado de la experiencia en nuestro establecimiento? */}
-            {/* {this.props.questions.questions.message} */}
-          </div>
-          <div className="modal__btn">
-            <button className="modal__btn--yes">Sí</button>
-            <button className="modal__btn--no">No</button>
-          </div>
+        {this.props.questions[0].questions.map((item)=>{
+          return(
+            <React.Fragment>
+            <div className="modal__content">
+               {item.message}
+            </div>
+            <div className="modal__btn">
+              <button className="modal__btn--yes">Sí</button>
+              <button className="modal__btn--no">No</button>
+            </div>
+            </React.Fragment>
+          );
+        })}
         </React.Fragment>
       );
     }
