@@ -3,17 +3,13 @@
   align-items: center;
   justify-content: flex-end;
   height: 30px;
-  margin-right: 93px;
-  margin-top: 26px; }
+  margin: 14px 0 14px 0; }
 
-.logoutName {
-  font-size: 20px;
-  padding: 10px;
-  margin-top: 10px; }
+.logout__name {
+  font-size: 20px; }
 
-.logoutIcon {
-  justify-content: center;
-  margin-left: 13px; }
+.logout__icon {
+  margin-left: 10px; }
 
 .fa-sign-out-alt {
   align-self: center;

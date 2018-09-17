@@ -1,7 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box; }
+
 .barLists {
-  height: 600px;
-  margin: 183px 0 0 37px;
+  height: 700px;
+  margin: 56px 20px 0 37px;
   min-width: 30%;
-  overflow: auto; }
-  .barLists .barLists_element {
-    background-color: #c6d6bc; }
+  overflow: auto;
+  padding-right: 20px; }
