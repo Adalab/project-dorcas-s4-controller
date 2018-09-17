@@ -6,7 +6,7 @@ class BarList extends React.Component {
   render() {
     if (this.props.establishments.data !== undefined) {
       return (
-        <div>
+        <div className="div__barList">
           <div className="barLists">
             <ul>
               {this.props.establishments.data

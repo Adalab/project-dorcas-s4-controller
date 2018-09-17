@@ -8,7 +8,6 @@ import Logout from "./Logout";
 
 class Map extends React.Component {
   render() {
-    // const {onOpen, onClose, modalStatus} = this.props;
     if (this.props.establishments.data === undefined) {
       return null;
     } else {

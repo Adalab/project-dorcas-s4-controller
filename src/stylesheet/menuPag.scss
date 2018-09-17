@@ -4,6 +4,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  width: 200px;
 }
 
 .buttonList:hover {
@@ -20,7 +21,6 @@
 }
 
 .menuPage {
-  width: 223px;
   height: 100%;
   background-color: #222222;
 }
@@ -30,7 +30,7 @@
   font-family: 'Expletus Sans', cursive;
   padding-top: 65px;
   font-size: 30px;
-  width: bold;
+  font-weight: bold;
 }
 
 .text-2 {
@@ -41,18 +41,18 @@
 .buttonList {
   display: flex;
   align-items: center;
-  width: 199px;
   height: 39px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   font-family: 'Open Sans';
   font-size: 16px;
   font-weight: bold;
-  padding-left:  17px;
-  margin: 15px 0 0 24px;
+  padding-left: 17px;
+  margin: 15px 0 0 20px;
   color:white;
   text-align: left;
   justify-content: flex-start;
+  width: 90%;
 
   &:hover {
     background-color: rgb(78, 92, 85);

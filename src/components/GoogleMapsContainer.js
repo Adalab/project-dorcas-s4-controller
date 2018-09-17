@@ -32,8 +32,7 @@ class GoogleMapsContainer extends React.Component {
   render() {
     const {latitude, longitude, name, address, postalcode, city}=this.props.establishments;
     const style = {
-      width: '692px',
-      height: '355px',
+      height: '255px',
       border:'1px solid #67cf9b',
       letf:'1000px',
       'marginLeft': 'auto'

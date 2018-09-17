@@ -1,7 +1,6 @@
 import React from "react";
 import BarList from "./BarList";
 import DetailBar from "./DetailBar";
-import Logout from "./Logout";
 import MenuCollapsible from "./MenuCollapsible";
 import "../stylesheet/layoutP.css";
 import Modal from "./Modal";

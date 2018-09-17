@@ -3,7 +3,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  width: 200px; }
 
 .buttonList:hover {
   background-color: #2B935F;
@@ -16,7 +17,6 @@
   background-color: #67cf9b; }
 
 .menuPage {
-  width: 223px;
   height: 100%;
   background-color: #222222; }
 
@@ -25,7 +25,7 @@
   font-family: 'Expletus Sans', cursive;
   padding-top: 65px;
   font-size: 30px;
-  width: bold; }
+  font-weight: bold; }
 
 .text-2 {
   color: #67cf9b;
@@ -34,7 +34,6 @@
 .buttonList {
   display: flex;
   align-items: center;
-  width: 199px;
   height: 39px;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -42,10 +41,11 @@
   font-size: 16px;
   font-weight: bold;
   padding-left: 17px;
-  margin: 15px 0 0 24px;
+  margin: 15px 0 0 20px;
   color: white;
   text-align: left;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  width: 90%; }
   .buttonList:hover {
     background-color: #4e5c55;
     cursor: pointer; }

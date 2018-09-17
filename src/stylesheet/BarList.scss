@@ -4,11 +4,14 @@
   list-style: none;
   box-sizing: border-box;
 } 
-
+.div__barList{
+  width: 470px;
+  height: 100vh;
+  overflow: hidden;
+}
 .barLists {
   height: 700px;
-  margin: 56px 20px 0 37px;
-  min-width: 30%;
+  margin: 56px 20px 0 28px;
   overflow: auto;
   padding-right: 20px;
 }
