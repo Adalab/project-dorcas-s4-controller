@@ -20,7 +20,8 @@ class App extends Component {
       detailsEstablishment: [],
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
-      colorMenuButton2: 'buttonList'
+      colorMenuButton2: 'buttonList',
+      questions:[]
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -31,6 +32,7 @@ class App extends Component {
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
     this.getDetails = this.getDetails.bind(this);
     this.handleClickMenu = this.handleClickMenu.bind(this);
+    this.getQuestions=this.getQuestions.bind(this);
   }
 
   componentWillMount() {
@@ -183,6 +185,26 @@ class App extends Component {
       });
   }
 
+  getQuestions(){
+    const urlQuestions = "https://ada-controller.deploy-cd.com/api/challenge/2";
+    const savedToken = JSON.parse(localStorage.getItem("token"));
+    
+    fetch(urlQuestions, {
+      method: "GET",
+      headers: {
+        Authorization: "Bearer " + savedToken
+      }
+    })
+      .then(response1 => {
+        return response1.json();
+      })
+      .then(response2 => {
+        this.setState({
+          questions: response2.data
+        });
+      });
+  }
+
   onOpen = () => {
     this.setState({
       modalIsOpen: true
@@ -194,7 +216,6 @@ class App extends Component {
       modalIsOpen: false
     });
   };
-
   render() {
     //localStorage.removeItem('token');
     return (
@@ -234,6 +255,7 @@ class App extends Component {
                 clickmenu={this.handleClickMenu}
                 colorMenuButton1={this.state.colorMenuButton1}
                 colorMenuButton2={this.state.colorMenuButton2}
+                getQuestions={this.getQuestions}
               />
             )}
           />

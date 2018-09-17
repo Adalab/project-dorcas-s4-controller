@@ -11,22 +11,19 @@ class Map extends React.Component {
     if (this.props.establishments.data === undefined) {
       return null;
     } else {
+    let establishmentFilter= this.props.establishments.data.filter(detailEstablishment => {
+      return (
+        detailEstablishment.establishmentId ===
+        this.props.selectedEstablishment
+      );
+    })
       return (
         <React.Fragment>
           <div className="establishments">
           <Logout logout={this.props.logout} email={this.props.email} />
-          {this.props.establishments.data
-            .filter(detailEstablishment => {
-              return (
-                detailEstablishment.establishmentId ===
-                this.props.selectedEstablishment
-              );
-            })
-            .map(function(item) {
-              return (
                   <section className="sectionDetails">
                     <div className="container__maps">
-                      <GoogleMapsContainer establishments={item} />
+                      <GoogleMapsContainer establishmentFilter={establishmentFilter[0]} />
                     </div>
                     <div className="establishments__div__details">
                       <div className="details__img">
@@ -34,13 +31,13 @@ class Map extends React.Component {
                           className="imgDetails"
                           style={{
                             backgroundImage: `url(https://ada-controller.deploy-cd.com/${
-                              item.imageWebUri
+                              establishmentFilter[0].imageWebUri
                             })`
                           }}
                         />
                       </div>
                       <div className="details__data">
-                          <h2 className="data__title">{item.name}</h2>
+                          <h2 className="data__title">{establishmentFilter[0].name}</h2>
                           <div className="data__div__direction">
                             <p className="direction__icon">
                               <i className="fas fa-map-marker-alt" />
@@ -48,22 +45,23 @@ class Map extends React.Component {
                             <div className="direction__div">
                               <p className="data">Dirección</p>
                               <p className="data__direction">
-                                {item.address}, {item.postalcode}{" "}
-                                {item.province}
+                                {establishmentFilter[0].address}, {establishmentFilter[0].postalcode}{" "}
+                                {establishmentFilter[0].province}
                               </p>
                               <p className="data__meters">A 543m</p>
                             </div>
                           </div>
                           <p className="data__affiliates">
                             <i className="fas fa-user-friends" />
-                            {item.affiliates}
+                            {establishmentFilter[0].affiliates}
                           </p>
                       </div>
                     </div>
                   </section>
-              );
-            })}
-          <ButtonReport onOpen={this.props.onOpen} />
+          <ButtonReport onOpen={this.props.onOpen} 
+            establishmentFilter={establishmentFilter[0].challengeId}
+            getQuestions={this.props.getQuestions}
+          />
           </div>
         </React.Fragment>
       );
