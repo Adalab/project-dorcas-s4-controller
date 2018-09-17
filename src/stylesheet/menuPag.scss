@@ -6,45 +6,69 @@
   flex-direction: column;
 }
 
+.buttonList:hover {
+  background-color: #2B935F;
+  cursor: pointer;
+}
+
+.buttonSelection{
+  background-color: #67cf9b;
+}
+
+.button1{
+  background-color: #67cf9b;
+}
+
 .menuPage {
-  width: 20%;
-  height: 1000px;
+  width: 223px;
+  height: 100%;
   background-color: #222222;
 }
 
 .text-controller {
   color: #ffffff;
-  font-family: 'Expletus Sans'; 
+  font-family: 'Expletus Sans', cursive;
   padding-top: 65px;
   font-size: 30px;
   width: bold;
 }
 
 .text-2 {
-  color: #67cf9b; 
+  color: #67cf9b;
   font-size: 45px;
 }
 
 .buttonList {
-  background-color: #67cf9b;
-  width: 175px;
-  height: 25px;
-  border-top-left-radius: 17.1px;
-  border-bottom-left-radius: 17.1px;
-  font-family: OpenSans;
+  display: flex;
+  align-items: center;
+  width: 199px;
+  height: 39px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  font-family: 'Open Sans';
   font-size: 16px;
   font-weight: bold;
   padding-left:  17px;
-  margin: 15px 0 0 47px;
+  margin: 15px 0 0 24px;
   color:white;
   text-align: left;
+  justify-content: flex-start;
+
+  &:hover {
+    background-color: rgb(78, 92, 85);
+    cursor: pointer;
+  }
+
+  &.buttonSelection {
+    background-color: #67cf9b;
+  }
 }
 
 .logoText {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 40px;
+  font-size: 30px;
   color: #ffffff;
   margin-top: 0;
   height: 98px;
@@ -53,12 +77,8 @@
   font-weight: bold;
 }
 
-.logoNumber {
-  font-size: 60px;
+.logoNumber{
+  font-size: 45px;
   color: #67cf9b;
   padding-bottom: 13px;
-}
-
-.logoContainer {
-  margin-top: 20%;
 }

@@ -9,6 +9,7 @@
   flex-direction: column;
   background-color: #222222;
   width: 50%;
+  padding-top: 20px;
 
   .half-logo--container {
     margin-top: 20%;
@@ -17,9 +18,11 @@
   .half-logo--welcome {
     color: #67cf9b;
     display: flex;
-    margin-left: 177px;
+    margin-left: 175px;
     margin-bottom: -10px;
     font-family: "Expletus Sans", cursive;
+    margin-bottom: -26px;
+    font-size: 24px;
   }
 
   .text-controller {
@@ -33,6 +36,8 @@
     font-family: "Expletus Sans", cursive;
     margin-bottom: 0;
     font-weight: bold;
+    height: 128px;
+    padding: 0;
   }
 
   .text-2 {
@@ -43,6 +48,9 @@
 
   .text-arrow {
     color: #bababa;
+    text-align: right;
+    padding-right: 111px;
+    margin-top: 24px;
   }
 
   .access-arrow {
@@ -69,6 +77,12 @@
   flex-direction: column;
   align-items: flex-start;
   width: 442px;
+  
+}
+input:focus { 
+  outline: none;
+  border-top:0;
+  box-shadow: 0;
 }
 
 .label-form {
@@ -98,6 +112,7 @@
   font-family: sans-serif;
   font-size: 19px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .form-password {
@@ -127,7 +142,7 @@
   margin-left: 5px;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
@@ -137,7 +152,7 @@
   color:red;
 }
 
-.error{
+.error {
   border-right: 0;
   border-top: 0;
   border-left: 0;
@@ -146,7 +161,7 @@
   margin: 0 10px;
 }
 
-.errorEmail{
+.errorEmail {
   margin-bottom: 20px;
   border-right: 0;
   border-top: 0;
