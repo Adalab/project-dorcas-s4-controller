@@ -149,7 +149,7 @@ class App extends Component {
   }
 
   handleClickMenu(eventclick) {
-    if(eventclick.currentTarget.getAttribute('button1')){
+    if(eventclick.currentTarget.getAttribute('id') === 'button1'){
       this.setState({
         colorMenuButton1: 'buttonList buttonSelection',
         colorMenuButton2: 'buttonList'
