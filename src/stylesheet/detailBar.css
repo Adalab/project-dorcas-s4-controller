@@ -20,7 +20,7 @@
 .details__data {
   background-color: #67cf9b;
   height: 230px;
-  width: 462px;
+  max-width: 462px;
   text-align: left;
   padding: 20px;
   display: flex;
