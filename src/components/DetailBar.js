@@ -6,7 +6,7 @@ import ButtonReport from './ButtonReport';
 import GoogleMapsContainer from "./GoogleMapsContainer";
 import Logout from "./Logout";
 
-class Map extends React.Component {
+class DetailBar extends React.Component {
   render() {
     if (this.props.establishments.data === undefined) {
       return null;
@@ -58,7 +58,7 @@ class Map extends React.Component {
                       </div>
                     </div>
                   </section>
-          <ButtonReport onOpen={this.props.onOpen} 
+          <ButtonReport onOpen={this.props.onOpen}
             establishmentFilter={establishmentFilter[0].challengeId}
             getQuestions={this.props.getQuestions}
           />
@@ -69,4 +69,4 @@ class Map extends React.Component {
   }
 }
 
-export default Map;
+export default DetailBar;

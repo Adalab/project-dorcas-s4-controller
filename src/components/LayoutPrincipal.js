@@ -6,7 +6,7 @@ import "../stylesheet/layoutP.css";
 import Modal from "./Modal";
 import ModalContent from "./ModalContent";
 
-class LoyoutPrincipal extends React.Component {
+class LayoutPrincipal extends React.Component {
   render() {
     return (
       <div className="layoutPrincipal">
@@ -30,7 +30,10 @@ class LoyoutPrincipal extends React.Component {
         />
         {this.props.modalStatus && (
           <Modal questions={this.props.questions} onClose={this.props.onClose}>
-            <ModalContent questions={this.props.questions} />
+            <ModalContent
+              questions={this.props.questions}
+              detailsEstablishment={this.props.detailsEstablishment}
+            />
           </Modal>
         )}
       </div>
@@ -38,4 +41,4 @@ class LoyoutPrincipal extends React.Component {
   }
 }
 
-export default LoyoutPrincipal;
+export default LayoutPrincipal;
