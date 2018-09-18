@@ -11,9 +11,9 @@ class LoyoutPrincipal extends React.Component {
     return (
       <div className="layoutPrincipal">
         <MenuCollapsible
-        clickmenu={this.props.clickmenu}
-        colorMenuButton1={this.props.colorMenuButton1}
-        colorMenuButton2={this.props.colorMenuButton2}
+          clickmenu={this.props.clickmenu}
+          colorMenuButton1={this.props.colorMenuButton1}
+          colorMenuButton2={this.props.colorMenuButton2}
         />
         <BarList
           establishments={this.props.establishments}
@@ -30,7 +30,9 @@ class LoyoutPrincipal extends React.Component {
         />
         {this.props.modalStatus && (
           <Modal questions={this.props.questions} onClose={this.props.onClose}>
-            <ModalContent questions={this.props.questions} />
+            <ModalContent questions={this.props.questions}
+              nextButton={this.props.nextButton}
+              answerButtons={this.props.answerButtons} />
           </Modal>
         )}
       </div>

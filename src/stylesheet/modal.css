@@ -61,4 +61,5 @@
 
 .modal__container {
   padding: 20px;
-  text-align: center; }
+  text-align: center;
+  height: 300px; }

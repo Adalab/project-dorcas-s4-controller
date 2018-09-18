@@ -21,7 +21,8 @@ class App extends Component {
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
       colorMenuButton2: 'buttonList',
-      questions:[]
+      questions:[],
+      nextButton: 'fas fa-chevron-circle-right next--hidden'
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -32,7 +33,8 @@ class App extends Component {
     this.handleChangeInputPassword = this.handleChangeInputPassword.bind(this);
     this.getDetails = this.getDetails.bind(this);
     this.handleClickMenu = this.handleClickMenu.bind(this);
-    this.getQuestions=this.getQuestions.bind(this);
+    this.getQuestions = this.getQuestions.bind(this);
+    this.answerButtons = this.answerButtons.bind(this);
   }
 
   componentWillMount() {
@@ -216,6 +218,14 @@ class App extends Component {
       modalIsOpen: false
     });
   };
+
+  answerButtons(e){
+    if(e.currentTarget){
+      this.setState({
+        nextButton: 'fas fa-chevron-circle-right next--visible'
+      })
+  }
+}
   render() {
     //localStorage.removeItem('token');
     return (
@@ -257,6 +267,8 @@ class App extends Component {
                 colorMenuButton2={this.state.colorMenuButton2}
                 getQuestions={this.getQuestions}
                 questions={this.state.questions}
+                nextButton={this.state.nextButton}
+                answerButtons={this.answerButtons}
               />
             )}
           />
