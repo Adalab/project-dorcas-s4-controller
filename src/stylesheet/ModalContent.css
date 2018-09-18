@@ -1,6 +1,9 @@
 .modal__content {
   padding-top: 65px; }
 
+.modal__generic {
+  max-height: 300px; }
+
 .modal__btn {
   display: flex;
   flex-direction: column;
