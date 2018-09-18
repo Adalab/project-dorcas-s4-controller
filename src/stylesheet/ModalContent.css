@@ -1,3 +1,6 @@
+.modal__total {
+  height: 300px; }
+
 .modal__content {
   padding-top: 65px; }
 
@@ -33,3 +36,9 @@
   margin-top: 22px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif; }
+
+.next--hidden {
+  display: none; }
+
+.next--visible {
+  display: flex; }

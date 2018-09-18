@@ -155,12 +155,12 @@ class App extends Component {
   }
 
   handleClickMenu(eventclick) {
-    if(eventclick.currentTarget.getAttribute('id') === 'button1'){
+    if (eventclick.currentTarget.getAttribute('id') === 'button1') {
       this.setState({
         colorMenuButton1: 'buttonList buttonSelection',
         colorMenuButton2: 'buttonList'
       })
-    }else{
+    } else {
       this.setState({
         colorMenuButton1: 'buttonList',
         colorMenuButton2: 'buttonList buttonSelection'
@@ -189,7 +189,7 @@ class App extends Component {
       });
   }
 
-  getQuestions(){
+  getQuestions() {
     const urlQuestions = "https://ada-controller.deploy-cd.com/api/challenge/2";
     const savedToken = JSON.parse(localStorage.getItem("token"));
 
