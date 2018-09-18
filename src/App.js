@@ -40,7 +40,6 @@ class App extends Component {
     this.handleClickMenu = this.handleClickMenu.bind(this);
     this.getQuestions=this.getQuestions.bind(this);
     this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
-    //this.answerButtons = this.answerButtons.bind(this);
     this.modalButtons = this.modalButtons.bind(this);
   }
 
@@ -237,17 +236,11 @@ class App extends Component {
     }
 
     this.setState({
-      modalQuestionsStage: newStage
+      modalQuestionsStage: newStage,
+      modalButtonYes: 'modal__btn--no',
+      modalButtonNo: 'modal__btn--no'
     });
   }
-
- //  answerButtons(e) {
- //   if (e.currentTarget) {
- //     this.setState({
- //       nextButton: 'fas fa-chevron-circle-right next--visible'
- //     })
- //   }
- // }
 
  modalButtons(eventclick) {
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
