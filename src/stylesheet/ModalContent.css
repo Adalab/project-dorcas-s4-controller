@@ -2,7 +2,7 @@
   height: 300px; }
 
 .modal__content {
-  padding-top: 65px; }
+  padding-top: 40px; }
 
 .modal__generic {
   max-height: 300px; }
@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  padding-top: 62px; }
+  padding-top: 40px; }
 
 .modal__btn--yes {
   color: #67cf9b;
@@ -46,7 +46,7 @@
   display: flex;
   color: #67cf9b;
   font-size: 45px;
-  margin-top: 15px; }
+  margin-top: 45px; }
 
 .buttonArrow {
   border-style: none;

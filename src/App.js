@@ -25,7 +25,9 @@ class App extends Component {
       questions:[],
       modalQuestionsStage: 0,
       modalQuestionFinished: false,
-      nextButton: 'fas fa-chevron-circle-right next--hidden'
+      nextButton: 'fas fa-chevron-circle-right next--hidden',
+      modalButtonYes: 'modal__btn--no',
+      modalButtonNo: 'modal__btn--no'
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -38,7 +40,8 @@ class App extends Component {
     this.handleClickMenu = this.handleClickMenu.bind(this);
     this.getQuestions=this.getQuestions.bind(this);
     this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
-    this.answerButtons = this.answerButtons.bind(this);
+    //this.answerButtons = this.answerButtons.bind(this);
+    this.modalButtons = this.modalButtons.bind(this);
   }
 
   componentWillMount() {
@@ -238,10 +241,26 @@ class App extends Component {
     });
   }
 
-  answerButtons(e) {
-   if (e.currentTarget) {
+ //  answerButtons(e) {
+ //   if (e.currentTarget) {
+ //     this.setState({
+ //       nextButton: 'fas fa-chevron-circle-right next--visible'
+ //     })
+ //   }
+ // }
+
+ modalButtons(eventclick) {
+   if (eventclick.currentTarget.getAttribute('id') === 'yes') {
      this.setState({
-       nextButton: 'fas fa-chevron-circle-right next--visible'
+       nextButton: 'fas fa-chevron-circle-right next--visible',
+       modalButtonYes: 'modal__btn--yes',
+       modalButtonNo: 'modal__btn--no'
+     })
+   } else {
+     this.setState({
+       nextButton: 'fas fa-chevron-circle-right next--visible',
+       modalButtonYes: 'modal__btn--no',
+       modalButtonNo: 'modal__btn--yes'
      })
    }
  }
@@ -292,6 +311,9 @@ class App extends Component {
                 modalQuestionFinished={this.state.modalQuestionFinished}
                 nextButton={this.state.nextButton}
                 answerButtons={this.answerButtons}
+                modalButtons={this.modalButtons}
+                modalButtonYes={this.state.modalButtonYes}
+                modalButtonNo={this.state.modalButtonNo}
               />
             )}
           />
