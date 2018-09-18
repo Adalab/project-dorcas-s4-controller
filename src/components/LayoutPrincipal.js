@@ -36,6 +36,8 @@ class LayoutPrincipal extends React.Component {
               modalQuestionsStage={this.props.modalQuestionsStage}
               setModalQuestionStage={this.props.setModalQuestionStage}
               modalQuestionFinished={this.props.modalQuestionFinished}
+              nextButton={this.props.nextButton}
+              answerButtons={this.props.answerButtons}
             />
           </Modal>
         )}

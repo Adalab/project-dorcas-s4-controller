@@ -30,24 +30,11 @@ class ModalContent extends React.Component {
                 {this.props.questions[0].questions[this.props.modalQuestionsStage].message}
               </div>
               <div className="modal__btn">
-                <button className="modal__btn--yes">Sí</button>
-                <button className="modal__btn--no">No</button>
-                <button className="modal__btn--no" onClick={this.props.setModalQuestionStage}>Flechita</button>
+                <button className="modal__btn--yes" onClick={this.props.answerButtons} >Sí</button>
+                <button className="modal__btn--no" onClick={this.props.answerButtons} >No</button>
+                <button className="buttonArrow" onClick={this.props.setModalQuestionStage}><i className={this.props.nextButton}></i></button>
               </div>
             </div>
-          {/* {this.props.questions[0].questions.map((item)=>{
-            return(
-              <div className="modal__generic">
-                <div className="modal__content">
-                   {item.message}
-                </div>
-                <div className="modal__btn">
-                  <button className="modal__btn--yes">Sí</button>
-                  <button className="modal__btn--no">No</button>
-                </div>
-              </div>
-            );
-          })} */}
           </React.Fragment>
         );
       }
