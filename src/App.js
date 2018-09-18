@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from "./components/LayoutPrincipal";
 import { withRouter, Route, Switch } from "react-router-dom";
+import { throws } from "assert";
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,9 @@ class App extends Component {
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
       colorMenuButton2: 'buttonList',
-      questions:[]
+      questions:[],
+      modalQuestionsStage: 0,
+      modalQuestionFinished: false
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -33,6 +36,7 @@ class App extends Component {
     this.getDetails = this.getDetails.bind(this);
     this.handleClickMenu = this.handleClickMenu.bind(this);
     this.getQuestions=this.getQuestions.bind(this);
+    this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
   }
 
   componentWillMount() {
@@ -216,6 +220,22 @@ class App extends Component {
       modalIsOpen: false
     });
   };
+
+  setModalQuestionStage = () => {
+    let newStage = this.state.modalQuestionsStage + 1;
+
+    if (newStage > this.state.questions[0].questions.length - 1) {
+      newStage = this.state.questions[0].questions.length - 1;
+      this.setState({
+        modalQuestionFinished: true
+      });
+    }
+
+    this.setState({
+      modalQuestionsStage: newStage
+    });
+  }
+
   render() {
     //localStorage.removeItem('token');
     return (
@@ -257,6 +277,9 @@ class App extends Component {
                 colorMenuButton2={this.state.colorMenuButton2}
                 getQuestions={this.getQuestions}
                 questions={this.state.questions}
+                modalQuestionsStage={this.state.modalQuestionsStage}
+                setModalQuestionStage={this.setModalQuestionStage}
+                modalQuestionFinished={this.state.modalQuestionFinished}
               />
             )}
           />
