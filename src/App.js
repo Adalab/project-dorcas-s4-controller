@@ -230,8 +230,8 @@ class App extends Component {
     }
   }
 
-  nextQuestion(key){
-    if(this.positionQuestion !== key){
+  nextQuestion(){
+    if(this.state.positionQuestion === 0){
       this.setState({
         stateQuestion: 'next--hidden'
       })
