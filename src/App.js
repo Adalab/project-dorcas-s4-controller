@@ -21,8 +21,10 @@ class App extends Component {
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
       colorMenuButton2: 'buttonList',
-      questions:[],
-      nextButton: 'fas fa-chevron-circle-right next--hidden'
+      questions: [],
+      nextButton: 'fas fa-chevron-circle-right next--hidden',
+      positionQuestion: 0,
+      stateQuestion: 'modal__question--visible'
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -35,6 +37,7 @@ class App extends Component {
     this.handleClickMenu = this.handleClickMenu.bind(this);
     this.getQuestions = this.getQuestions.bind(this);
     this.answerButtons = this.answerButtons.bind(this);
+    this.nextQuestion = this.nextQuestion.bind(this);
   }
 
   componentWillMount() {
@@ -153,12 +156,12 @@ class App extends Component {
   }
 
   handleClickMenu(eventclick) {
-    if(eventclick.currentTarget.getAttribute('id') === 'button1'){
+    if (eventclick.currentTarget.getAttribute('id') === 'button1') {
       this.setState({
         colorMenuButton1: 'buttonList buttonSelection',
         colorMenuButton2: 'buttonList'
       })
-    }else{
+    } else {
       this.setState({
         colorMenuButton1: 'buttonList',
         colorMenuButton2: 'buttonList buttonSelection'
@@ -187,7 +190,7 @@ class App extends Component {
       });
   }
 
-  getQuestions(){
+  getQuestions() {
     const urlQuestions = "https://ada-controller.deploy-cd.com/api/challenge/2";
     const savedToken = JSON.parse(localStorage.getItem("token"));
 
@@ -219,13 +222,21 @@ class App extends Component {
     });
   };
 
-  answerButtons(e){
-    if(e.currentTarget){
+  answerButtons(e) {
+    if (e.currentTarget) {
       this.setState({
         nextButton: 'fas fa-chevron-circle-right next--visible'
       })
+    }
   }
-}
+
+  nextQuestion(key){
+    if(this.positionQuestion !== key){
+      this.setState({
+        stateQuestion: 'next--hidden'
+      })
+    }
+  }
   render() {
     //localStorage.removeItem('token');
     return (
@@ -269,6 +280,8 @@ class App extends Component {
                 questions={this.state.questions}
                 nextButton={this.state.nextButton}
                 answerButtons={this.answerButtons}
+                nextQuestion={this.nextQuestion}
+                stateQuestion={this.state.stateQuestion}
               />
             )}
           />

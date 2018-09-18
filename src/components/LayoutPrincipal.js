@@ -32,7 +32,10 @@ class LoyoutPrincipal extends React.Component {
           <Modal questions={this.props.questions} onClose={this.props.onClose}>
             <ModalContent questions={this.props.questions}
               nextButton={this.props.nextButton}
-              answerButtons={this.props.answerButtons} />
+              answerButtons={this.props.answerButtons} 
+              nextQuestion={this.props.nextQuestion}
+              stateQuestion={this.props.stateQuestion}
+              />
           </Modal>
         )}
       </div>
