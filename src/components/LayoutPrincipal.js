@@ -29,7 +29,7 @@ class LayoutPrincipal extends React.Component {
           getQuestions={this.props.getQuestions}
         />
         {this.props.modalStatus && (
-          <Modal questions={this.props.questions} onClose={this.props.onClose}>
+          <Modal questions={this.props.questions} onClose={this.props.onClose} modalQuestionsStage={this.props.modalQuestionsStage} >
             <ModalContent
               questions={this.props.questions}
               detailsEstablishment={this.props.detailsEstablishment}

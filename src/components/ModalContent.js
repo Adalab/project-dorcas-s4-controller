@@ -2,14 +2,6 @@ import React from "react";
 import '../stylesheet/ModalContent.css';
 
 class ModalContent extends React.Component {
-  // constructor(props){
-  //   super(props);
-  //   this.callModalButtons = this.callModalButtons.bind(this);
-  // }
-  // callModalButtons(){
-  //   this.props.answerButtons();
-  //   this.props.modalButtons();
-  // }
   render() {
     if (this.props.questions.length <= 0) {
       return null;

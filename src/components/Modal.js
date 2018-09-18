@@ -13,7 +13,7 @@ class Modal extends React.Component {
             <header className="modal__header">
               <h2 className="modal__title">Completa el cuestionario</h2>
               <p className="modal__text">Pregunta</p>
-              <p className="modal__number"><span className="modal__number--first">1</span> de {(this.props.questions.length)+1}</p>
+              <p className="modal__number"><span className="modal__number--first">{(this.props.modalQuestionsStage)+1}</span> de {(this.props.questions.length)+1}</p>
             </header>
             <div className="modal__container">{this.props.children}</div>
           </div>
