@@ -28,6 +28,7 @@ class ModalContent extends React.Component {
   // }
 
   render() {
+    
     if (this.props.questions.length <= 0) {
       return null;
     } else {
@@ -40,9 +41,9 @@ class ModalContent extends React.Component {
             <div className="modal__summary__content">
               <ol className="modal__summary__list">
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[0].message}</li>
-                <p>{this.props.answers[0]}</p>
+                <p className="modal__summary__answers">{this.props.answers[0]}</p>
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[1].message}</li>
-                <p>{this.props.answers[1]}</p>
+                <p className="modal__summary__answers">{this.props.answers[1]}</p>
               </ol>
             </div>
           </div>
@@ -62,10 +63,10 @@ class ModalContent extends React.Component {
               <div className="modal__btn">
                 {/* <input className={this.props.modalButtonYes}  id="yes" onClick={this.props.modalButtons} type="button" value="Sí"></input> */}
                 <button className={this.props.modalButtonYes}  id="yes" onClick={eventClick => {
-                  this.props.modalButtons(eventClick, true);}} >Sí</button>
+                  this.props.modalButtons(eventClick, 'Sí');}} >Sí</button>
                 {/* <input className={this.props.modalButtonNo}  id="no" onClick={this.props.modalButtons} type="button" value="No"></input> */}
                 <button className={this.props.modalButtonNo}  id="no" onClick={eventClick => {
-                  this.props.modalButtons(eventClick, false);}} >No</button>
+                  this.props.modalButtons(eventClick, 'No');}} >No</button>
                 <button className="buttonArrow" onClick={this.props.setModalQuestionStage}><i className={this.props.nextButton}></i></button>
               </div>
             </div>

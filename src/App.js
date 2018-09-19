@@ -245,7 +245,6 @@ class App extends Component {
  modalButtons(eventclick,boolean) {
   const answers = this.state.answers;
     answers.push(boolean);  
-   
     this.setState({
       answers:answers
     })
