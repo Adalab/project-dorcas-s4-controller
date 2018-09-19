@@ -66,3 +66,35 @@
   outline: none;
   border-top: 0;
   box-shadow: 0; }
+
+.modal__summary__content {
+  height: 250px;
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 40px;
+  border: 2px solid #67cf9b;
+  border-radius: 10px;
+  padding-top: 20px; }
+
+.modal__summary__list {
+  text-align: left;
+  padding-left: 21px; }
+
+.modal__summary__list__item {
+  margin-left: 5px;
+  margin-bottom: 10px; }
+
+.modal__summary__answers {
+  padding: 15px; }
+
+.modal__button__send {
+  color: #222222;
+  background-color: #67cf9b;
+  width: 263px;
+  height: 35px;
+  border-radius: 17px;
+  font-size: 14px;
+  margin-top: 11px;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  border-style: none; }

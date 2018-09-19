@@ -17,6 +17,7 @@ class App extends Component {
       inputP: "",
       establishments: [],
       selectedEstablishment: 1,
+      routeId:3,
       detailsEstablishment: [],
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
@@ -26,7 +27,8 @@ class App extends Component {
       modalQuestionFinished: false,
       nextButton: 'fas fa-chevron-circle-right next--hidden',
       modalButtonYes: 'modal__btn--no',
-      modalButtonNo: 'modal__btn--no'
+      modalButtonNo: 'modal__btn--no',
+      answers:[]
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -40,6 +42,7 @@ class App extends Component {
     this.getQuestions=this.getQuestions.bind(this);
     this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
     this.modalButtons = this.modalButtons.bind(this);
+    this.sendSummary = this.sendSummary.bind(this);
   }
 
   componentWillMount() {
@@ -233,7 +236,6 @@ class App extends Component {
         modalQuestionFinished: true
       });
     }
-
     this.setState({
       modalQuestionsStage: newStage,
       modalButtonYes: 'modal__btn--no',
@@ -242,20 +244,85 @@ class App extends Component {
     });
   }
 
- modalButtons(eventclick) {
+ modalButtons(eventclick,boolean) {
+   if(boolean===true){
+      boolean='Sí';
+   }else{
+    boolean='No';
+   }
+  const answers = this.state.answers;
+    answers.push(boolean);  
+    this.setState({
+      answers:answers
+    })
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--yes',
        modalButtonNo: 'modal__btn--no'
+       
      })
    } else {
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--no',
        modalButtonNo: 'modal__btn--yes'
+    
      })
    }
+ }
+
+ sendSummary(){
+  const newDate = new Date();
+  const month= newDate.getMonth();
+  const day = newDate.getDate();
+  const year = newDate.getFullYear();
+  const hours = newDate.getHours();
+  const minutes = newDate.getMinutes();
+  const seconds = newDate.getSeconds();
+  let fech = year+'-'+month+'-'+day+ ' ' + hours+':'+ minutes+':'+seconds;
+  if(this.state.answers==='Sí'){
+    this.setState({
+      answers:true
+    })
+ }else{
+  this.setState({
+    answers:false
+  })
+ }
+
+  const send={
+    "envoy-date":fech,
+    "establishmentId":this.state.selectedEstablishment,
+    "routeId":this.state.routeId,
+    "answers": {
+      	"52": this.state.answers[0],
+      	"53": this.state.answers[1]
+      }
+
+  }
+
+  const savedToken = JSON.parse(localStorage.getItem("token"));
+  fetch('https://ada-controller.deploy-cd.com/api/challenge/2/answers', {
+    method: "POST",
+    body: JSON.stringify( send ),
+    headers: {
+      Authorization: "Bearer " + savedToken,
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  })
+    .then(res => res.json())
+    .then(response2 => {
+      console.log(response2);
+    });
+
+
+
+
+
+  this.setState({
+    modalIsOpen: false
+  })
  }
 
   render() {
@@ -307,6 +374,9 @@ class App extends Component {
                 modalButtons={this.modalButtons}
                 modalButtonYes={this.state.modalButtonYes}
                 modalButtonNo={this.state.modalButtonNo}
+                answers={this.state.answers}
+                sendSummary={this.sendSummary}
+               
               />
             )}
           />
