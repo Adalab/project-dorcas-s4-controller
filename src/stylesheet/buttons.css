@@ -8,7 +8,12 @@
   height: 45px;
   border-radius: 17px;
   font-size: 14px;
-  margin-top: 22px; }
+  margin-top: 12px; }
+
+.btnReport:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
 
 .fa-clipboard-list {
   margin-right: 16px; }
