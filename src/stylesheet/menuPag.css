@@ -8,14 +8,16 @@
 
 @media (max-width: 1024px) {
   .containerMenu {
-    width: 95px; }
+    width: 100px; }
   .menuPage {
     width: 100px; }
-  .logoNumber {
-    font-size: 25px;
-    padding-bottom: 4px; }
+  .logoContainer {
+    font-size: 8px; }
   .buttonList {
-    font-size: 13px; } }
+    font-size: 0.813em;
+    padding-left: 0.875em;
+    margin: 0.938em 0 0 0;
+    width: 100%; } }
 
 .buttonSelection {
   background-color: #67cf9b; }
@@ -45,10 +47,10 @@
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   font-family: 'Open Sans';
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
-  padding-left: 17px;
-  margin: 15px 0 0 20px;
+  padding-left: 1.063em;
+  margin: 0.938em 0 0 1.250em;
   color: white;
   text-align: left;
   justify-content: flex-start;
@@ -63,15 +65,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 1.98em;
   color: #ffffff;
   margin-top: 0;
-  height: 98px;
+  height: 6.16em;
   font-family: 'Expletus Sans', cursive;
   margin-bottom: 0;
   font-weight: bold; }
 
 .logoNumber {
-  font-size: 45px;
+  font-size: 1.5em;
   color: #67cf9b;
-  padding-bottom: 13px; }
+  padding-bottom: 0.2em; }
