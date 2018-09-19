@@ -3,7 +3,6 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from "./components/LayoutPrincipal";
 import { withRouter, Route, Switch } from "react-router-dom";
-import { throws } from "assert";
 
 class App extends Component {
   constructor(props) {
