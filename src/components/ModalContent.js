@@ -40,9 +40,9 @@ class ModalContent extends React.Component {
             <div className="modal__summary__content">
               <ol className="modal__summary__list">
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[0].message}</li>
-                <p>{this.props.answerOne}</p>
+                <p>{this.props.answers}</p>
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[1].message}</li>
-                <p>{this.props.answerTwo}</p>
+                <p>{this.props.answers}</p>
               </ol>
             </div>
           </div>

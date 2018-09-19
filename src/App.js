@@ -27,8 +27,7 @@ class App extends Component {
       nextButton: 'fas fa-chevron-circle-right next--hidden',
       modalButtonYes: 'modal__btn--no',
       modalButtonNo: 'modal__btn--no',
-      answerOne: '',
-      answerTwo: ''
+      answers:[]
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -243,21 +242,27 @@ class App extends Component {
     });
   }
 
- modalButtons(eventclick,booleano) {
-
+ modalButtons(eventclick,boolean) {
+  const answers = this.state.answers.push(boolean);
+    console.log(answers);
+    this.setState({
+      answers:answers
+    })
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
+     
+     
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--yes',
-       modalButtonNo: 'modal__btn--no',
-       answerOne:booleano
+       modalButtonNo: 'modal__btn--no'
+       
      })
    } else {
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--no',
-       modalButtonNo: 'modal__btn--yes',
-       answerOne:booleano
+       modalButtonNo: 'modal__btn--yes'
+    
      })
    }
  }
@@ -311,8 +316,8 @@ class App extends Component {
                 modalButtons={this.modalButtons}
                 modalButtonYes={this.state.modalButtonYes}
                 modalButtonNo={this.state.modalButtonNo}
-                answerOne={this.state.answerOne}
-                answerTwo={this.state.answerTwo}
+                answers={this.state.answers}
+               
               />
             )}
           />
