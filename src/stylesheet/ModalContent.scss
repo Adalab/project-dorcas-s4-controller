@@ -1,4 +1,4 @@
-.modal__total{
+.modal__total {
   height: 300px;
 }
 
@@ -6,7 +6,7 @@
   padding-top: 40px;
 }
 
-.modal__generic{
+.modal__generic {
   max-height: 300px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .modal__btn--yes {
-  color:#67cf9b;
+  color: #67cf9b;
   background-color: #222222;
   width: 178px;
   height: 35px;
@@ -28,8 +28,14 @@
   font-size: 14px;
   margin-top: 11px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-style: none;
+}
+
+.modal__btn--yes:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0;
 }
 
 .modal__btn--no {
@@ -41,28 +47,34 @@
   font-size: 14px;
   margin-top: 11px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-style: none;
 }
 
-.next--hidden{
+.modal__btn--no:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0;
+}
+
+.next--hidden {
   display: none;
 }
 
-.next--visible{
+.next--visible {
   display: flex;
   color: #67cf9b;
   font-size: 45px;
   margin-top: 45px;
 }
 
-.buttonArrow{
+.buttonArrow {
   border-style: none;
   background: none;
 }
 
 .buttonArrow:focus {
- outline: none;
- border-top:0;
- box-shadow: 0;
+  outline: none;
+  border-top: 0;
+  box-shadow: 0;
 }
