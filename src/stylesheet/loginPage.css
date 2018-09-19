@@ -94,6 +94,11 @@ input:focus {
   font-weight: bold;
   cursor: pointer; }
 
+.form-button-send:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
+
 .form-password {
   margin: 20px 0px 61px 0px;
   font-size: 14px; }
