@@ -14,8 +14,7 @@ class Logout extends React.Component {
   render() {
     return (
       <div className="logout">
-        <p className="logoutName">{this.props.email}</p>
-        <div className="logoutIcon" onClick={this.onClickLogout} ><i className="fas fa-sign-out-alt"></i></div>
+        <p className="logout__name">{this.props.email} |<span className="logout__icon"><i onClick={this.onClickLogout} className="fas fa-sign-out-alt"></i></span></p>
       </div>
     );
   }

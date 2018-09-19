@@ -7,15 +7,18 @@
   display: flex;
   flex-direction: column;
   background-color: #222222;
-  width: 50%; }
+  width: 50%;
+  padding-top: 20px; }
   .half-logo .half-logo--container {
     margin-top: 20%; }
   .half-logo .half-logo--welcome {
     color: #67cf9b;
     display: flex;
-    margin-left: 177px;
+    margin-left: 175px;
     margin-bottom: -10px;
-    font-family: "Expletus Sans", cursive; }
+    font-family: "Expletus Sans", cursive;
+    margin-bottom: -26px;
+    font-size: 24px; }
   .half-logo .text-controller {
     display: flex;
     justify-content: center;
@@ -26,13 +29,18 @@
     height: 98px;
     font-family: "Expletus Sans", cursive;
     margin-bottom: 0;
-    font-weight: bold; }
+    font-weight: bold;
+    height: 128px;
+    padding: 0; }
   .half-logo .text-2 {
     font-size: 100px;
     color: #67cf9b;
     padding-bottom: 13px; }
   .half-logo .text-arrow {
-    color: #bababa; }
+    color: #bababa;
+    text-align: right;
+    padding-right: 111px;
+    margin-top: 24px; }
   .half-logo .access-arrow {
     display: inline-flex;
     justify-content: center;
@@ -54,6 +62,11 @@
   flex-direction: column;
   align-items: flex-start;
   width: 442px; }
+
+input:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
 
 .label-form {
   margin: 10px 10px 16px 10px;
@@ -78,7 +91,8 @@
   border-style: none;
   font-family: sans-serif;
   font-size: 19px;
-  font-weight: bold; }
+  font-weight: bold;
+  cursor: pointer; }
 
 .form-password {
   margin: 20px 0px 61px 0px;
