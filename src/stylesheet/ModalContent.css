@@ -98,3 +98,8 @@
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
   border-style: none; }
+
+.modal__button__send:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
