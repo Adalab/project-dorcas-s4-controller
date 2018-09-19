@@ -238,7 +238,8 @@ class App extends Component {
     this.setState({
       modalQuestionsStage: newStage,
       modalButtonYes: 'modal__btn--no',
-      modalButtonNo: 'modal__btn--no'
+      modalButtonNo: 'modal__btn--no',
+      nextButton: 'fas fa-chevron-circle-right next--hidden'
     });
   }
 
