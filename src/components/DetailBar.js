@@ -46,7 +46,7 @@ class DetailBar extends React.Component {
                               <p className="data">Dirección</p>
                               <p className="data__direction">
                                 {establishmentFilter[0].address}, {establishmentFilter[0].postalcode}{" "}
-                                {establishmentFilter[0].province}
+                                {establishmentFilter[0].province} 
                               </p>
                               <p className="data__meters">A 543m</p>
                             </div>
