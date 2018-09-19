@@ -10,10 +10,5 @@
   font-size: 14px;
   margin-top: 22px; }
 
-.buttonReport:focus {
-  outline: none;
-  border-top: 0;
-  box-shadow: 0; }
-
 .fa-clipboard-list {
   margin-right: 16px; }
