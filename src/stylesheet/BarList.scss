@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  list-style: none;
   box-sizing: border-box;
 } 
 .div__barList{
@@ -10,11 +9,7 @@
   overflow: hidden;
 }
 .barLists {
-<<<<<<< HEAD
-  height: 500px;
-=======
   height: 600px;
->>>>>>> 35c809232863c83f95a87298ecf1c8acc2d5f1c7
   margin: 56px 20px 0 28px;
   overflow: auto;
   padding-right: 20px;

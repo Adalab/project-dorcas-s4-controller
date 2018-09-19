@@ -8,7 +8,19 @@ class ModalContent extends React.Component {
     } else {
       if (this.props.modalQuestionFinished) {
         return (
-          <div></div>
+          <div>
+            <header className="modal__header">
+              <h2 className="modal__title">Resumen del cuestionario</h2>
+            </header>
+            <div className="modal__summary__content">
+              <ol className="modal__summary__list">
+                <li className="modal__summary__list__item">{this.props.questions[0].questions[0].message}</li>
+                <p></p>
+                <li className="modal__summary__list__item">{this.props.questions[0].questions[1].message}</li>
+                <p></p>
+              </ol>
+            </div>
+          </div>
         )
       } else {
         return (
