@@ -11,9 +11,8 @@
     width: 95px; }
   .menuPage {
     width: 100px; }
-  .logoNumber {
-    font-size: 25px;
-    padding-bottom: 4px; }
+  .logoContainer {
+    font-size: 8px; }
   .buttonList {
     font-size: 13px; } }
 
@@ -64,14 +63,18 @@
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  font-size: 1.98em;
   color: #ffffff;
   margin-top: 0;
   height: 98px;
+  height: 6.16em;
   font-family: 'Expletus Sans', cursive;
   margin-bottom: 0;
   font-weight: bold; }
 
 .logoNumber {
   font-size: 45px;
+  font-size: 1.5em;
   color: #67cf9b;
-  padding-bottom: 13px; }
+  padding-bottom: 13px;
+  padding-bottom: .43em; }
