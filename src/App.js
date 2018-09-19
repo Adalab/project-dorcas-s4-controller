@@ -249,8 +249,6 @@ class App extends Component {
       answers:answers
     })
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
-     
-     
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--yes',
