@@ -2,6 +2,31 @@ import React from "react";
 import '../stylesheet/ModalContent.css';
 
 class ModalContent extends React.Component {
+
+  // constructor(props) {
+  //   super(props);
+  //   this.saveAnswer=this.saveAnswer.bind(this);
+  // }
+  // saveAnswer(e){
+  //   this.props.setModalQuestionStage();
+  //   // this.buttonNo.current.value;
+  //   // this.buttonYes.current.value;
+  //   if(this.props.modalQuestionsStage===0){
+  //     if (e.currentTarget.getAttribute('id') === 'yes'){
+  //      return(<p>Sí</p>);
+  //     }else{
+  //       return(<p>No</p>);
+  //     }
+  //   }else{
+  //     if (e.currentTarget.getAttribute('id') === 'yes'){
+  //       return(<p>Sí</p>);
+  //     }else{
+  //       return(<p>No</p>);
+  //     }
+  //   }
+    
+  // }
+
   render() {
     if (this.props.questions.length <= 0) {
       return null;
@@ -15,9 +40,9 @@ class ModalContent extends React.Component {
             <div className="modal__summary__content">
               <ol className="modal__summary__list">
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[0].message}</li>
-                <p></p>
+                <p>{this.props.answerOne}</p>
                 <li className="modal__summary__list__item">{this.props.questions[0].questions[1].message}</li>
-                <p></p>
+                <p>{this.props.answerTwo}</p>
               </ol>
             </div>
           </div>
@@ -35,8 +60,12 @@ class ModalContent extends React.Component {
                 {this.props.questions[0].questions[this.props.modalQuestionsStage].message}
               </div>
               <div className="modal__btn">
-                <button className={this.props.modalButtonYes} id="yes" onClick={this.props.modalButtons} >Sí</button>
-                <button className={this.props.modalButtonNo} id="no" onClick={this.props.modalButtons} >No</button>
+                {/* <input className={this.props.modalButtonYes}  id="yes" onClick={this.props.modalButtons} type="button" value="Sí"></input> */}
+                <button className={this.props.modalButtonYes}  id="yes" onClick={eventClick => {
+                  this.props.modalButtons(eventClick, true);}} >Sí</button>
+                {/* <input className={this.props.modalButtonNo}  id="no" onClick={this.props.modalButtons} type="button" value="No"></input> */}
+                <button className={this.props.modalButtonNo}  id="no" onClick={eventClick => {
+                  this.props.modalButtons(eventClick, false);}} >No</button>
                 <button className="buttonArrow" onClick={this.props.setModalQuestionStage}><i className={this.props.nextButton}></i></button>
               </div>
             </div>

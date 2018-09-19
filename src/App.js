@@ -26,7 +26,9 @@ class App extends Component {
       modalQuestionFinished: false,
       nextButton: 'fas fa-chevron-circle-right next--hidden',
       modalButtonYes: 'modal__btn--no',
-      modalButtonNo: 'modal__btn--no'
+      modalButtonNo: 'modal__btn--no',
+      answerOne: '',
+      answerTwo: ''
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -233,7 +235,6 @@ class App extends Component {
         modalQuestionFinished: true
       });
     }
-
     this.setState({
       modalQuestionsStage: newStage,
       modalButtonYes: 'modal__btn--no',
@@ -242,18 +243,21 @@ class App extends Component {
     });
   }
 
- modalButtons(eventclick) {
+ modalButtons(eventclick,booleano) {
+
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--yes',
-       modalButtonNo: 'modal__btn--no'
+       modalButtonNo: 'modal__btn--no',
+       answerOne:booleano
      })
    } else {
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--no',
-       modalButtonNo: 'modal__btn--yes'
+       modalButtonNo: 'modal__btn--yes',
+       answerOne:booleano
      })
    }
  }
@@ -307,6 +311,8 @@ class App extends Component {
                 modalButtons={this.modalButtons}
                 modalButtonYes={this.state.modalButtonYes}
                 modalButtonNo={this.state.modalButtonNo}
+                answerOne={this.state.answerOne}
+                answerTwo={this.state.answerTwo}
               />
             )}
           />

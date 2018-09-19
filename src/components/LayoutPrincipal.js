@@ -41,6 +41,8 @@ class LayoutPrincipal extends React.Component {
               modalButtons={this.props.modalButtons}
               modalButtonYes={this.props.modalButtonYes}
               modalButtonNo={this.props.modalButtonNo}
+              answerOne={this.props.answerOne}
+              answerTwo={this.props.answerTwo}
             />
           </Modal>
         )}
