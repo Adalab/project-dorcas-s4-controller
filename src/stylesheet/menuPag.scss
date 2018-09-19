@@ -6,7 +6,24 @@
   flex-direction: column;
   width: 200px;
 }
-
+@media (max-width: 1024px){
+  .containerMenu{
+    width: 95px;
+  }
+  .menuPage{
+    width: 100px;
+  }
+  .logoNumber{
+    font-size: 25px;
+    padding-bottom: 4px;
+  }
+  .logoText{
+    
+  }
+  .buttonList{
+    font-size: 13px;
+  }
+}
 .buttonList:hover {
   background-color: #2B935F;
   cursor: pointer;

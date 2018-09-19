@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./components/Login";
 import LayoutPrincipal from "./components/LayoutPrincipal";
 import { withRouter, Route, Switch } from "react-router-dom";
+import { throws } from "assert";
 
 class App extends Component {
   constructor(props) {
@@ -21,7 +22,12 @@ class App extends Component {
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
       colorMenuButton2: 'buttonList',
-      questions:[]
+      questions:[],
+      modalQuestionsStage: 0,
+      modalQuestionFinished: false,
+      nextButton: 'fas fa-chevron-circle-right next--hidden',
+      modalButtonYes: 'modal__btn--no',
+      modalButtonNo: 'modal__btn--no'
     };
     this.launchLogin = this.launchLogin.bind(this);
     this.logout = this.logout.bind(this);
@@ -33,6 +39,8 @@ class App extends Component {
     this.getDetails = this.getDetails.bind(this);
     this.handleClickMenu = this.handleClickMenu.bind(this);
     this.getQuestions=this.getQuestions.bind(this);
+    this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
+    this.modalButtons = this.modalButtons.bind(this);
   }
 
   componentWillMount() {
@@ -151,12 +159,12 @@ class App extends Component {
   }
 
   handleClickMenu(eventclick) {
-    if(eventclick.currentTarget.getAttribute('id') === 'button1'){
+    if (eventclick.currentTarget.getAttribute('id') === 'button1') {
       this.setState({
         colorMenuButton1: 'buttonList buttonSelection',
         colorMenuButton2: 'buttonList'
       })
-    }else{
+    } else {
       this.setState({
         colorMenuButton1: 'buttonList',
         colorMenuButton2: 'buttonList buttonSelection'
@@ -185,7 +193,7 @@ class App extends Component {
       });
   }
 
-  getQuestions(){
+  getQuestions() {
     const urlQuestions = "https://ada-controller.deploy-cd.com/api/challenge/2";
     const savedToken = JSON.parse(localStorage.getItem("token"));
 
@@ -216,6 +224,41 @@ class App extends Component {
       modalIsOpen: false
     });
   };
+
+  setModalQuestionStage = () => {
+    let newStage = this.state.modalQuestionsStage + 1;
+
+    if (newStage > this.state.questions[0].questions.length - 1) {
+      newStage = this.state.questions[0].questions.length - 1;
+      this.setState({
+        modalQuestionFinished: true
+      });
+    }
+
+    this.setState({
+      modalQuestionsStage: newStage,
+      modalButtonYes: 'modal__btn--no',
+      modalButtonNo: 'modal__btn--no',
+      nextButton: 'fas fa-chevron-circle-right next--hidden'
+    });
+  }
+
+ modalButtons(eventclick) {
+   if (eventclick.currentTarget.getAttribute('id') === 'yes') {
+     this.setState({
+       nextButton: 'fas fa-chevron-circle-right next--visible',
+       modalButtonYes: 'modal__btn--yes',
+       modalButtonNo: 'modal__btn--no'
+     })
+   } else {
+     this.setState({
+       nextButton: 'fas fa-chevron-circle-right next--visible',
+       modalButtonYes: 'modal__btn--no',
+       modalButtonNo: 'modal__btn--yes'
+     })
+   }
+ }
+
   render() {
     //localStorage.removeItem('token');
     return (
@@ -257,6 +300,14 @@ class App extends Component {
                 colorMenuButton2={this.state.colorMenuButton2}
                 getQuestions={this.getQuestions}
                 questions={this.state.questions}
+                modalQuestionsStage={this.state.modalQuestionsStage}
+                setModalQuestionStage={this.setModalQuestionStage}
+                modalQuestionFinished={this.state.modalQuestionFinished}
+                nextButton={this.state.nextButton}
+                answerButtons={this.answerButtons}
+                modalButtons={this.modalButtons}
+                modalButtonYes={this.state.modalButtonYes}
+                modalButtonNo={this.state.modalButtonNo}
               />
             )}
           />
