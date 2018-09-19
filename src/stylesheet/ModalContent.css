@@ -73,3 +73,18 @@
 .modal__summary__list__item {
   margin-left: 5px;
   margin-bottom: 10px; }
+
+.modal__summary__answers {
+  padding: 15px; }
+
+.modal__button__send {
+  color: #222222;
+  background-color: #67cf9b;
+  width: 263px;
+  height: 35px;
+  border-radius: 17px;
+  font-size: 14px;
+  margin-top: 11px;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  border-style: none; }

@@ -41,6 +41,7 @@ class App extends Component {
     this.getQuestions=this.getQuestions.bind(this);
     this.setModalQuestionStage = this.setModalQuestionStage.bind(this);
     this.modalButtons = this.modalButtons.bind(this);
+    this.sendSummary = this.sendSummary.bind(this);
   }
 
   componentWillMount() {
@@ -249,8 +250,6 @@ class App extends Component {
       answers:answers
     })
    if (eventclick.currentTarget.getAttribute('id') === 'yes') {
-     
-     
      this.setState({
        nextButton: 'fas fa-chevron-circle-right next--visible',
        modalButtonYes: 'modal__btn--yes',
@@ -265,6 +264,12 @@ class App extends Component {
     
      })
    }
+ }
+
+ sendSummary(){
+  this.setState({
+    modalIsOpen: false
+  })
  }
 
   render() {
@@ -317,6 +322,7 @@ class App extends Component {
                 modalButtonYes={this.state.modalButtonYes}
                 modalButtonNo={this.state.modalButtonNo}
                 answers={this.state.answers}
+                sendSummary={this.sendSummary}
                
               />
             )}

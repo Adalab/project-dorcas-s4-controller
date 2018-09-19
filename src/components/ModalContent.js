@@ -46,6 +46,7 @@ class ModalContent extends React.Component {
                 <p className="modal__summary__answers">{this.props.answers[1]}</p>
               </ol>
             </div>
+            <button className="modal__button__send" onClick={this.props.sendSummary}>Envíar informe</button>
           </div>
         )
       } else {
