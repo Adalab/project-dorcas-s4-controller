@@ -13,6 +13,11 @@ class ModalContent extends React.Component {
       } else {
         return (
           <React.Fragment>
+            <header className="modal__header">
+              <h2 className="modal__title">Completa el cuestionario</h2>
+              <p className="modal__text">Pregunta</p>
+              <p className="modal__number"><span className="modal__number--first">{(this.props.modalQuestionsStage) + 1}</span> de {(this.props.questions.length) + 1}</p>
+            </header>
             <div className="modal__generic">
               <div className="modal__content">
                 {this.props.questions[0].questions[this.props.modalQuestionsStage].message}
