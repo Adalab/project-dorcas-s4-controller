@@ -30,7 +30,10 @@
 .data__title {
   font-family: "Expletus Sans", cursive;
   font-size: 30px;
-  color: #ffffff; }
+  color: #ffffff;
+  line-height: 39px;
+  max-height: 80px;
+  overflow: hidden; }
 
 .hiddenDetails {
   display: none; }
@@ -44,7 +47,7 @@
 
 .direction__div {
   margin-left: 21px;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 .data {
   font-size: 14px;
@@ -62,7 +65,7 @@
   font-style: italic; }
 
 .data__affiliates {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px; }
 
 .fa-user-friends {

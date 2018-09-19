@@ -1,4 +1,4 @@
-.establishments{
+.establishments {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -35,6 +35,9 @@
   font-family: "Expletus Sans", cursive;
   font-size: 30px;
   color: #ffffff;
+  line-height: 39px;
+  max-height: 80px;
+  overflow: hidden;
 }
 
 .hiddenDetails {
@@ -52,7 +55,7 @@
 
 .direction__div {
   margin-left: 21px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .data {
@@ -74,7 +77,7 @@
 }
 
 .data__affiliates {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 
