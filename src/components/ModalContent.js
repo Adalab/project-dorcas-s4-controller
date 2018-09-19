@@ -1,29 +1,31 @@
 import React from "react";
 import '../stylesheet/ModalContent.css';
-// import ReactDOM from 'react-dom';
 
 class ModalContent extends React.Component {
   render() {
-    if (this.props.questions.length<=0) {
+    if (this.props.questions.length <= 0) {
       return null;
     } else {
-      return (
-        <React.Fragment>
-        {this.props.questions[0].questions.map((item)=>{
-          return(
+      if (this.props.modalQuestionFinished) {
+        return (
+          <div></div>
+        )
+      } else {
+        return (
+          <React.Fragment>
             <div className="modal__generic">
               <div className="modal__content">
-                 {item.message}
+                {this.props.questions[0].questions[this.props.modalQuestionsStage].message}
               </div>
               <div className="modal__btn">
-                <button className="modal__btn--yes">Sí</button>
-                <button className="modal__btn--no">No</button>
+                <button className={this.props.modalButtonYes} id="yes" onClick={this.props.modalButtons} >Sí</button>
+                <button className={this.props.modalButtonNo} id="no" onClick={this.props.modalButtons} >No</button>
+                <button className="buttonArrow" onClick={this.props.setModalQuestionStage}><i className={this.props.nextButton}></i></button>
               </div>
             </div>
-          );
-        })}
-        </React.Fragment>
-      );
+          </React.Fragment>
+        );
+      }
     }
   }
 }

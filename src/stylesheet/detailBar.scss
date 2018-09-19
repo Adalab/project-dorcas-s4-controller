@@ -1,4 +1,4 @@
-.establishments{
+.establishments {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -18,6 +18,7 @@
   display: flex;
   margin-top: 28px;
   border: 1px solid #67cf9b;
+  background-color: #67cf9b;
 }
 
 .details__data {
@@ -35,6 +36,9 @@
   font-family: "Expletus Sans", cursive;
   font-size: 30px;
   color: #ffffff;
+  line-height: 39px;
+  max-height: 80px;
+  overflow: hidden;
 }
 
 .hiddenDetails {
@@ -52,7 +56,7 @@
 
 .direction__div {
   margin-left: 21px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .data {
@@ -74,7 +78,7 @@
 }
 
 .data__affiliates {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 18px;
 }
 

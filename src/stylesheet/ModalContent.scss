@@ -1,5 +1,9 @@
+.modal__total{
+  height: 300px;
+}
+
 .modal__content {
-  padding-top: 65px;
+  padding-top: 40px;
 }
 
 .modal__generic{
@@ -12,29 +16,53 @@
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  padding-top: 62px;
+  padding-top: 40px;
 }
 
 .modal__btn--yes {
   color:#67cf9b;
   background-color: #222222;
-  width: 186px;
-  height: 45px;
+  width: 178px;
+  height: 35px;
   border-radius: 17px;
   font-size: 14px;
-  margin-top: 22px;
+  margin-top: 11px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
+  border-style: none;
 }
 
 .modal__btn--no {
   color: #222222;
   background-color: #67cf9b;
-  width: 186px;
-  height: 45px;
+  width: 178px;
+  height: 35px;
   border-radius: 17px;
   font-size: 14px;
-  margin-top: 22px;
+  margin-top: 11px;
   font-weight: 700;
   font-family: 'Open Sans', sans-serif;
+  border-style: none;
+}
+
+.next--hidden{
+  display: none;
+}
+
+.next--visible{
+  display: flex;
+  color: #67cf9b;
+  font-size: 45px;
+  margin-top: 45px;
+}
+
+.buttonArrow{
+  border-style: none;
+  background: none;
+}
+
+.buttonArrow:focus {
+ outline: none;
+ border-top:0;
+ box-shadow: 0;
 }

@@ -11,9 +11,9 @@ class LayoutPrincipal extends React.Component {
     return (
       <div className="layoutPrincipal">
         <MenuCollapsible
-        clickmenu={this.props.clickmenu}
-        colorMenuButton1={this.props.colorMenuButton1}
-        colorMenuButton2={this.props.colorMenuButton2}
+          clickmenu={this.props.clickmenu}
+          colorMenuButton1={this.props.colorMenuButton1}
+          colorMenuButton2={this.props.colorMenuButton2}
         />
         <BarList
           establishments={this.props.establishments}
@@ -29,10 +29,18 @@ class LayoutPrincipal extends React.Component {
           getQuestions={this.props.getQuestions}
         />
         {this.props.modalStatus && (
-          <Modal questions={this.props.questions} onClose={this.props.onClose}>
+          <Modal questions={this.props.questions} onClose={this.props.onClose} modalQuestionsStage={this.props.modalQuestionsStage} >
             <ModalContent
               questions={this.props.questions}
               detailsEstablishment={this.props.detailsEstablishment}
+              modalQuestionsStage={this.props.modalQuestionsStage}
+              setModalQuestionStage={this.props.setModalQuestionStage}
+              modalQuestionFinished={this.props.modalQuestionFinished}
+              nextButton={this.props.nextButton}
+              answerButtons={this.props.answerButtons}
+              modalButtons={this.props.modalButtons}
+              modalButtonYes={this.props.modalButtonYes}
+              modalButtonNo={this.props.modalButtonNo}
             />
           </Modal>
         )}
