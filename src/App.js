@@ -17,6 +17,7 @@ class App extends Component {
       inputP: "",
       establishments: [],
       selectedEstablishment: 1,
+      routeId:3,
       detailsEstablishment: [],
       modalIsOpen: false,
       colorMenuButton1: 'buttonList buttonSelection',
@@ -244,6 +245,11 @@ class App extends Component {
   }
 
  modalButtons(eventclick,boolean) {
+   if(boolean===true){
+      boolean='Sí';
+   }else{
+    boolean='No';
+   }
   const answers = this.state.answers;
     answers.push(boolean);  
     this.setState({
@@ -267,6 +273,53 @@ class App extends Component {
  }
 
  sendSummary(){
+  const newDate = new Date();
+  const month= newDate.getMonth();
+  const day = newDate.getDate();
+  const year = newDate.getFullYear();
+  const hours = newDate.getHours();
+  const minutes = newDate.getMinutes();
+  const seconds = newDate.getSeconds();
+  let fech = year+'-'+month+'-'+day+ ' ' + hours+':'+ minutes+':'+seconds;
+  if(this.state.answers==='Sí'){
+    this.setState({
+      answers:true
+    })
+ }else{
+  this.setState({
+    answers:false
+  })
+ }
+
+  const send={
+    "envoy-date":fech,
+    "establishmentId":this.state.selectedEstablishment,
+    "routeId":this.state.routeId,
+    "answers": {
+      	"52": this.state.answers[0],
+      	"53": this.state.answers[1]
+      }
+
+  }
+
+  const savedToken = JSON.parse(localStorage.getItem("token"));
+  fetch('https://ada-controller.deploy-cd.com/api/challenge/2/answers', {
+    method: "POST",
+    body: JSON.stringify( send ),
+    headers: {
+      Authorization: "Bearer " + savedToken,
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  })
+    .then(res => res.json())
+    .then(response2 => {
+      console.log(response2);
+    });
+
+
+
+
+
   this.setState({
     modalIsOpen: false
   })

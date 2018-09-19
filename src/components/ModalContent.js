@@ -64,10 +64,10 @@ class ModalContent extends React.Component {
               <div className="modal__btn">
                 {/* <input className={this.props.modalButtonYes}  id="yes" onClick={this.props.modalButtons} type="button" value="Sí"></input> */}
                 <button className={this.props.modalButtonYes}  id="yes" onClick={eventClick => {
-                  this.props.modalButtons(eventClick, 'Sí');}} >Sí</button>
+                  this.props.modalButtons(eventClick, true);}} >Sí</button>
                 {/* <input className={this.props.modalButtonNo}  id="no" onClick={this.props.modalButtons} type="button" value="No"></input> */}
                 <button className={this.props.modalButtonNo}  id="no" onClick={eventClick => {
-                  this.props.modalButtons(eventClick, 'No');}} >No</button>
+                  this.props.modalButtons(eventClick, false);}} >No</button>
                 <button className="buttonArrow" onClick={this.props.setModalQuestionStage}><i className={this.props.nextButton}></i></button>
               </div>
             </div>
