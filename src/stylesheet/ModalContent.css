@@ -24,8 +24,13 @@
   font-size: 14px;
   margin-top: 11px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-style: none; }
+
+.modal__btn--yes:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
 
 .modal__btn--no {
   color: #222222;
@@ -36,8 +41,13 @@
   font-size: 14px;
   margin-top: 11px;
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-style: none; }
+
+.modal__btn--no:focus {
+  outline: none;
+  border-top: 0;
+  box-shadow: 0; }
 
 .next--hidden {
   display: none; }
